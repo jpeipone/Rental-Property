@@ -9,6 +9,7 @@ function App() {
     <div className="App">
       <NavigationMenu />
       <Banner />
+      <h2>Asunnot</h2>
       <ApartmentSlide />
     </div>
   );
