@@ -1,0 +1,42 @@
+.banner {
+  color: white;
+  object-fit: contain;
+  height: 350px;
+  background-image: url("/public/images/banner-image-rooftops.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.banner-info {
+  width: 330px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 0rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-left: 6px solid orangered;
+}
+
+.banner__header {
+  margin-top: 100px;
+  margin-bottom: 2rem;
+  text-align: left;
+  margin-left: 1.5rem;
+}
+
+.banner__text {
+  margin-bottom: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.banner__btn {
+  width: 60px;
+  height: 30px;
+  background-color: orangered;
+  color: white;
+  font-weight: bold;
+  border: none;
+  margin-left: 1.5rem;
+}
