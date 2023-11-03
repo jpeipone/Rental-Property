@@ -11,7 +11,7 @@ const ContextUser = ({ children }) => {
       monthlyMaintenanceCharge: 264.4,
       squareMeters: 32,
       originalCost: 230500,
-      loanMonthlyCost: 189500,
+      loanMonthlyCost: 1100,
     },
     {
       id: "2",

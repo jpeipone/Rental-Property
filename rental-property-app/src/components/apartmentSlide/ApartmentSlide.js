@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./ApartmentSlide.css";
 import { UserContext } from "../../ContextUser";
 
@@ -16,16 +17,17 @@ const ApartmentSlide = () => {
   console.log("asuntojen tiedot:", userdata);
   return (
     <div className="apartment-slide">
-      <div className="apartment-grid">
-        <div className="apartment-container card">
+      <Link to="/uusi">
+        <div className="apartment-container add">
           <div className="add-apartment">
             <div className="add-apartment__btn">+</div>
           </div>
         </div>
-
+      </Link>
+      <div className="apartment-grid">
         {/*  apartment card */}
         {userdata
-          ? userdata.map((apartment) => (
+          ? userdata?.map((apartment) => (
               <div className="apartment-container card">
                 <div className="header-container">
                   <h3 className="apartment__header">{apartment?.address}</h3>
@@ -42,16 +44,7 @@ const ApartmentSlide = () => {
                     {apartment?.monthlyMaintenanceCharge}€/kk
                   </div>
                 </div>
-                <div className="row-apartment">
-                  <div className="apartment__label">kaupunki</div>
-                  <div className="apartment__data">{apartment?.city}</div>
-                </div>
-                <div className="row-apartment">
-                  <div className="apartment__label">pinta-ala</div>
-                  <div className="apartment__data">
-                    {apartment?.squareMeters}m2
-                  </div>
-                </div>
+
                 <div className="row-apartment">
                   <div className="apartment__label">hankintahinta</div>
                   <div className="apartment__data">
@@ -64,6 +57,17 @@ const ApartmentSlide = () => {
                     {apartment?.loanMonthlyCost}€/kk
                   </div>
                 </div>
+                <div className="row-apartment column">
+                  <div className="apartment__data column">
+                    {apartment?.city}
+                  </div>
+                  <div className="apartment__data column">
+                    {apartment?.squareMeters}m2
+                  </div>
+                </div>
+                <Link to="/asunto">
+                  <button className="show-apartment__btn">katso</button>
+                </Link>
               </div>
             ))
           : null}

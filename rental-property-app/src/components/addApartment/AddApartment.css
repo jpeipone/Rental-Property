@@ -1,0 +1,56 @@
+.add-form {
+  width: 100%;
+  height: 800px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  max-width: 450px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input__label {
+  text-align: left;
+  margin-top: 1rem;
+  font-size: 16px;
+}
+
+.input__investment {
+  width: 260px;
+  height: 20px;
+}
+
+.input__investment.half {
+  width: 150px;
+}
+
+.input__investment::placeholder {
+  font-size: 16px;
+}
+
+.clear__btn {
+  background-color: #a9a9a9;
+  border-radius: 20px;
+  border: none;
+  color: black;
+  height: 30px;
+  width: 120px;
+  margin-top: 20px;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.add__btn {
+  background-color: orangered;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  height: 30px;
+  width: 120px;
+  margin-top: 20px;
+  font-weight: bold;
+}
