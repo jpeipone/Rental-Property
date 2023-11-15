@@ -1,0 +1,10 @@
+.footer-container {
+  margin-top: 150px;
+  background-color: lightgray;
+  height: 300px;
+}
+
+.footer__header {
+  text-align: center;
+  padding: 1.5rem;
+}

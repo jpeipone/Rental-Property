@@ -1,22 +1,40 @@
 .add-form {
   width: 100%;
-  height: 800px;
 }
 
 .form-container {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  max-width: 450px;
-  margin-top: 40px;
+  max-width: 300px;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.form-more {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin-top: 5px;
+  margin-left: 0px;
+  margin-right: auto;
+}
+
+.btn__showall {
+  width: 150px;
+  color: blue;
+  font-weight: bold;
+  padding-bottom: 2px;
+  border-bottom: 3px solid blue;
+  margin-top: 15px;
+  cursor: pointer;
 }
 
 .input__label {
   text-align: left;
   margin-top: 1rem;
   font-size: 16px;
+  margin-bottom: 5px;
 }
 
 .input__investment {
@@ -32,6 +50,17 @@
   font-size: 16px;
 }
 
+.mandatory__text {
+  margin-top: 5px;
+}
+
+.show-saved {
+  margin-top: 5px;
+  color: orangered;
+  font-weight: bold;
+  height: 20px;
+}
+
 .clear__btn {
   background-color: #a9a9a9;
   border-radius: 20px;
@@ -42,6 +71,7 @@
   margin-top: 20px;
   margin-right: 20px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .add__btn {
@@ -53,4 +83,5 @@
   width: 120px;
   margin-top: 20px;
   font-weight: bold;
+  cursor: pointer;
 }

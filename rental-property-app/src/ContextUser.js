@@ -12,6 +12,7 @@ const ContextUser = ({ children }) => {
       squareMeters: 32,
       originalCost: 230500,
       loanMonthlyCost: 1100,
+      emptyMonths: 0,
     },
     {
       id: "2",
@@ -22,6 +23,7 @@ const ContextUser = ({ children }) => {
       squareMeters: 60,
       originalCost: 45500,
       loanMonthlyCost: 0,
+      emptyMonths: 0,
     },
     {
       id: "3",
@@ -32,6 +34,7 @@ const ContextUser = ({ children }) => {
       squareMeters: 18,
       originalCost: 79500,
       loanMonthlyCost: 100,
+      emptyMonths: 0,
     },
     {
       id: "4",
@@ -42,6 +45,7 @@ const ContextUser = ({ children }) => {
       squareMeters: 70,
       originalCost: 79500,
       loanMonthlyCost: 310,
+      emptyMonths: 0,
     },
   ]);
   const [logged, setLogged] = useState(false);
@@ -53,6 +57,7 @@ const ContextUser = ({ children }) => {
     TotalCost: 142,
     TotalValue: 1220,
   });
+  const [showTempApartments, setTempApartments] = useState(true);
 
   return (
     <UserContext.Provider
@@ -65,6 +70,8 @@ const ContextUser = ({ children }) => {
         setUIDinvestor,
         portfolioUser,
         setPortfolioUser,
+        showTempApartments,
+        setTempApartments,
       }}
     >
       {children}

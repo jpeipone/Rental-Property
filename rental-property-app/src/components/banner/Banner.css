@@ -10,7 +10,7 @@
 }
 
 .banner-info {
-  width: 330px;
+  width: 360px;
   height: 350px;
   display: flex;
   flex-direction: column;
@@ -39,4 +39,11 @@
   font-weight: bold;
   border: none;
   margin-left: 1.5rem;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 450px) {
+  .banner-info {
+    width: 100%;
+  }
 }

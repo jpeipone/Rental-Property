@@ -13,15 +13,13 @@ const NavigationMenu = () => {
             className="menu-logo"
           />
         </Link>
-        <div className="website-name">AsuntoX</div>
+        <Link to="/">
+          <div className="website-name">AsuntoX</div>
+        </Link>
       </div>
       <ul>
         <li className="menu-items">
           <Link to="/asunnot">Asunnot</Link>
-        </li>
-
-        <li className="menu-items">
-          <a>account</a>
         </li>
       </ul>
     </nav>
