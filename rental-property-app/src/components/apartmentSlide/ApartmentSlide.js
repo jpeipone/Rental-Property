@@ -2,6 +2,11 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./ApartmentSlide.css";
 import { UserContext } from "../../ContextUser";
+import { CalculateSummary } from "../algos/CalculateSummary";
+
+/**
+ * Shows apartments data in a grid
+ */
 
 const ApartmentSlide = () => {
   const {
@@ -15,6 +20,9 @@ const ApartmentSlide = () => {
   } = useContext(UserContext);
 
   const [apartmentDetails, setApartmentDetails] = useState([]);
+
+  //summary calculation
+  const usersApartmentSummary = CalculateSummary(userdata);
 
   const handleDeleteApartment = (id) => {
     if (id) {

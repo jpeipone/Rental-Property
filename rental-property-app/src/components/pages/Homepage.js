@@ -21,7 +21,6 @@ const Homepage = () => {
       </div>
 
       <ApartmentSlide />
-      <FooterData />
     </div>
   );
 };

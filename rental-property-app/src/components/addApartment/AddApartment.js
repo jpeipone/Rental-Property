@@ -3,6 +3,10 @@ import { UserContext } from "../../ContextUser";
 import uniqid from "uniqid";
 import "./AddApartment.css";
 
+/**
+ * Form for adding aparment data
+ */
+
 const AddApartment = () => {
   const {
     UIDinvestor,
@@ -15,9 +19,9 @@ const AddApartment = () => {
   } = useContext(UserContext);
   const [name, setName] = useState("");
   const [city, setCity] = useState("");
-  const [monthlyRent, setMonthlyRent] = useState("");
-  const [originalCost, setOriginalCost] = useState("");
-  const [monthlyMaintenanceCharge, setMonthlyMaintenanceCharge] = useState("");
+  const [monthlyRent, setMonthlyRent] = useState(""); //kuukausivuokra
+  const [originalCost, setOriginalCost] = useState(""); //velaton ostohinta
+  const [monthlyMaintenanceCharge, setMonthlyMaintenanceCharge] = useState(""); //yhtiövastike
   const [loan, setLoan] = useState("");
   const [emptyMonths, setEmptyMonths] = useState("");
   const [squareMeters, setSquareMeters] = useState("");
@@ -88,7 +92,7 @@ const AddApartment = () => {
             }}
           />
 
-          <label className="input__label half">Hoitovastike *</label>
+          <label className="input__label half">Yhtiövastike *</label>
           <input
             type="number"
             step="0.01"
@@ -102,7 +106,7 @@ const AddApartment = () => {
           />
           <p className="mandatory__text">* pakollinen tieto </p>
           <div className="btn__showall" onClick={() => setShowAll(!showAll)}>
-            Näytä ylimääräiset
+            Näytä lisätiedot
           </div>
           {showAll === true && (
             <div className="form-more">
