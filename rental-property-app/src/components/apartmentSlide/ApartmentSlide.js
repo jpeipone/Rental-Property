@@ -94,7 +94,7 @@ const ApartmentSlide = () => {
                 </div>
 
                 <div className="row-btn">
-                  <Link to="/asunto">
+                  <Link to={`/asunto/${apartment?.id}`}>
                     <button className="show-apartment__btn">katso</button>
                   </Link>
                   <button

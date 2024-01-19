@@ -1,0 +1,31 @@
+.apartment-page {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row__apartment {
+  display: flex;
+}
+
+.info-container {
+  line-height: 2;
+}
+
+.address__apartment {
+  font-weight: bold;
+  font-size: 1.3em;
+  margin-top: 1.5rem;
+}
+
+.bold__apartment {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.info__apartment {
+  margin-right: 0.5rem;
+}
