@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { UserContext } from "../../../ContextUser";
+
 import "./ApartmentPage.css";
 
 const ApartmentPage = () => {
@@ -15,13 +16,14 @@ const ApartmentPage = () => {
   useEffect(() => {
     const findApartment = userdata.filter((a) => a.id === apartmentID);
     setApartmentDetails(findApartment);
-    console.log("asunto tiedot", findApartment);
   }, []);
-  console.log("ASUNTO HOOKS", apartmentDetails);
+
+  const imagePath = "images/apa.jpg";
 
   return (
     <div className="apartment-page">
       <h3>Asunnon tiedot</h3>
+      <img src="../images/apa.jpg" alt="rental" />
       <div className="info-container">
         <div className="address__apartment">{apartmentDetails[0]?.address}</div>
         <div className="row__apartment">
@@ -52,9 +54,9 @@ const ApartmentPage = () => {
           </div>
         )}
 
-        {apartmentDetails[0]?.emptyMonths && (
+        {apartmentDetails[0]?.emptyMonths >= 0 && (
           <div className="info__apartment">
-            tyhjät kuukaudet {apartmentDetails[0]?.emptyMonths}
+            tyhjät kuukaudet: {apartmentDetails[0]?.emptyMonths}
           </div>
         )}
       </div>
