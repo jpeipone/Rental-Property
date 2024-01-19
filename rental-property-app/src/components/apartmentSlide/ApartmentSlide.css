@@ -89,6 +89,7 @@
 .row-btn {
   display: flex;
   margin-top: 20px;
+  margin-bottom: 5px;
 }
 
 .delete-apartment__btn {
