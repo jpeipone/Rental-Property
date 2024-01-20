@@ -59,6 +59,7 @@ const ApartmentPage = () => {
           </div>
         )}
       </div>
+      <div className="buttons-row">uusi poista kassavirta</div>
     </div>
   );
 };

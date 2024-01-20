@@ -79,6 +79,16 @@
   font-size: 1.2rem;
 }
 
+.summary__second {
+  width: 300px;
+  margin-left: 15px;
+  margin-bottom: 4px;
+}
+
+.left__summary__second {
+  width: 300px;
+}
+
 @media only screen and (min-width: 400px) {
   .right__summary {
     margin-left: 20%;

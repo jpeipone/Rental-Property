@@ -35,3 +35,10 @@
 .info__apartment {
   margin-right: 0.3rem;
 }
+
+.buttons-row {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1rem;
+  margin-top: 3rem;
+}

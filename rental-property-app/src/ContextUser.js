@@ -23,7 +23,7 @@ const ContextUser = ({ children }) => {
       squareMeters: 60,
       originalCost: 45500,
       loanMonthlyCost: 0,
-      emptyMonths: 0,
+      emptyMonths: 3,
     },
     {
       id: "3",

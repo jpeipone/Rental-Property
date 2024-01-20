@@ -26,15 +26,15 @@ const SummaryApartments = () => {
                   <h3 className="summary__header">Kuukaudessa</h3>
                   <div className="summary__label">Vuokratulot</div>
                   <div className="summary__value">
-                    {summary?.monthlyRevenue}€/kk
+                    {summary?.monthlyRevenue} €/kk
                   </div>
                   <div className="summary__label">Yhtiövastikkeet</div>
                   <div className="summary__value">
-                    {summary?.monthlyMaintenanceCharge}€/kk
+                    {summary?.monthlyMaintenanceCharge} €/kk
                   </div>
                   <div className="summary__label">lainaerä</div>
                   <div className="summary__value">
-                    {summary?.loanMonthlyCost}€/kk
+                    {summary?.loanMonthlyCost} €/kk
                   </div>
                   <button
                     className="change-tax__btn"
@@ -85,15 +85,17 @@ const SummaryApartments = () => {
                   <h3 className="summary__header">Vuodessa</h3>
                   <div className="summary__label">Vuokratulot</div>
                   <div className="summary__value">
-                    {summary?.monthlyRevenue * 12}€/vuosi
+                    {summary?.monthlyRevenue * 12 -
+                      summary?.emptyMonthsYearlyLoss}{" "}
+                    €/vuosi
                   </div>
                   <div className="summary__label">Hoitovastikkeet</div>
                   <div className="summary__value">
-                    {summary?.monthlyMaintenanceCharge * 12}€/vuosi
+                    {summary?.monthlyMaintenanceCharge * 12} €/vuosi
                   </div>
                   <div className="summary__label">lainaerä</div>
                   <div className="summary__value">
-                    {summary?.loanMonthlyCost * 12}€/vuosi
+                    {summary?.loanMonthlyCost * 12} €/vuosi
                   </div>
                   <button
                     className="change-tax__btn"
@@ -114,7 +116,8 @@ const SummaryApartments = () => {
                         {parseFloat(
                           (summary?.monthlyRevenue * 12 -
                             summary?.monthlyMaintenanceCharge * 12 -
-                            summary?.loanMonthlyCost * 12) *
+                            summary?.loanMonthlyCost * 12 -
+                            summary?.emptyMonthsYearlyLoss) *
                             0.7
                         ).toFixed(2)}{" "}
                         €
@@ -127,7 +130,8 @@ const SummaryApartments = () => {
                         {parseFloat(
                           (summary?.monthlyRevenue * 12 -
                             summary?.monthlyMaintenanceCharge * 12 -
-                            summary?.loanMonthlyCost * 12) *
+                            summary?.loanMonthlyCost * 12 -
+                            summary?.emptyMonthsYearlyLoss) *
                             0.66
                         ).toFixed(2)}{" "}
                         €
@@ -139,12 +143,14 @@ const SummaryApartments = () => {
                 </div>
               </div>
               <div className="summary-wrapper">
-                <div className="left__summary">
+                <div className="left__summary__second">
                   <h3 className="summary__header">Asunnoista</h3>
-                  <div className="summary__label">
+                  <div className="summary__second">
                     Asuntojen velatonhinta yhteensä
                   </div>
-                  <div className="summary__value">{summary?.originalCost}€</div>
+                  <div className="summary__value">
+                    {summary?.originalCost} €
+                  </div>
                 </div>
               </div>
             </div>

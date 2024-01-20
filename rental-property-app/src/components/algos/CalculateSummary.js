@@ -17,6 +17,12 @@ export const CalculateSummary = (userdata) => {
     monthlyRevenue = monthlyRevenue + userdata[i]?.monthlyRevenue;
     monthlyMaintenanceCharge =
       monthlyMaintenanceCharge + userdata[i]?.monthlyMaintenanceCharge;
+
+    //empty months total
+    if (userdata[i]?.emptyMonths > 0) {
+      emptyMonths = userdata[i]?.emptyMonths * userdata[i]?.monthlyRevenue;
+    }
+
     if (userdata[i]?.originalCost === null) {
       originalCost = parseFloat(originalCost + 0);
     } else {
@@ -38,6 +44,7 @@ export const CalculateSummary = (userdata) => {
       originalCost: originalCost,
       monthlyMaintenanceCharge: monthlyMaintenanceCharge,
       loanMonthlyCost: loanMonthlyCost,
+      emptyMonthsYearlyLoss: emptyMonths,
     },
   ];
   return summaryApartments;

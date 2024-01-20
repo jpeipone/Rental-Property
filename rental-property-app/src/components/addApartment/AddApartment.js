@@ -23,7 +23,7 @@ const AddApartment = () => {
   const [originalCost, setOriginalCost] = useState(""); //velaton ostohinta
   const [monthlyMaintenanceCharge, setMonthlyMaintenanceCharge] = useState(""); //yhtiövastike
   const [loan, setLoan] = useState("");
-  const [emptyMonths, setEmptyMonths] = useState("");
+  const [emptyMonths, setEmptyMonths] = useState(0);
   const [squareMeters, setSquareMeters] = useState("");
 
   const [addedInvestment, setAddedInvestment] = useState(" ");
