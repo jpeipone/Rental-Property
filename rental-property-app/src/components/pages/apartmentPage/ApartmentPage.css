@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   max-width: 500px;
-  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -39,10 +38,13 @@
 .buttons-row {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin-left: 40px;
+
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
   margin-top: 3rem;
-  max-width: 300px;
+  max-width: 280px;
+  gap: 4.5em;
 }
 
 .column__icon__text {
