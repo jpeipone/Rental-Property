@@ -22,7 +22,6 @@ const ApartmentPage = () => {
 
   return (
     <div className="apartment-page">
-      <h3>Asunnon tiedot</h3>
       <img src="../images/apa.jpg" alt="rental" />
       <div className="info-container">
         <div className="address__apartment">{apartmentDetails[0]?.address}</div>

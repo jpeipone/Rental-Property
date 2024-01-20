@@ -7,9 +7,7 @@ const Banner = () => {
     <header className="banner">
       <div className="banner-info">
         <h2 className="banner__header">Asuntosijoittan työkalu</h2>
-        <p className="banner__text">
-          Vuokra-asuntojen analysointiin laskuri ja tietokanta
-        </p>
+        <p className="banner__text">Vuokra-asuntojen analysointiin laskuri</p>
         <Link to="/uusi">
           <button className="banner__btn">Aloita</button>
         </Link>

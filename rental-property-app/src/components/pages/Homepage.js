@@ -12,9 +12,9 @@ const Homepage = () => {
       <h2 className="app__header">Asunnot</h2>
 
       <div className="add-new-apartment">
-        <Link to="/uusi">
+        {/*  <Link to="/uusi">
           <div className="add-apartment__btn">+</div>
-        </Link>
+        </Link> */}
         <Link to="/uusi">
           <div className="add__text">Lisää asunto</div>
         </Link>
