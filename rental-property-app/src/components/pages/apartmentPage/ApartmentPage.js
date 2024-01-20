@@ -6,12 +6,14 @@ import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import HomeIcon from "@mui/icons-material/Home";
 import { Link } from "react-router-dom";
 import "./ApartmentPage.css";
+import { Diversity1TwoTone } from "@mui/icons-material";
 
 const ApartmentPage = () => {
   const { UIDinvestor, setUserdata, setPortfolioUser, logged, userdata } =
     useContext(UserContext);
 
   const [apartmentDetails, setApartmentDetails] = useState([]);
+  const [showApartment, setShowApartment] = useState(true);
 
   let { apartmentID } = useParams();
 
@@ -30,6 +32,7 @@ const ApartmentPage = () => {
       );
       if (findIndex !== -1) {
         setUserdata(userdata?.filter((apartment) => apartment.id !== id));
+        setShowApartment(false);
       }
     }
   };
@@ -37,7 +40,9 @@ const ApartmentPage = () => {
   return (
     <div className="apartment-page">
       <img src="../images/apa.jpg" alt="rental" />
+
       <div className="info-container">
+        {!showApartment && <div className="address__apartment">Poistettu</div>}
         <div className="address__apartment">{apartmentDetails[0]?.address}</div>
         <div className="row__apartment">
           {apartmentDetails[0]?.city && (
@@ -84,7 +89,7 @@ const ApartmentPage = () => {
 
         <div
           className="column__icon__text"
-          onClick={() => handleDeleteApartment(apartmentDetails?.id)}
+          onClick={() => handleDeleteApartment(apartmentDetails[0]?.id)}
         >
           <HighlightOffIcon className="icon-symbol" />
           Poista
