@@ -6,9 +6,7 @@ const FooterData = () => {
     <div className="footer-container">
       <div className="footer__header">AsuntoX</div>
       <p>Asuntosijoittajan työkalu</p>
-      <p>
-        Laskurin arvot voivat sisältää virheitä. Käyttö on omalla vastuulla.
-      </p>
+      <p>Laskurin arvot voivat sisältää virheitä.</p>
     </div>
   );
 };

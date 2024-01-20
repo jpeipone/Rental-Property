@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../ContextUser";
 import { CalculateSummary } from "../algos/CalculateSummary";
 import "./SummaryApartments.css";
+import HomeIcon from "@mui/icons-material/Home";
 
 const SummaryApartments = () => {
   const { userdata, setUserdata, setPortfolioUser } = useContext(UserContext);
@@ -150,6 +151,10 @@ const SummaryApartments = () => {
                   </div>
                   <div className="summary__value">
                     {summary?.originalCost} €
+                  </div>
+                  <div className="apartment-number-row">
+                    <HomeIcon className="home-icon" fontSize="large" />
+                    <div className="apartment-number"> x {userdata.length}</div>
                   </div>
                 </div>
               </div>

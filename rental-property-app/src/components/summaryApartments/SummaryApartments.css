@@ -89,6 +89,24 @@
   width: 300px;
 }
 
+.apartment-number-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.home-icon {
+  margin-top: 15px;
+  margin-left: 15px;
+  color: orangered;
+}
+
+.apartment-number {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
 @media only screen and (min-width: 400px) {
   .right__summary {
     margin-left: 20%;
