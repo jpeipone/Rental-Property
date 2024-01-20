@@ -1,7 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { UserContext } from "../../../ContextUser";
-
+import AddCircleIcon from "@mui/icons-material/AddCircle";
+import HighlightOffIcon from "@mui/icons-material/HighlightOff";
+import HomeIcon from "@mui/icons-material/Home";
+import { Link } from "react-router-dom";
 import "./ApartmentPage.css";
 
 const ApartmentPage = () => {
@@ -19,6 +22,17 @@ const ApartmentPage = () => {
   }, []);
 
   const imagePath = "images/apa.jpg";
+
+  const handleDeleteApartment = (id) => {
+    if (id) {
+      const findIndex = userdata?.findIndex(
+        (apartment) => apartment?.id === id
+      );
+      if (findIndex !== -1) {
+        setUserdata(userdata?.filter((apartment) => apartment.id !== id));
+      }
+    }
+  };
 
   return (
     <div className="apartment-page">
@@ -59,7 +73,30 @@ const ApartmentPage = () => {
           </div>
         )}
       </div>
-      <div className="buttons-row">uusi poista kassavirta</div>
+
+      <div className="buttons-row">
+        <Link to="/uusi">
+          <div className="column__icon__text">
+            <AddCircleIcon className="icon-symbol" />
+            Uusi
+          </div>
+        </Link>
+
+        <div
+          className="column__icon__text"
+          onClick={() => handleDeleteApartment(apartmentDetails?.id)}
+        >
+          <HighlightOffIcon className="icon-symbol" />
+          Poista
+        </div>
+
+        <Link to="/">
+          <div className="column__icon__text">
+            <HomeIcon className="icon-symbol" />
+            Etusivu
+          </div>
+        </Link>
+      </div>
     </div>
   );
 };
