@@ -13,6 +13,8 @@
 
 .row__apartment {
   display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .info-container {
@@ -31,8 +33,18 @@
   font-size: 1.1em;
 }
 
+.bold__apartment__rent {
+  color: orangered;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
 .info__apartment {
   margin-right: 0.3rem;
+}
+
+.info__apartment__m {
+  margin-bottom: 2px;
 }
 
 .buttons-row {

@@ -50,6 +50,7 @@
 .row-apartment.column {
   display: flex;
   margin-top: 10px;
+  align-items: center;
 }
 
 .apartment__data.column {
@@ -63,17 +64,17 @@
 .apartment__rent__hd {
   margin-top: 10px;
   margin-left: 15px;
-  font-size: 1rem;
 }
 
 .apartment__rent {
   width: 230px;
   text-align: left;
   font-weight: bold;
-  margin-top: 5px;
+  margin-top: 15px;
   margin-left: 15px;
   margin-bottom: 15px;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  color: orangered;
 }
 
 .show-apartment__btn {

@@ -46,7 +46,7 @@ const ApartmentSlide = () => {
                   <h3 className="apartment__header">{apartment?.address}</h3>
                 </div>
                 <div className="column-apartment">
-                  <div className="apartment__rent__hd">vuokra</div>
+                  {/*  <div className="apartment__rent__hd"></div> */}
 
                   <div className="apartment__rent">
                     {apartment?.monthlyRevenue} €/kk
@@ -60,7 +60,8 @@ const ApartmentSlide = () => {
                 </div>
 
                 <div className="row-apartment">
-                  <div className="apartment__label">hankintahinta</div>
+                  <div className="apartment__label">velaton hinta</div>
+
                   <div className="apartment__data">
                     {apartment?.originalCost}€
                   </div>
@@ -86,10 +87,7 @@ const ApartmentSlide = () => {
 
                 <div className="row-apartment column">
                   <div className="apartment__data column">
-                    {apartment?.city}
-                  </div>
-                  <div className="apartment__data column">
-                    {apartment?.squareMeters}m2
+                    {apartment?.city} {apartment?.squareMeters}m<sup>2</sup>
                   </div>
                 </div>
 

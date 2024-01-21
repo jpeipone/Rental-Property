@@ -45,17 +45,19 @@ const ApartmentPage = () => {
         {!showApartment && <div className="address__apartment">Poistettu</div>}
         <div className="address__apartment">{apartmentDetails[0]?.address}</div>
         <div className="row__apartment">
-          {apartmentDetails[0]?.city && (
-            <div className="info__apartment">{apartmentDetails[0]?.city} |</div>
-          )}
+          <div className="info__apartment">{apartmentDetails[0]?.city}</div>{" "}
+          <div className="info__apartment">
+            {" "}
+            {apartmentDetails[0]?.squareMeters}
+          </div>
           {apartmentDetails[0]?.squareMeters && (
-            <div className="info__apartment">
-              {apartmentDetails[0]?.squareMeters} m2
+            <div className="info__apartment__m">
+              m<sup>2</sup>
             </div>
           )}
         </div>
-        <div className="bold__apartment">
-          {apartmentDetails[0]?.monthlyRevenue} €/kk vuokra
+        <div className="bold__apartment__rent">
+          {apartmentDetails[0]?.monthlyRevenue} €/kk
         </div>
 
         {apartmentDetails[0]?.originalCost && (
@@ -66,11 +68,10 @@ const ApartmentPage = () => {
         <div className="info__apartment">
           hoitovastikkeet: {apartmentDetails[0]?.monthlyMaintenanceCharge} €/kk
         </div>
-        {apartmentDetails[0]?.loanMonthlyCost && (
-          <div className="info__apartment">
-            lainaerä: {apartmentDetails[0]?.loanMonthlyCost} €/kk
-          </div>
-        )}
+
+        <div className="info__apartment">
+          lainaerä: {apartmentDetails[0]?.loanMonthlyCost} €/kk
+        </div>
 
         {apartmentDetails[0]?.emptyMonths >= 0 && (
           <div className="info__apartment">
