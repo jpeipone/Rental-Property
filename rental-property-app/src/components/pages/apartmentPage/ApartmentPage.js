@@ -7,6 +7,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import { Link } from "react-router-dom";
 import "./ApartmentPage.css";
 import { Diversity1TwoTone } from "@mui/icons-material";
+import CalculateApartmentRenovationTotal from "../../algos/CalculateApartmentRenovationTotal";
 
 const ApartmentPage = () => {
   const { UIDinvestor, setUserdata, setPortfolioUser, logged, userdata } =
@@ -14,14 +15,25 @@ const ApartmentPage = () => {
 
   const [apartmentDetails, setApartmentDetails] = useState([]);
   const [showApartment, setShowApartment] = useState(true);
+  const [renovationTotal, setRenovationTotal] = useState("");
 
   let { apartmentID } = useParams();
+
+  let apartmentRenovationMonthTotal = 0;
 
   //finds apartment from array
   useEffect(() => {
     const findApartment = userdata.filter((a) => a.id === apartmentID);
     setApartmentDetails(findApartment);
   }, []);
+
+  //calculates renovation
+  useEffect(() => {
+    apartmentRenovationMonthTotal =
+      CalculateApartmentRenovationTotal(apartmentDetails);
+    console.log("remontti menot yhteensä", apartmentRenovationMonthTotal);
+    setRenovationTotal(apartmentRenovationMonthTotal);
+  }, [apartmentDetails]);
 
   const imagePath = "images/apa.jpg";
 
@@ -71,6 +83,10 @@ const ApartmentPage = () => {
 
         <div className="info__apartment">
           lainaerä: {apartmentDetails[0]?.loanMonthlyCost} €/kk
+        </div>
+        <div className="info__apartment">
+          remontit yhteensä:{" "}
+          {renovationTotal * apartmentDetails[0]?.squareMeters} €
         </div>
 
         {apartmentDetails[0]?.emptyMonths >= 0 && (

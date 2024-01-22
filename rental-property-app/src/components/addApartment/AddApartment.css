@@ -86,3 +86,17 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+/* decoration css */
+.decoration__hd {
+  margin-top: 20px;
+}
+
+.decoration-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.squaremeter__label {
+  margin-left: 10px;
+}

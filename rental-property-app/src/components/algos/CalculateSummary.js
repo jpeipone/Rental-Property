@@ -1,5 +1,6 @@
 import React from "react";
 import uniqid from "uniqid";
+import CalculateApartmentRenovationTotal from "./CalculateApartmentRenovationTotal";
 
 /**
  * Calculates summary from apartments data and returns array of object
@@ -12,11 +13,26 @@ export const CalculateSummary = (userdata) => {
   let monthlyMaintenanceCharge = 0;
   let loanMonthlyCost = 0;
   let emptyMonths = 0;
+  let totalRenovationCost = 0;
 
   for (let i in userdata) {
     monthlyRevenue = monthlyRevenue + userdata[i]?.monthlyRevenue;
     monthlyMaintenanceCharge =
       monthlyMaintenanceCharge + userdata[i]?.monthlyMaintenanceCharge;
+
+    //renovation total cost
+    if (userdata[i]?.squareMeters) {
+      totalRenovationCost =
+        totalRenovationCost +
+        (userdata[i]?.lineRenovation +
+          userdata[i]?.pipeRepair +
+          userdata[i]?.roofRepair +
+          userdata[i]?.balconyRepair +
+          userdata[i]?.windowRepair +
+          userdata[i]?.facadeRepair +
+          userdata[i]?.otherRepair) *
+          userdata[i]?.squareMeters;
+    }
 
     //empty months total
     if (userdata[i]?.emptyMonths > 0) {
@@ -45,6 +61,7 @@ export const CalculateSummary = (userdata) => {
       monthlyMaintenanceCharge: monthlyMaintenanceCharge,
       loanMonthlyCost: loanMonthlyCost,
       emptyMonthsYearlyLoss: emptyMonths,
+      totalRenovationCost: totalRenovationCost,
     },
   ];
   return summaryApartments;

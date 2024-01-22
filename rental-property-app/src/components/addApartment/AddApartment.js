@@ -26,6 +26,15 @@ const AddApartment = () => {
   const [emptyMonths, setEmptyMonths] = useState(0);
   const [squareMeters, setSquareMeters] = useState("");
 
+  //renovations
+  const [lineRenovation, setLineRenovation] = useState(""); //linjasaneeraus
+  const [pipeRepair, setPipeRepair] = useState(""); //putkir
+  const [roofRepair, setRoofRepair] = useState(""); // kattor
+  const [balconyRepair, setBalconyRepair] = useState(""); //parveke
+  const [windowRepair, setWindowRepair] = useState(""); //ikkuna
+  const [facadeRepair, setFacadeRepair] = useState(""); //julkisivu
+  const [otherRepair, setOtherRepair] = useState(""); //muut remontit
+
   const [addedInvestment, setAddedInvestment] = useState(" ");
   const [showAll, setShowAll] = useState(false);
 
@@ -47,6 +56,13 @@ const AddApartment = () => {
       loanMonthlyCost: loan,
       emptyMonths: emptyMonths,
       squareMeters: squareMeters,
+      lineRenovation: lineRenovation,
+      pipeRepair: pipeRepair,
+      roofRepair: roofRepair,
+      balconyRepair: balconyRepair,
+      windowRepair: windowRepair,
+      facadeRepair: facadeRepair,
+      otherRepair: otherRepair,
     };
 
     setUserdata([...userdata, newApartment]);
@@ -63,6 +79,13 @@ const AddApartment = () => {
     setAddedInvestment(" ");
     setEmptyMonths("");
     setSquareMeters("");
+    setLineRenovation("");
+    setPipeRepair("");
+    setRoofRepair("");
+    setBalconyRepair("");
+    setWindowRepair("");
+    setFacadeRepair("");
+    setOtherRepair("");
   };
 
   return (
@@ -164,6 +187,127 @@ const AddApartment = () => {
                   setEmptyMonths(parseFloat(commaToSpot));
                 }}
               />
+              {/* Remontit */}
+              <h3 className="decoration__hd">Remontit</h3>
+              {/*   Linjasaneeraus */}
+              <label className="input__label half">Linjasaneeraus</label>
+              <div className="decoration-row">
+                <input
+                  type="number"
+                  step="0.1"
+                  className="input__investment half"
+                  value={lineRenovation}
+                  onChange={(e) => {
+                    const commaToSpot = e.target.value.replace(",", ".");
+                    setLineRenovation(parseFloat(commaToSpot));
+                  }}
+                />
+                <label className="squaremeter__label">
+                  €/m<sup>2</sup>
+                </label>
+              </div>
+              {/*   Putkiremontti */}
+              <label className="input__label half">Putki</label>
+              <div className="decoration-row">
+                <input
+                  type="number"
+                  step="0.1"
+                  className="input__investment half"
+                  value={pipeRepair}
+                  onChange={(e) => {
+                    const commaToSpot = e.target.value.replace(",", ".");
+                    setPipeRepair(parseFloat(commaToSpot));
+                  }}
+                />
+                <label className="squaremeter__label">
+                  €/m<sup>2</sup>
+                </label>
+              </div>
+              {/*   Kattoremontti */}
+              <label className="input__label half">Katto</label>
+              <div className="decoration-row">
+                <input
+                  type="number"
+                  step="0.1"
+                  className="input__investment half"
+                  value={roofRepair}
+                  onChange={(e) => {
+                    const commaToSpot = e.target.value.replace(",", ".");
+                    setRoofRepair(parseFloat(commaToSpot));
+                  }}
+                />
+                <label className="squaremeter__label">
+                  €/m<sup>2</sup>
+                </label>
+              </div>
+              {/*   Parvekeremontti */}
+              <label className="input__label half">Parveke</label>
+              <div className="decoration-row">
+                <input
+                  type="number"
+                  step="0.1"
+                  className="input__investment half"
+                  value={balconyRepair}
+                  onChange={(e) => {
+                    const commaToSpot = e.target.value.replace(",", ".");
+                    setBalconyRepair(parseFloat(commaToSpot));
+                  }}
+                />
+                <label className="squaremeter__label">
+                  €/m<sup>2</sup>
+                </label>
+              </div>
+              {/*   Ikkunaremontti */}
+              <label className="input__label half">Ikkuna</label>
+              <div className="decoration-row">
+                <input
+                  type="number"
+                  step="0.1"
+                  className="input__investment half"
+                  value={windowRepair}
+                  onChange={(e) => {
+                    const commaToSpot = e.target.value.replace(",", ".");
+                    setWindowRepair(parseFloat(commaToSpot));
+                  }}
+                />
+                <label className="squaremeter__label">
+                  €/m<sup>2</sup>
+                </label>
+              </div>
+              {/*   Julkisivuremontti */}
+              <label className="input__label half">Julkisivu</label>
+              <div className="decoration-row">
+                <input
+                  type="number"
+                  step="0.1"
+                  className="input__investment half"
+                  value={facadeRepair}
+                  onChange={(e) => {
+                    const commaToSpot = e.target.value.replace(",", ".");
+                    setFacadeRepair(parseFloat(commaToSpot));
+                  }}
+                />
+                <label className="squaremeter__label">
+                  €/m<sup>2</sup>
+                </label>
+              </div>
+              {/*   Omat */}
+              <label className="input__label half">Muut remontit</label>
+              <div className="decoration-row">
+                <input
+                  type="number"
+                  step="0.1"
+                  className="input__investment half"
+                  value={otherRepair}
+                  onChange={(e) => {
+                    const commaToSpot = e.target.value.replace(",", ".");
+                    setOtherRepair(parseFloat(commaToSpot));
+                  }}
+                />
+                <label className="squaremeter__label">
+                  €/m<sup>2</sup>
+                </label>
+              </div>
             </div>
           )}
 
