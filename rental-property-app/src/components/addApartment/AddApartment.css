@@ -87,6 +87,11 @@
   cursor: pointer;
 }
 
+/* radio button*/
+.radio__btn {
+  margin-right: 10px;
+}
+
 /* decoration css */
 .decoration__hd {
   margin-top: 20px;

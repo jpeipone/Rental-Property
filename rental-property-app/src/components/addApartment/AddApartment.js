@@ -35,6 +35,9 @@ const AddApartment = () => {
   const [facadeRepair, setFacadeRepair] = useState(""); //julkisivu
   const [otherRepair, setOtherRepair] = useState(""); //muut remontit
 
+  //varainsiirtovero
+  const [transferTax, setTransferTax] = useState("2");
+
   const [addedInvestment, setAddedInvestment] = useState(" ");
   const [showAll, setShowAll] = useState(false);
 
@@ -63,6 +66,7 @@ const AddApartment = () => {
       windowRepair: windowRepair,
       facadeRepair: facadeRepair,
       otherRepair: otherRepair,
+      transferTax: transferTax,
     };
 
     setUserdata([...userdata, newApartment]);
@@ -86,6 +90,11 @@ const AddApartment = () => {
     setWindowRepair("");
     setFacadeRepair("");
     setOtherRepair("");
+  };
+
+  //Tax radio buttons
+  const handleRadioTax = (value) => {
+    setTransferTax(value);
   };
 
   return (
@@ -152,6 +161,36 @@ const AddApartment = () => {
                   setOriginalCost(parseFloat(commaToSpot));
                 }}
               />
+              {/*  Radio buttons transfer tax */}
+              <label className="input__label half">
+                Varainsiirto veroprosentti
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  value="2"
+                  name="taxGroup"
+                  className="radio__btn"
+                  onChange={(e) => {
+                    const tax = 2;
+                    setTransferTax(parseFloat(tax));
+                  }}
+                />{" "}
+                2 % Asunto-osake
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  value="4"
+                  name="taxGroup"
+                  className="radio__btn"
+                  onChange={(e) => {
+                    const tax = 4;
+                    setTransferTax(parseFloat(tax));
+                  }}
+                />{" "}
+                4 % Kiinteistö
+              </label>
               <label className="input__label half">Lainan kuukausierä</label>
               <input
                 type="number"

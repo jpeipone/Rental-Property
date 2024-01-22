@@ -72,28 +72,51 @@ const ApartmentPage = () => {
           {apartmentDetails[0]?.monthlyRevenue} €/kk
         </div>
 
+        <div className="info__apartment">
+          <label className="label__apartment">hoitovastikkeet: </label>
+          <div> {apartmentDetails[0]?.monthlyMaintenanceCharge} €/kk </div>
+        </div>
+        {apartmentDetails[0]?.emptyMonths >= 0 && (
+          <div className="info__apartment">
+            <label className="label__apartment">tyhjät kuukaudet: </label>
+            <div>{apartmentDetails[0]?.emptyMonths}</div>
+          </div>
+        )}
+
+        <div className="info__apartment">
+          <label className="label__apartment">lainaerä: </label>
+          {apartmentDetails[0]?.loanMonthlyCost} €/kk
+        </div>
+        <br />
         {apartmentDetails[0]?.originalCost && (
-          <div className="bold__apartment">
+          <div className="info__apartment">
+            <label className="label__apartment">velaton hinta: </label>
             {apartmentDetails[0]?.originalCost} €
           </div>
         )}
-        <div className="info__apartment">
-          hoitovastikkeet: {apartmentDetails[0]?.monthlyMaintenanceCharge} €/kk
-        </div>
-
-        <div className="info__apartment">
-          lainaerä: {apartmentDetails[0]?.loanMonthlyCost} €/kk
-        </div>
-        <div className="info__apartment">
-          remontit yhteensä:{" "}
-          {renovationTotal * apartmentDetails[0]?.squareMeters} €
-        </div>
-
-        {apartmentDetails[0]?.emptyMonths >= 0 && (
+        {apartmentDetails[0]?.transferTax && (
           <div className="info__apartment">
-            tyhjät kuukaudet: {apartmentDetails[0]?.emptyMonths}
+            <label className="label__apartment">varainsiirtovero: </label>
+            {(apartmentDetails[0]?.transferTax / 100) *
+              apartmentDetails[0]?.originalCost}{" "}
+            €{"  "} ({apartmentDetails[0]?.transferTax}%)
           </div>
         )}
+        {apartmentDetails[0]?.squareMeters && renovationTotal > 0 && (
+          <div className="info__apartment">
+            <label className="label__apartment">remontit yhteensä: </label>
+            {renovationTotal * apartmentDetails[0]?.squareMeters} €
+          </div>
+        )}
+
+        <div className="bold__apartment">
+          <label className="label__apartment">kokonaishinta: </label>
+          {apartmentDetails[0]?.originalCost +
+            renovationTotal * apartmentDetails[0]?.squareMeters +
+            (apartmentDetails[0]?.transferTax / 100) *
+              apartmentDetails[0]?.originalCost}{" "}
+          €
+        </div>
       </div>
 
       <div className="buttons-row">

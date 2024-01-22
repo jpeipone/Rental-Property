@@ -29,7 +29,7 @@ const SummaryApartments = () => {
                   <div className="summary__value">
                     {summary?.monthlyRevenue} €/kk
                   </div>
-                  <div className="summary__label">Yhtiövastikkeet</div>
+                  <div className="summary__label">Hoitovastikkeet</div>
                   <div className="summary__value">
                     {summary?.monthlyMaintenanceCharge} €/kk
                   </div>
@@ -152,7 +152,7 @@ const SummaryApartments = () => {
                 <div className="left__summary__second">
                   <h3 className="summary__header">Asunnoista</h3>
                   <div className="summary__second">
-                    Asuntojen velatonhinta yhteensä
+                    Asuntojen velaton hinta yhteensä
                   </div>
                   <div className="summary__value">
                     {summary?.originalCost} €
@@ -163,6 +163,7 @@ const SummaryApartments = () => {
                   <div className="summary__value">
                     {summary?.totalRenovationCost} €
                   </div>
+
                   <div className="apartment-number-row">
                     <HomeIcon className="home-icon" fontSize="large" />
                     <div className="apartment-number"> x {userdata.length}</div>

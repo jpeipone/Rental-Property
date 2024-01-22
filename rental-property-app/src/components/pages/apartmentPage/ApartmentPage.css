@@ -31,6 +31,8 @@
 .bold__apartment {
   font-weight: bold;
   font-size: 1.1em;
+  display: flex;
+  flex-direction: row;
 }
 
 .bold__apartment__rent {
@@ -39,8 +41,14 @@
   font-size: 1.5em;
 }
 
+.label__apartment {
+  width: 180px;
+}
+
 .info__apartment {
   margin-right: 0.3rem;
+  display: flex;
+  flex-direction: row;
 }
 
 .info__apartment__m {
