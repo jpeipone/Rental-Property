@@ -108,15 +108,18 @@ const ApartmentPage = () => {
             {renovationTotal * apartmentDetails[0]?.squareMeters} €
           </div>
         )}
-
-        <div className="bold__apartment">
-          <label className="label__apartment">kokonaishinta: </label>
-          {apartmentDetails[0]?.originalCost +
-            renovationTotal * apartmentDetails[0]?.squareMeters +
-            (apartmentDetails[0]?.transferTax / 100) *
-              apartmentDetails[0]?.originalCost}{" "}
-          €
-        </div>
+        {apartmentDetails[0]?.squareMeters &&
+          apartmentDetails[0]?.transferTax &&
+          apartmentDetails[0]?.originalCost && (
+            <div className="bold__apartment">
+              <label className="label__apartment">kokonaishinta: </label>
+              {apartmentDetails[0]?.originalCost +
+                renovationTotal * apartmentDetails[0]?.squareMeters +
+                (apartmentDetails[0]?.transferTax / 100) *
+                  apartmentDetails[0]?.originalCost}{" "}
+              €
+            </div>
+          )}
       </div>
 
       <div className="buttons-row">

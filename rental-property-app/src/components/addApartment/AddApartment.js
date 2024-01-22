@@ -27,13 +27,13 @@ const AddApartment = () => {
   const [squareMeters, setSquareMeters] = useState("");
 
   //renovations
-  const [lineRenovation, setLineRenovation] = useState(""); //linjasaneeraus
-  const [pipeRepair, setPipeRepair] = useState(""); //putkir
-  const [roofRepair, setRoofRepair] = useState(""); // kattor
-  const [balconyRepair, setBalconyRepair] = useState(""); //parveke
-  const [windowRepair, setWindowRepair] = useState(""); //ikkuna
-  const [facadeRepair, setFacadeRepair] = useState(""); //julkisivu
-  const [otherRepair, setOtherRepair] = useState(""); //muut remontit
+  const [lineRenovation, setLineRenovation] = useState(0); //linjasaneeraus
+  const [pipeRepair, setPipeRepair] = useState(0); //putkir
+  const [roofRepair, setRoofRepair] = useState(0); // kattor
+  const [balconyRepair, setBalconyRepair] = useState(0); //parveke
+  const [windowRepair, setWindowRepair] = useState(0); //ikkuna
+  const [facadeRepair, setFacadeRepair] = useState(0); //julkisivu
+  const [otherRepair, setOtherRepair] = useState(0); //muut remontit
 
   //varainsiirtovero
   const [transferTax, setTransferTax] = useState("2");
