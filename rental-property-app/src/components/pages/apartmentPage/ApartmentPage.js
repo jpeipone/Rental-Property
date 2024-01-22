@@ -8,6 +8,9 @@ import { Link } from "react-router-dom";
 import "./ApartmentPage.css";
 import { Diversity1TwoTone } from "@mui/icons-material";
 import CalculateApartmentRenovationTotal from "../../algos/CalculateApartmentRenovationTotal";
+import { Line } from "react-chartjs-2";
+import { Chart as ChartJS } from "chart.js/auto";
+import { Chart } from "react-chartjs-2";
 
 const ApartmentPage = () => {
   const { UIDinvestor, setUserdata, setPortfolioUser, logged, userdata } =
@@ -16,6 +19,9 @@ const ApartmentPage = () => {
   const [apartmentDetails, setApartmentDetails] = useState([]);
   const [showApartment, setShowApartment] = useState(true);
   const [renovationTotal, setRenovationTotal] = useState("");
+
+  //kassavirta
+  const [cashFlow, setCashFlow] = useState(0);
 
   let { apartmentID } = useParams();
 
@@ -49,10 +55,33 @@ const ApartmentPage = () => {
     }
   };
 
+  //Chart line
+  const years = [0, 1, 2, 3, 4, 5, 10, 15, 20];
+  let data = {
+    labels: [0, 1, 2, 3, 4, 5, 10, 15, 20],
+    datasets: [
+      {
+        label: "Kassavirta tulevaisuudessa",
+        data: years.map(
+          (year) =>
+            (apartmentDetails[0]?.monthlyRevenue -
+              apartmentDetails[0]?.monthlyMaintenanceCharge -
+              apartmentDetails[0]?.loanMonthlyCost) *
+            12 *
+            year
+        ),
+        fill: true,
+        borderColor: "rgba(44, 189, 189, 1)",
+      },
+    ],
+  };
+
   return (
     <div className="apartment-page">
-      <img src="../images/apa.jpg" alt="rental" />
+      {/*  <img src="../images/apa.jpg" alt="rental" /> */}
 
+      {/* Graph */}
+      <Line data={data} />
       <div className="info-container">
         {!showApartment && <div className="address__apartment">Poistettu</div>}
         <div className="address__apartment">{apartmentDetails[0]?.address}</div>
