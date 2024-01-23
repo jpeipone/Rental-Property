@@ -49,6 +49,13 @@ const AddApartment = () => {
       setUserdata(userdata.splice(0, userdata.length));
     }
 
+    let tempLoan = loan;
+    if (tempLoan === null) {
+      tempLoan = 0;
+    }
+
+    const cashFlowMonthlyNoTax = monthlyRent - monthlyMaintenanceCharge - loan;
+
     const newApartment = {
       id: uniqid(),
       address: name,
@@ -67,8 +74,9 @@ const AddApartment = () => {
       facadeRepair: facadeRepair,
       otherRepair: otherRepair,
       transferTax: transferTax,
+      cashFlowMonthlyNoTax: cashFlowMonthlyNoTax,
     };
-
+    console.log("new apartment", newApartment);
     setUserdata([...userdata, newApartment]);
     setAddedInvestment("Tallennettu asunto");
   };
@@ -124,7 +132,7 @@ const AddApartment = () => {
             }}
           />
 
-          <label className="input__label half">Yhtiövastike *</label>
+          <label className="input__label half">Hoitovastike *</label>
           <input
             type="number"
             step="0.01"

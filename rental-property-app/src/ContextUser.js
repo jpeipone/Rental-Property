@@ -21,6 +21,7 @@ const ContextUser = ({ children }) => {
       facadeRepair: 0,
       otherRepair: 0,
       transferTax: 2,
+      cashFlowMonthlyNoTax: -786.4,
     },
     {
       id: "2",
@@ -40,6 +41,7 @@ const ContextUser = ({ children }) => {
       facadeRepair: 0,
       otherRepair: 0,
       transferTax: 2,
+      cashFlowMonthlyNoTax: -80,
     },
     {
       id: "3",
@@ -59,6 +61,7 @@ const ContextUser = ({ children }) => {
       facadeRepair: 0,
       otherRepair: 0,
       transferTax: 2,
+      cashFlowMonthlyNoTax: 271,
     },
     {
       id: "4",
@@ -78,6 +81,7 @@ const ContextUser = ({ children }) => {
       facadeRepair: 0,
       otherRepair: 0,
       transferTax: 2,
+      cashFlowMonthlyNoTax: 224,
     },
   ]);
   const [logged, setLogged] = useState(false);

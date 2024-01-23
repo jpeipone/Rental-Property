@@ -116,6 +116,13 @@ const ApartmentPage = () => {
           <label className="label__apartment">lainaerä: </label>
           {apartmentDetails[0]?.loanMonthlyCost} €/kk
         </div>
+        {/* cashflow monthly */}
+
+        <div className="bold__apartment">
+          <label className="label__apartment">kassavirta: </label>
+          <div>{apartmentDetails[0]?.cashFlowMonthlyNoTax} €/kk</div>
+        </div>
+
         <br />
         {apartmentDetails[0]?.originalCost && (
           <div className="info__apartment">
