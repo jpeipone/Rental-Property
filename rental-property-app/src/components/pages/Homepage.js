@@ -22,7 +22,7 @@ const Homepage = () => {
       </div>
 
       <ApartmentSlide />
-      <h2 className="app__header">Vuokratuotto vertailu</h2>
+      <h2 className="app__header">Vuokratuotto</h2>
       <CashFlowRanking />
     </div>
   );

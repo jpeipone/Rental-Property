@@ -21,7 +21,7 @@ const CashFlowRanking = () => {
     indexAxis: "y",
     elements: {
       bar: {
-        borderWidth: 3,
+        borderWidth: 4,
       },
     },
 
@@ -53,7 +53,7 @@ const CashFlowRanking = () => {
             100
         ),
         borderColor: "rgb(0,0,255,1)",
-        backgroundColor: "rgba(46, 159, 159, 0.5)",
+        backgroundColor: "rgba(82, 179, 217,1)",
       },
     ],
   };
