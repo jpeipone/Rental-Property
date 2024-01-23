@@ -61,7 +61,7 @@ const ApartmentPage = () => {
     labels: [0, 1, 2, 3, 4, 5, 10, 15, 20],
     datasets: [
       {
-        label: "Kassavirta tulevaisuudessa",
+        label: "Kassavirta veroton (€/vuosi)",
         data: years.map(
           (year) =>
             (apartmentDetails[0]?.monthlyRevenue -
