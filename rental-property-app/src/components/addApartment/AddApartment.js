@@ -55,6 +55,25 @@ const AddApartment = () => {
     }
 
     const cashFlowMonthlyNoTax = monthlyRent - monthlyMaintenanceCharge - loan;
+    const renovationTotal =
+      (lineRenovation +
+        pipeRepair +
+        roofRepair +
+        balconyRepair +
+        windowRepair +
+        facadeRepair +
+        otherRepair) *
+      squareMeters;
+
+    if (renovationTotal === null) {
+      renovationTotal = 0;
+    }
+
+    const totalCostWithTransferTax = (originalCost * transferTax) / 100;
+
+    if (totalCostWithTransferTax === null) {
+      totalCostWithTransferTax = 0;
+    }
 
     const newApartment = {
       id: uniqid(),
@@ -75,6 +94,8 @@ const AddApartment = () => {
       otherRepair: otherRepair,
       transferTax: transferTax,
       cashFlowMonthlyNoTax: cashFlowMonthlyNoTax,
+      renovationTotalM2: renovationTotal,
+      totalCostWithTransferTax: totalCostWithTransferTax,
     };
     console.log("new apartment", newApartment);
     setUserdata([...userdata, newApartment]);

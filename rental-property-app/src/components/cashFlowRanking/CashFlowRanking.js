@@ -49,7 +49,9 @@ const CashFlowRanking = () => {
               a?.monthlyMaintenanceCharge -
               a?.loanMonthlyCost) *
               12) /
-              a.originalCost) *
+              (a?.originalCost +
+                a?.renovationTotalM2 +
+                a?.totalCostWithTransferTax)) *
             100
         ),
         borderColor: "rgb(0,0,255,1)",

@@ -22,6 +22,8 @@ const ContextUser = ({ children }) => {
       otherRepair: 0,
       transferTax: 2,
       cashFlowMonthlyNoTax: -786.4,
+      renovationTotalM2: 2240,
+      totalCostWithTransferTax: 4610,
     },
     {
       id: "2",
@@ -42,6 +44,8 @@ const ContextUser = ({ children }) => {
       otherRepair: 0,
       transferTax: 2,
       cashFlowMonthlyNoTax: -80,
+      renovationTotalM2: 0,
+      totalCostWithTransferTax: 910,
     },
     {
       id: "3",
@@ -62,6 +66,8 @@ const ContextUser = ({ children }) => {
       otherRepair: 0,
       transferTax: 2,
       cashFlowMonthlyNoTax: 271,
+      renovationTotalM2: 0,
+      totalCostWithTransferTax: 1190,
     },
     {
       id: "4",
@@ -82,6 +88,8 @@ const ContextUser = ({ children }) => {
       otherRepair: 0,
       transferTax: 2,
       cashFlowMonthlyNoTax: 224,
+      renovationTotalM2: 0,
+      totalCostWithTransferTax: 1590,
     },
   ]);
   const [logged, setLogged] = useState(false);
