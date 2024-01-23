@@ -4,6 +4,7 @@ import { UserContext } from "../../ContextUser";
 import { CalculateSummary } from "../algos/CalculateSummary";
 import "./SummaryApartments.css";
 import HomeIcon from "@mui/icons-material/Home";
+import CashFlowRanking from "../cashFlowRanking/CashFlowRanking";
 
 const SummaryApartments = () => {
   const { userdata, setUserdata, setPortfolioUser } = useContext(UserContext);
@@ -170,6 +171,7 @@ const SummaryApartments = () => {
                   </div>
                 </div>
               </div>
+              <CashFlowRanking />
             </div>
           ))
         : null}

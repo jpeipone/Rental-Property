@@ -4,6 +4,7 @@ import Banner from "../banner/Banner";
 import ApartmentSlide from "../apartmentSlide/ApartmentSlide";
 import "./Homepage.css";
 import FooterData from "../FooterData";
+import CashFlowRanking from "../cashFlowRanking/CashFlowRanking";
 
 const Homepage = () => {
   return (
@@ -21,6 +22,8 @@ const Homepage = () => {
       </div>
 
       <ApartmentSlide />
+      <h2 className="app__header">Vuokratuotto vertailu</h2>
+      <CashFlowRanking />
     </div>
   );
 };

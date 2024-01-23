@@ -1,0 +1,11 @@
+.bar-chart {
+  max-width: 800px;
+  max-height: 700px;
+}
+
+@media only screen and (max-width: 420px) {
+  .bar-chart {
+    max-width: 400px;
+    max-height: 400px;
+  }
+}

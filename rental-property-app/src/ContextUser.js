@@ -65,7 +65,7 @@ const ContextUser = ({ children }) => {
     },
     {
       id: "4",
-      address: "Yliopistokatu 367 F 35",
+      address: "Yliopistokatu 367",
       city: "Kuopio",
       monthlyRevenue: 890,
       monthlyMaintenanceCharge: 356,
