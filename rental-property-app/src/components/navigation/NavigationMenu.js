@@ -6,15 +6,11 @@ const NavigationMenu = () => {
   return (
     <nav className="navigation">
       <div className="logo-name-container">
-        {/*  <Link to="/">
-          <img
-            src="./images/asuntologo.svg"
-            alt="asunto"
-            className="menu-logo"
-          />
-        </Link> */}
         <Link to="/">
-          <div className="website-name">AsuntoX</div>
+          <img src="./images/whalelogo.jpg" alt="" className="menu-logo" />
+        </Link>
+        <Link to="/">
+          <div className="website-name">AsuntoValas</div>
         </Link>
       </div>
       <ul>

@@ -9,7 +9,7 @@ const Banner = () => {
         <h2 className="banner__header">Asuntosijoittan työkalu</h2>
         <p className="banner__text">Vuokra-asuntojen analysointiin laskuri</p>
         <Link to="/uusi">
-          <button className="banner__btn">Aloita</button>
+          <button className="banner__btn">Laskuri</button>
         </Link>
       </div>
     </header>

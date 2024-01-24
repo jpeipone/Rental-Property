@@ -37,7 +37,7 @@
   width: 140px;
   margin-top: 35px;
   height: 140px;
-  background-color: orangered;
+  background-color: #1f51ff;
   border-radius: 50%;
 }
 
@@ -98,7 +98,7 @@
 .home-icon {
   margin-top: 15px;
   margin-left: 15px;
-  color: orangered;
+  color: #1f51ff;
 }
 
 .apartment-number {

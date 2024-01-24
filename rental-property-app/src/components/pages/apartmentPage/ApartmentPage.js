@@ -71,7 +71,7 @@ const ApartmentPage = () => {
             year
         ),
         fill: true,
-        borderColor: "rgba(44, 189, 189, 1)",
+        borderColor: "rgba(31, 81, 255, 1)",
       },
     ],
   };

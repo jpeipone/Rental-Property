@@ -7,11 +7,11 @@
   align-items: center;
   justify-content: center;
   margin: 1rem;
-  background-color: orangered;
+  background-color: #1f51ff;
 }
 
 .add-apartment__btn {
-  background-color: orangered;
+  background-color: #1f51ff;
   color: white;
   font-size: 2.5rem;
   width: 30px;

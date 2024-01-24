@@ -16,7 +16,7 @@
   flex-direction: column;
   margin-left: 0rem;
   background-color: rgba(0, 0, 0, 0.5);
-  border-left: 6px solid orangered;
+  border-left: 6px solid #1f51ff;
 }
 
 .banner__header {
@@ -35,7 +35,7 @@
 .banner__btn {
   width: 60px;
   height: 30px;
-  background-color: orangered;
+  background-color: #1f51ff;
   color: white;
   font-weight: bold;
   border: none;
