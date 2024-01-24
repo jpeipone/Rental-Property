@@ -7,7 +7,7 @@ const NavigationMenu = () => {
     <nav className="navigation">
       <div className="logo-name-container">
         <Link to="/">
-          <img src="./images/whalelogo.jpg" alt="" className="menu-logo" />
+          <img src="./images/whaleapartment.jpg" alt="" className="menu-logo" />
         </Link>
         <Link to="/">
           <div className="website-name">AsuntoValas</div>
