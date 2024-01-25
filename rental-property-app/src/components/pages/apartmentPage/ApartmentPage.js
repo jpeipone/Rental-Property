@@ -37,7 +37,7 @@ const ApartmentPage = () => {
   useEffect(() => {
     apartmentRenovationMonthTotal =
       CalculateApartmentRenovationTotal(apartmentDetails);
-    console.log("remontti menot yhteensä", apartmentRenovationMonthTotal);
+    //console.log("remontti menot yhteensä", apartmentRenovationMonthTotal);
     setRenovationTotal(apartmentRenovationMonthTotal);
   }, [apartmentDetails]);
 
@@ -145,8 +145,7 @@ const ApartmentPage = () => {
             {(renovationTotal * apartmentDetails[0]?.squareMeters).toFixed(2)} €
           </div>
         )}
-        {apartmentDetails[0]?.squareMeters &&
-          apartmentDetails[0]?.transferTax &&
+        {apartmentDetails[0]?.transferTax &&
           apartmentDetails[0]?.originalCost && (
             <div className="bold__apartment">
               <label className="label__apartment">kokonaishinta: </label>

@@ -176,6 +176,17 @@ const AddApartment = () => {
               setMonthlyMaintenanceCharge(parseFloat(commaToSpot));
             }}
           />
+          <label className="input__label half">Velaton ostohinta</label>
+          <input
+            type="number"
+            step="0.01"
+            className="input__investment half"
+            /*  value={originalCost} */
+            onChange={(e) => {
+              const commaToSpot = e.target.value.replace(",", ".");
+              setOriginalCost(parseFloat(commaToSpot));
+            }}
+          />
           <p className="mandatory__text">* pakollinen tieto </p>
           <div className="btn__showall" onClick={() => setShowAll(!showAll)}>
             Näytä lisätiedot
@@ -190,17 +201,6 @@ const AddApartment = () => {
                 onChange={(e) => setCity(e.target.value)}
               />
 
-              <label className="input__label half">Velaton ostohinta</label>
-              <input
-                type="number"
-                step="0.01"
-                className="input__investment half"
-                /*  value={originalCost} */
-                onChange={(e) => {
-                  const commaToSpot = e.target.value.replace(",", ".");
-                  setOriginalCost(parseFloat(commaToSpot));
-                }}
-              />
               {/*  Radio buttons transfer tax */}
               <label className="input__label half">
                 Varainsiirto veroprosentti
