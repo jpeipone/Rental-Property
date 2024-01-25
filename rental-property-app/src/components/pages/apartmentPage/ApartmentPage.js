@@ -43,6 +43,8 @@ const ApartmentPage = () => {
 
   const imagePath = "images/apa.jpg";
 
+  //kassavirta kk
+
   const handleDeleteApartment = (id) => {
     if (id) {
       const findIndex = userdata?.findIndex(
@@ -133,15 +135,14 @@ const ApartmentPage = () => {
         {apartmentDetails[0]?.transferTax && (
           <div className="info__apartment">
             <label className="label__apartment">varainsiirtovero: </label>
-            {(apartmentDetails[0]?.transferTax / 100) *
-              apartmentDetails[0]?.originalCost}{" "}
-            €{"  "} ({apartmentDetails[0]?.transferTax}%)
+            {apartmentDetails[0]?.totalCostWithTransferTax} €{"  "} (
+            {apartmentDetails[0]?.transferTax}%)
           </div>
         )}
         {apartmentDetails[0]?.squareMeters && renovationTotal > 0 && (
           <div className="info__apartment">
             <label className="label__apartment">remontit yhteensä: </label>
-            {renovationTotal * apartmentDetails[0]?.squareMeters} €
+            {(renovationTotal * apartmentDetails[0]?.squareMeters).toFixed(2)} €
           </div>
         )}
         {apartmentDetails[0]?.squareMeters &&
@@ -149,10 +150,12 @@ const ApartmentPage = () => {
           apartmentDetails[0]?.originalCost && (
             <div className="bold__apartment">
               <label className="label__apartment">kokonaishinta: </label>
-              {apartmentDetails[0]?.originalCost +
+              {(
+                apartmentDetails[0]?.originalCost +
                 renovationTotal * apartmentDetails[0]?.squareMeters +
                 (apartmentDetails[0]?.transferTax / 100) *
-                  apartmentDetails[0]?.originalCost}{" "}
+                  apartmentDetails[0]?.originalCost
+              ).toFixed(2)}{" "}
               €
             </div>
           )}

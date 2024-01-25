@@ -54,22 +54,33 @@ const AddApartment = () => {
       tempLoan = 0;
     }
 
-    const cashFlowMonthlyNoTax = monthlyRent - monthlyMaintenanceCharge - loan;
-    const renovationTotal =
-      (lineRenovation +
-        pipeRepair +
-        roofRepair +
-        balconyRepair +
-        windowRepair +
-        facadeRepair +
-        otherRepair) *
-      squareMeters;
+    if (loan === "") {
+      setLoan(0);
+    }
+
+    const cashFlowMonthlyNoTax = parseFloat(
+      monthlyRent - monthlyMaintenanceCharge - loan
+    ).toFixed(2);
+
+    const renovationTotal = (
+      parseFloat(
+        lineRenovation +
+          pipeRepair +
+          roofRepair +
+          balconyRepair +
+          windowRepair +
+          facadeRepair +
+          otherRepair
+      ) * squareMeters
+    ).toFixed(2);
 
     if (renovationTotal === null) {
       renovationTotal = 0;
     }
 
-    const totalCostWithTransferTax = (originalCost * transferTax) / 100;
+    const totalCostWithTransferTax = (
+      parseFloat(originalCost * transferTax) / 100
+    ).toFixed(2);
 
     if (totalCostWithTransferTax === null) {
       totalCostWithTransferTax = 0;
@@ -146,7 +157,7 @@ const AddApartment = () => {
             step="any"
             className="input__investment half"
             required
-            value={monthlyRent}
+            /* value={monthlyRent} */
             onChange={(e) => {
               const commaToSpot = e.target.value.replace(",", ".");
               setMonthlyRent(parseFloat(commaToSpot));
@@ -159,7 +170,7 @@ const AddApartment = () => {
             step="0.01"
             className="input__investment half"
             required
-            value={monthlyMaintenanceCharge}
+            /*  value={monthlyMaintenanceCharge} */
             onChange={(e) => {
               const commaToSpot = e.target.value.replace(",", ".");
               setMonthlyMaintenanceCharge(parseFloat(commaToSpot));
@@ -184,7 +195,7 @@ const AddApartment = () => {
                 type="number"
                 step="0.01"
                 className="input__investment half"
-                value={originalCost}
+                /*  value={originalCost} */
                 onChange={(e) => {
                   const commaToSpot = e.target.value.replace(",", ".");
                   setOriginalCost(parseFloat(commaToSpot));
@@ -225,7 +236,7 @@ const AddApartment = () => {
                 type="number"
                 step="0.01"
                 className="input__investment half"
-                value={loan}
+                /*  value={loan} */
                 onChange={(e) => {
                   const commaToSpot = e.target.value.replace(",", ".");
                   setLoan(parseFloat(commaToSpot));
@@ -236,7 +247,7 @@ const AddApartment = () => {
                 type="number"
                 step="0.1"
                 className="input__investment half"
-                value={squareMeters}
+                /* value={squareMeters} */
                 onChange={(e) => {
                   const commaToSpot = e.target.value.replace(",", ".");
                   setSquareMeters(parseFloat(commaToSpot));
@@ -249,7 +260,7 @@ const AddApartment = () => {
                 min="0"
                 max="12"
                 className="input__investment half"
-                value={emptyMonths}
+                /*  value={emptyMonths} */
                 onChange={(e) => {
                   const commaToSpot = e.target.value.replace(",", ".");
                   setEmptyMonths(parseFloat(commaToSpot));
@@ -262,9 +273,9 @@ const AddApartment = () => {
               <div className="decoration-row">
                 <input
                   type="number"
-                  step="0.1"
+                  step="0.01"
                   className="input__investment half"
-                  value={lineRenovation}
+                  /*  value={lineRenovation} */
                   onChange={(e) => {
                     const commaToSpot = e.target.value.replace(",", ".");
                     setLineRenovation(parseFloat(commaToSpot));
@@ -279,9 +290,9 @@ const AddApartment = () => {
               <div className="decoration-row">
                 <input
                   type="number"
-                  step="0.1"
+                  step="0.01"
                   className="input__investment half"
-                  value={pipeRepair}
+                  /* value={pipeRepair} */
                   onChange={(e) => {
                     const commaToSpot = e.target.value.replace(",", ".");
                     setPipeRepair(parseFloat(commaToSpot));
@@ -296,9 +307,9 @@ const AddApartment = () => {
               <div className="decoration-row">
                 <input
                   type="number"
-                  step="0.1"
+                  step="0.01"
                   className="input__investment half"
-                  value={roofRepair}
+                  /*    value={roofRepair} */
                   onChange={(e) => {
                     const commaToSpot = e.target.value.replace(",", ".");
                     setRoofRepair(parseFloat(commaToSpot));
@@ -313,9 +324,9 @@ const AddApartment = () => {
               <div className="decoration-row">
                 <input
                   type="number"
-                  step="0.1"
+                  step="0.01"
                   className="input__investment half"
-                  value={balconyRepair}
+                  /*   value={balconyRepair} */
                   onChange={(e) => {
                     const commaToSpot = e.target.value.replace(",", ".");
                     setBalconyRepair(parseFloat(commaToSpot));
@@ -330,9 +341,9 @@ const AddApartment = () => {
               <div className="decoration-row">
                 <input
                   type="number"
-                  step="0.1"
+                  step="0.01"
                   className="input__investment half"
-                  value={windowRepair}
+                  /*   value={windowRepair} */
                   onChange={(e) => {
                     const commaToSpot = e.target.value.replace(",", ".");
                     setWindowRepair(parseFloat(commaToSpot));
@@ -347,9 +358,9 @@ const AddApartment = () => {
               <div className="decoration-row">
                 <input
                   type="number"
-                  step="0.1"
+                  step="0.01"
                   className="input__investment half"
-                  value={facadeRepair}
+                  /*    value={facadeRepair} */
                   onChange={(e) => {
                     const commaToSpot = e.target.value.replace(",", ".");
                     setFacadeRepair(parseFloat(commaToSpot));
@@ -364,9 +375,9 @@ const AddApartment = () => {
               <div className="decoration-row">
                 <input
                   type="number"
-                  step="0.1"
+                  step="0.01"
                   className="input__investment half"
-                  value={otherRepair}
+                  /*     value={otherRepair} */
                   onChange={(e) => {
                     const commaToSpot = e.target.value.replace(",", ".");
                     setOtherRepair(parseFloat(commaToSpot));

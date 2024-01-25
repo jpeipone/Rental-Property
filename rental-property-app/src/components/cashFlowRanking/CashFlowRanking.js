@@ -37,8 +37,28 @@ const CashFlowRanking = () => {
       },
     },
   };
-
   const data = {
+    labels,
+    datasets: [
+      {
+        label: "asunto",
+        data: userdata.map((a) =>
+          parseFloat(
+            (((a?.monthlyRevenue -
+              a?.monthlyMaintenanceCharge -
+              a?.loanMonthlyCost) *
+              12) /
+              a?.originalCost) *
+              100
+          ).toFixed(2)
+        ),
+        borderColor: "rgb(0,0,255,1)",
+        backgroundColor: "rgba(82, 179, 217,1)",
+      },
+    ],
+  };
+
+  /*  const data = {
     labels,
     datasets: [
       {
@@ -58,7 +78,7 @@ const CashFlowRanking = () => {
         backgroundColor: "rgba(82, 179, 217,1)",
       },
     ],
-  };
+  }; */
   return <Bar options={options} data={data} className="bar-chart" />;
 };
 
