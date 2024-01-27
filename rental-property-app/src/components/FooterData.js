@@ -18,7 +18,7 @@ const FooterData = () => {
             <Link to="/asunnot">Asunnot</Link>
           </div>
           <div className="footer__link">
-            <Link to="/tiivistelmä">Vuokratuotto</Link>
+            <Link to="/tiivistelma">Vuokratuotto</Link>
           </div>
         </div>{" "}
       </div>

@@ -26,7 +26,7 @@ function App() {
           <Route path="/asunnot" element={<ApartmentSlide />} />
           <Route path="/uusi" element={<AddApartment />} />
           <Route path="/asunto/:apartmentID" element={<ApartmentPage />} />
-          <Route path="/tiivistelmä" element={<SummaryApartments />} />
+          <Route path="/tiivistelma" element={<SummaryApartments />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
         <FooterData />

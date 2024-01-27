@@ -17,7 +17,7 @@ const PageNotFound = () => {
           <Link to="/asunnot">Asunnot</Link>
         </div>
         <div className="notfound__link">
-          <Link to="/tiivistelmä">Vuokratuotto</Link>
+          <Link to="/tiivistelma">Vuokratuotto</Link>
         </div>
         <img
           src="./images/pagenotfoundwhale.png"

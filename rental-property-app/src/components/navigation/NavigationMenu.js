@@ -22,7 +22,7 @@ const NavigationMenu = () => {
           <Link to="/asunnot">Asunnot</Link>
         </li>
         <li className="menu-items">
-          <Link to="/tiivistelmä">Vuokratuotto</Link>
+          <Link to="/tiivistelma">Vuokratuotto</Link>
         </li>
       </ul>
     </nav>

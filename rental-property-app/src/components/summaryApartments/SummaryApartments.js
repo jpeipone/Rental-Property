@@ -34,7 +34,7 @@ const SummaryApartments = () => {
                   <div className="summary__value">
                     {summary?.monthlyMaintenanceCharge} €/kk
                   </div>
-                  <div className="summary__label">lainaerä</div>
+                  <div className="summary__label">Lainaerä</div>
                   <div className="summary__value">
                     {summary?.loanMonthlyCost} €/kk
                   </div>
@@ -100,7 +100,7 @@ const SummaryApartments = () => {
                     )}{" "}
                     €/v
                   </div>
-                  <div className="summary__label">lainaerä</div>
+                  <div className="summary__label">Lainaerä</div>
                   <div className="summary__value">
                     {parseFloat(summary?.loanMonthlyCost * 12).toFixed(2)} €/v
                   </div>

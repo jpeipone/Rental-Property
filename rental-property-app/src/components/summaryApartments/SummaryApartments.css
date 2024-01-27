@@ -26,9 +26,9 @@
   margin-top: 5px;
   height: 25px;
   width: 100px;
-  background-color: #a9a9a9;
+  background-color: white;
   border-radius: 20px;
-  border: none;
+  border: 2px solid black;
   color: black;
   cursor: pointer;
 }
