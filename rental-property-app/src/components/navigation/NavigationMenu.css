@@ -37,7 +37,7 @@ nav ul li a {
 @media only screen and (max-width: 620px) {
   nav .menu-logo {
     margin-left: 10px;
-    max-width: 40px;
+    max-width: 50px;
   }
   .website-name {
     font-size: 20px;
@@ -54,7 +54,7 @@ nav ul li a {
 
 @media only screen and (max-width: 450px) {
   nav .menu-logo {
-    max-width: 35px;
+    max-width: 45px;
   }
   .website-name {
     font-size: 15px;

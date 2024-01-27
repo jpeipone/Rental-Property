@@ -8,7 +8,7 @@ const NavigationMenu = () => {
       <div className="logo-name-container">
         <Link to="/">
           <img
-            src="./images/apartmentcalculator.jpg"
+            src="./images/apartmentwhalelogo.png"
             alt=""
             className="menu-logo"
           />

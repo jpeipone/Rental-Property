@@ -27,6 +27,7 @@
   padding-bottom: 2px;
   border-bottom: 3px solid blue;
   margin-top: 10px;
+  margin-bottom: 10px;
   cursor: pointer;
 }
 
@@ -56,10 +57,18 @@
 }
 
 .show-saved {
-  margin-top: 5px;
-  color: orangered;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 1em;
   font-weight: bold;
-  height: 20px;
+
+  background-color: #1f51ff;
+
+  border-radius: 20px;
+  border: none;
+  color: white;
+  height: 40px;
+  width: 260px;
 }
 
 .clear__btn {
@@ -69,7 +78,7 @@
   color: black;
   height: 30px;
   width: 120px;
-  margin-top: 8px;
+  margin-top: 15px;
   margin-right: 20px;
   font-weight: bold;
   cursor: pointer;
@@ -82,7 +91,7 @@
   color: white;
   height: 30px;
   width: 120px;
-  margin-top: 8px;
+  margin-top: 15px;
   font-weight: bold;
   cursor: pointer;
 }

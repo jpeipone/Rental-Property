@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { UserContext } from "../../../ContextUser";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import HomeIcon from "@mui/icons-material/Home";
 import { Link } from "react-router-dom";
 import "./ApartmentPage.css";
@@ -172,7 +173,7 @@ const ApartmentPage = () => {
           className="column__icon__text"
           onClick={() => handleDeleteApartment(apartmentDetails[0]?.id)}
         >
-          <HighlightOffIcon className="icon-symbol" />
+          <DeleteForeverIcon className="icon-symbol" />
           Poista
         </div>
 

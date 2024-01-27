@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../ContextUser";
+import { Link } from "react-router-dom";
 import uniqid from "uniqid";
 import "./AddApartment.css";
 
@@ -21,7 +22,7 @@ const AddApartment = () => {
   const [city, setCity] = useState("");
   const [monthlyRent, setMonthlyRent] = useState(""); //kuukausivuokra
   const [originalCost, setOriginalCost] = useState(""); //velaton ostohinta
-  const [monthlyMaintenanceCharge, setMonthlyMaintenanceCharge] = useState(""); //yhtiövastike
+  const [monthlyMaintenanceCharge, setMonthlyMaintenanceCharge] = useState(""); //hoitovastike
   const [loan, setLoan] = useState("");
   const [emptyMonths, setEmptyMonths] = useState(0);
   const [squareMeters, setSquareMeters] = useState("");
@@ -34,6 +35,7 @@ const AddApartment = () => {
   const [windowRepair, setWindowRepair] = useState(0); //ikkuna
   const [facadeRepair, setFacadeRepair] = useState(0); //julkisivu
   const [otherRepair, setOtherRepair] = useState(0); //muut remontit
+  const [id, setId] = useState();
 
   //varainsiirtovero
   const [transferTax, setTransferTax] = useState("2");
@@ -86,8 +88,10 @@ const AddApartment = () => {
       totalCostWithTransferTax = 0;
     }
 
+    let newId = uniqid();
+    setId(newId);
     const newApartment = {
-      id: uniqid(),
+      id: newId,
       address: name,
       city: city,
       monthlyRevenue: monthlyRent,
@@ -110,7 +114,7 @@ const AddApartment = () => {
     };
     console.log("new apartment", newApartment);
     setUserdata([...userdata, newApartment]);
-    setAddedInvestment("Tallennettu asunto");
+    setAddedInvestment("Tarkastele asuntoa");
   };
 
   const handleClear = () => {
@@ -130,6 +134,7 @@ const AddApartment = () => {
     setWindowRepair("");
     setFacadeRepair("");
     setOtherRepair("");
+    setId("");
   };
 
   //Tax radio buttons
@@ -390,12 +395,14 @@ const AddApartment = () => {
             </div>
           )}
 
-          <p className="show-saved"> {addedInvestment}</p>
-
+          <Link to={`/asunto/${id}`}>
+            {id && <button className="show-saved"> {addedInvestment}</button>}
+          </Link>
           <div className="form-buttons">
-            <button className="clear__btn" onClick={handleClear}>
+            {/*  <button className="clear__btn" onClick={handleClear}>
               Tyhjennä
-            </button>
+            </button> */}
+
             <button className="add__btn" type="submit">
               Tallenna
             </button>
