@@ -14,6 +14,7 @@ import AddApartment from "./components/addApartment/AddApartment";
 import ApartmentPage from "./components/pages/apartmentPage/ApartmentPage";
 import SummaryApartments from "./components/summaryApartments/SummaryApartments";
 import FooterData from "./components/FooterData";
+import PageNotFound from "./components/pages/pageNotFound/PageNotFound";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/uusi" element={<AddApartment />} />
           <Route path="/asunto/:apartmentID" element={<ApartmentPage />} />
           <Route path="/tiivistelmä" element={<SummaryApartments />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
         <FooterData />
       </Router>
