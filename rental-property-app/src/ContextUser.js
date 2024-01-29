@@ -24,10 +24,11 @@ const ContextUser = ({ children }) => {
       cashFlowMonthlyNoTax: -786.4,
       renovationTotalM2: 2240,
       totalCostWithTransferTax: 4610,
+      capitalExpenditureCharge: 0,
     },
     {
       id: "2",
-      address: "Kings Cross 34",
+      address: "Mallikatu 34",
       city: "Savonlinna",
       monthlyRevenue: 340,
       monthlyMaintenanceCharge: 420,
@@ -46,6 +47,7 @@ const ContextUser = ({ children }) => {
       cashFlowMonthlyNoTax: -80,
       renovationTotalM2: 0,
       totalCostWithTransferTax: 910,
+      capitalExpenditureCharge: 0,
     },
     {
       id: "3",
@@ -68,6 +70,7 @@ const ContextUser = ({ children }) => {
       cashFlowMonthlyNoTax: 271,
       renovationTotalM2: 0,
       totalCostWithTransferTax: 1190,
+      capitalExpenditureCharge: 0,
     },
     {
       id: "4",
@@ -90,6 +93,7 @@ const ContextUser = ({ children }) => {
       cashFlowMonthlyNoTax: 224,
       renovationTotalM2: 0,
       totalCostWithTransferTax: 1590,
+      capitalExpenditureCharge: 0,
     },
   ]);
   const [logged, setLogged] = useState(false);

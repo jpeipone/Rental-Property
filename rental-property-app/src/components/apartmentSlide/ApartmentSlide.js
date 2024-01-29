@@ -2,38 +2,13 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./ApartmentSlide.css";
 import { UserContext } from "../../ContextUser";
-import { CalculateSummary } from "../algos/CalculateSummary";
 
 /**
  * Shows apartments data in a grid
  */
 
 const ApartmentSlide = () => {
-  const {
-    userdata,
-    setUserdata,
-    logged,
-    setLogged,
-    UIDinvestor,
-    setUIDinvestor,
-    setPortfolioUser,
-  } = useContext(UserContext);
-
-  const [apartmentDetails, setApartmentDetails] = useState([]);
-
-  //summary calculation
-  const usersApartmentSummary = CalculateSummary(userdata);
-
-  const handleDeleteApartment = (id) => {
-    if (id) {
-      const findIndex = userdata?.findIndex(
-        (apartment) => apartment?.id === id
-      );
-      if (findIndex !== -1) {
-        setUserdata(userdata?.filter((apartment) => apartment.id !== id));
-      }
-    }
-  };
+  const { userdata, setUserdata } = useContext(UserContext);
 
   return (
     <div className="apartment-slide">
@@ -41,68 +16,63 @@ const ApartmentSlide = () => {
         {/*  apartment card */}
         {userdata
           ? userdata?.map((apartment) => (
-              <div className="apartment-container card" id={apartment?.id}>
-                <div className="header-container">
-                  <h3 className="apartment__header">{apartment?.address}</h3>
-                </div>
-                <div className="column-apartment">
-                  {/*  <div className="apartment__rent__hd"></div> */}
-
-                  <div className="apartment__rent">
-                    {apartment?.monthlyRevenue} €/kk
+              <Link to={`/asunto/${apartment?.id}`}>
+                <div className="apartment-container card" key={apartment?.id}>
+                  <div className="header-container">
+                    <h3 className="apartment__header">{apartment?.address}</h3>
                   </div>
-                </div>
-                <div className="row-apartment">
-                  <div className="apartment__label">hoitovastikkeet</div>
-                  <div className="apartment__data">
-                    {apartment?.monthlyMaintenanceCharge}€/kk
-                  </div>
-                </div>
-
-                <div className="row-apartment">
-                  <div className="apartment__label">velaton hinta</div>
-
-                  <div className="apartment__data">
-                    {apartment?.originalCost}€
-                  </div>
-                </div>
-                <div className="row-apartment">
-                  <div className="apartment__label">lainaerä </div>
-
-                  {apartment?.loanMonthlyCost && (
-                    <div className="apartment__data">
-                      {apartment?.loanMonthlyCost}
-                      €/kk
+                  <div className="column-apartment">
+                    <div className="apartment__rent">
+                      {apartment?.monthlyRevenue} €/kk
                     </div>
-                  )}
-                </div>
-                <div className="row-apartment">
-                  <div className="apartment__label">tyhjät kuukaudet </div>
-                  {apartment?.emptyMonths && (
+                  </div>
+                  <div className="row-apartment">
+                    <div className="apartment__label">hoitovastike</div>
                     <div className="apartment__data">
-                      {apartment?.emptyMonths}
+                      {apartment?.monthlyMaintenanceCharge}€/kk
                     </div>
-                  )}
-                </div>
+                  </div>
 
-                <div className="row-apartment column">
-                  <div className="apartment__data column">
-                    {apartment?.city} {apartment?.squareMeters}m<sup>2</sup>
+                  <div className="row-apartment">
+                    <div className="apartment__label">rahoitusvastike</div>
+                    <div className="apartment__data">
+                      {apartment?.capitalExpenditureCharge}€/kk
+                    </div>
+                  </div>
+
+                  <div className="row-apartment">
+                    <div className="apartment__label">velaton hinta</div>
+
+                    <div className="apartment__data">
+                      {apartment?.originalCost}€
+                    </div>
+                  </div>
+                  <div className="row-apartment">
+                    <div className="apartment__label">lainaerä </div>
+
+                    {apartment?.loanMonthlyCost && (
+                      <div className="apartment__data">
+                        {apartment?.loanMonthlyCost}
+                        €/kk
+                      </div>
+                    )}
+                  </div>
+                  <div className="row-apartment">
+                    <div className="apartment__label">tyhjät kuukaudet </div>
+                    {apartment?.emptyMonths && (
+                      <div className="apartment__data">
+                        {apartment?.emptyMonths}
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="row-apartment column">
+                    <div className="apartment__data column">
+                      {apartment?.city} {apartment?.squareMeters}m<sup>2</sup>
+                    </div>
                   </div>
                 </div>
-
-                <div className="row-btn">
-                  <Link to={`/asunto/${apartment?.id}`}>
-                    <button className="show-apartment__btn">katso</button>
-                  </Link>
-                  <button
-                    className="delete-apartment__btn"
-                    onClick={() => handleDeleteApartment(apartment?.id)}
-                  >
-                    Poista
-                  </button>
-                </div>
-              </div>
+              </Link>
             ))
           : null}
       </div>

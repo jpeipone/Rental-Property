@@ -14,11 +14,15 @@ export const CalculateSummary = (userdata) => {
   let loanMonthlyCost = 0;
   let emptyMonths = 0;
   let totalRenovationCost = 0;
+  let capitalExpenditureCharge = 0;
 
   for (let i in userdata) {
     monthlyRevenue = monthlyRevenue + userdata[i]?.monthlyRevenue;
     monthlyMaintenanceCharge =
       monthlyMaintenanceCharge + userdata[i]?.monthlyMaintenanceCharge;
+
+    capitalExpenditureCharge =
+      capitalExpenditureCharge + userdata[i]?.capitalExpenditureCharge;
 
     //renovation total cost
     if (userdata[i]?.squareMeters) {
@@ -62,6 +66,7 @@ export const CalculateSummary = (userdata) => {
       loanMonthlyCost: loanMonthlyCost,
       emptyMonthsYearlyLoss: emptyMonths,
       totalRenovationCost: totalRenovationCost,
+      monthlyCapitalExpenditureCharge: capitalExpenditureCharge,
     },
   ];
   return summaryApartments;

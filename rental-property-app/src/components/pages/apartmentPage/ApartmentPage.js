@@ -2,12 +2,10 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { UserContext } from "../../../ContextUser";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
-import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import HomeIcon from "@mui/icons-material/Home";
 import { Link } from "react-router-dom";
 import "./ApartmentPage.css";
-import { Diversity1TwoTone } from "@mui/icons-material";
 import CalculateApartmentRenovationTotal from "../../algos/CalculateApartmentRenovationTotal";
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
@@ -59,9 +57,9 @@ const ApartmentPage = () => {
   };
 
   //Chart line
-  const years = [0, 1, 2, 3, 4, 5, 10, 15, 20];
+  const years = [0, 1, 2, 3, 4, 5, 10, 15, 20, 25];
   let data = {
-    labels: [0, 1, 2, 3, 4, 5, 10, 15, 20],
+    labels: [0, 1, 2, 3, 4, 5, 10, 15, 20, 25],
     datasets: [
       {
         label: "Kassavirta veroton (€/vuosi)",
@@ -69,7 +67,8 @@ const ApartmentPage = () => {
           (year) =>
             (apartmentDetails[0]?.monthlyRevenue -
               apartmentDetails[0]?.monthlyMaintenanceCharge -
-              apartmentDetails[0]?.loanMonthlyCost) *
+              apartmentDetails[0]?.loanMonthlyCost -
+              apartmentDetails[0]?.capitalExpenditureCharge) *
             12 *
             year
         ),
@@ -81,12 +80,12 @@ const ApartmentPage = () => {
 
   return (
     <div className="apartment-page">
-      {/*  <img src="../images/apa.jpg" alt="rental" /> */}
-
       {/* Graph */}
       <Line data={data} />
       <div className="info-container">
-        {!showApartment && <div className="address__apartment">Poistettu</div>}
+        {!showApartment && (
+          <div className="address__apartment__deleted">Poistettu</div>
+        )}
         <div className="address__apartment">{apartmentDetails[0]?.address}</div>
         <div className="row__apartment">
           <div className="info__apartment">{apartmentDetails[0]?.city}</div>{" "}
@@ -105,8 +104,13 @@ const ApartmentPage = () => {
         </div>
 
         <div className="info__apartment">
-          <label className="label__apartment">hoitovastikkeet: </label>
+          <label className="label__apartment">hoitovastike: </label>
           <div> {apartmentDetails[0]?.monthlyMaintenanceCharge} €/kk </div>
+        </div>
+
+        <div className="info__apartment">
+          <label className="label__apartment">rahoitusvastike: </label>
+          <div> {apartmentDetails[0]?.capitalExpenditureCharge} €/kk </div>
         </div>
         {apartmentDetails[0]?.emptyMonths >= 0 && (
           <div className="info__apartment">
@@ -126,7 +130,7 @@ const ApartmentPage = () => {
           <div>{apartmentDetails[0]?.cashFlowMonthlyNoTax} €/kk</div>
         </div>
 
-        <br />
+        <span className="medium-br" />
         {apartmentDetails[0]?.originalCost && (
           <div className="info__apartment">
             <label className="label__apartment">velaton hinta: </label>

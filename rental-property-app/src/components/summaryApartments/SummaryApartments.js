@@ -34,6 +34,11 @@ const SummaryApartments = () => {
                   <div className="summary__value">
                     {summary?.monthlyMaintenanceCharge} €/kk
                   </div>
+
+                  <div className="summary__label">Rahoitusvastikkeet</div>
+                  <div className="summary__value">
+                    {summary?.monthlyCapitalExpenditureCharge} €/kk
+                  </div>
                   <div className="summary__label">Lainaerä</div>
                   <div className="summary__value">
                     {summary?.loanMonthlyCost} €/kk
@@ -56,7 +61,8 @@ const SummaryApartments = () => {
                         {parseFloat(
                           (summary?.monthlyRevenue -
                             summary?.monthlyMaintenanceCharge -
-                            summary?.loanMonthlyCost) *
+                            summary?.loanMonthlyCost -
+                            summary?.monthlyCapitalExpenditureCharge) *
                             0.7
                         ).toFixed(2)}{" "}
                         €
@@ -69,7 +75,8 @@ const SummaryApartments = () => {
                         {parseFloat(
                           (summary?.monthlyRevenue -
                             summary?.monthlyMaintenanceCharge -
-                            summary?.loanMonthlyCost) *
+                            summary?.loanMonthlyCost -
+                            summary?.monthlyCapitalExpenditureCharge) *
                             0.66
                         ).toFixed(2)}{" "}
                         €
@@ -100,6 +107,14 @@ const SummaryApartments = () => {
                     )}{" "}
                     €/v
                   </div>
+
+                  <div className="summary__label">Rahoitusvastikkeet</div>
+                  <div className="summary__value">
+                    {parseFloat(
+                      summary?.monthlyCapitalExpenditureCharge * 12
+                    ).toFixed(2)}{" "}
+                    €/v
+                  </div>
                   <div className="summary__label">Lainaerä</div>
                   <div className="summary__value">
                     {parseFloat(summary?.loanMonthlyCost * 12).toFixed(2)} €/v
@@ -124,6 +139,7 @@ const SummaryApartments = () => {
                           (summary?.monthlyRevenue * 12 -
                             summary?.monthlyMaintenanceCharge * 12 -
                             summary?.loanMonthlyCost * 12 -
+                            summary?.monthlyCapitalExpenditureCharge * 12 -
                             summary?.emptyMonthsYearlyLoss) *
                             0.7
                         ).toFixed(2)}{" "}
@@ -138,6 +154,7 @@ const SummaryApartments = () => {
                           (summary?.monthlyRevenue * 12 -
                             summary?.monthlyMaintenanceCharge * 12 -
                             summary?.loanMonthlyCost * 12 -
+                            summary?.monthlyCapitalExpenditureCharge * 12 -
                             summary?.emptyMonthsYearlyLoss) *
                             0.66
                         ).toFixed(2)}{" "}

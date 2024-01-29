@@ -38,7 +38,10 @@ const AddApartment = () => {
   const [id, setId] = useState();
 
   //varainsiirtovero
-  const [transferTax, setTransferTax] = useState("2");
+  const [transferTax, setTransferTax] = useState(2);
+
+  //rahoitus
+  const [capitalExpenditureCharge, setCapitalExpenditureCharge] = useState(0); //rahoitusvastike
 
   const [addedInvestment, setAddedInvestment] = useState(" ");
   const [showAll, setShowAll] = useState(false);
@@ -59,9 +62,13 @@ const AddApartment = () => {
     if (loan === "") {
       setLoan(0);
     }
+    if (capitalExpenditureCharge === null || capitalExpenditureCharge === "") {
+      setCapitalExpenditureCharge(0);
+    }
 
+    //kassavirta
     const cashFlowMonthlyNoTax = parseFloat(
-      monthlyRent - monthlyMaintenanceCharge - loan
+      monthlyRent - monthlyMaintenanceCharge - loan - capitalExpenditureCharge
     ).toFixed(2);
 
     const renovationTotal = (
@@ -80,13 +87,10 @@ const AddApartment = () => {
       renovationTotal = 0;
     }
 
-    const totalCostWithTransferTax = (
+    // varainsiirtovero
+    let totalCostWithTransferTax = (
       parseFloat(originalCost * transferTax) / 100
     ).toFixed(2);
-
-    if (totalCostWithTransferTax === null) {
-      totalCostWithTransferTax = 0;
-    }
 
     let newId = uniqid();
     setId(newId);
@@ -111,6 +115,7 @@ const AddApartment = () => {
       cashFlowMonthlyNoTax: cashFlowMonthlyNoTax,
       renovationTotalM2: renovationTotal,
       totalCostWithTransferTax: totalCostWithTransferTax,
+      capitalExpenditureCharge: capitalExpenditureCharge,
     };
     console.log("new apartment", newApartment);
     setUserdata([...userdata, newApartment]);
@@ -247,6 +252,19 @@ const AddApartment = () => {
                   setLoan(parseFloat(commaToSpot));
                 }}
               />
+              {/*  rahoitusvastike */}
+              <label className="input__label half">Rahoitusvastike</label>
+              <input
+                type="number"
+                step="0.01"
+                className="input__investment half"
+                /*  value={loan} */
+                onChange={(e) => {
+                  const commaToSpot = e.target.value.replace(",", ".");
+                  setCapitalExpenditureCharge(parseFloat(commaToSpot));
+                }}
+              />
+
               <label className="input__label half">Neliömetrit</label>
               <input
                 type="number"

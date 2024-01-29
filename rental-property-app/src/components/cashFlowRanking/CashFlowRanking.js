@@ -13,8 +13,7 @@ import {
 import { Bar } from "react-chartjs-2";
 
 const CashFlowRanking = () => {
-  const { UIDinvestor, setUserdata, setPortfolioUser, logged, userdata } =
-    useContext(UserContext);
+  const { setUserdata, setPortfolioUser, userdata } = useContext(UserContext);
 
   const labels = userdata.map((a) => a?.address);
   const options = {
@@ -33,7 +32,7 @@ const CashFlowRanking = () => {
       },
       title: {
         display: true,
-        text: "Vertailu: Vuokratuoton prosentti %",
+        text: "Vuokratuottoprosentti %",
       },
     },
   };
@@ -44,11 +43,8 @@ const CashFlowRanking = () => {
         label: "asunto",
         data: userdata.map((a) =>
           parseFloat(
-            (((a?.monthlyRevenue -
-              a?.monthlyMaintenanceCharge -
-              a?.loanMonthlyCost) *
-              12) /
-              a?.originalCost) *
+            (((a?.monthlyRevenue - a?.monthlyMaintenanceCharge) * 12) /
+              (a?.originalCost + parseFloat(a?.totalCostWithTransferTax))) *
               100
           ).toFixed(2)
         ),
@@ -58,27 +54,6 @@ const CashFlowRanking = () => {
     ],
   };
 
-  /*  const data = {
-    labels,
-    datasets: [
-      {
-        label: "asunto",
-        data: userdata.map(
-          (a) =>
-            (((a?.monthlyRevenue -
-              a?.monthlyMaintenanceCharge -
-              a?.loanMonthlyCost) *
-              12) /
-              (a?.originalCost +
-                a?.renovationTotalM2 +
-                a?.totalCostWithTransferTax)) *
-            100
-        ),
-        borderColor: "rgb(0,0,255,1)",
-        backgroundColor: "rgba(82, 179, 217,1)",
-      },
-    ],
-  }; */
   return <Bar options={options} data={data} className="bar-chart" />;
 };
 
