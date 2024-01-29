@@ -44,7 +44,9 @@ const CashFlowRanking = () => {
         data: userdata.map((a) =>
           parseFloat(
             (((a?.monthlyRevenue - a?.monthlyMaintenanceCharge) * 12) /
-              (a?.originalCost + parseFloat(a?.totalCostWithTransferTax))) *
+              (a?.originalCost +
+                parseFloat(a?.totalCostWithTransferTax) +
+                parseFloat(a?.renovationTotalM2))) *
               100
           ).toFixed(2)
         ),
