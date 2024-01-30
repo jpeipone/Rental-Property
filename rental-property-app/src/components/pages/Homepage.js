@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Banner from "../banner/Banner";
 import ApartmentSlide from "../apartmentSlide/ApartmentSlide";
 import "./Homepage.css";
-import FooterData from "../FooterData";
 import CashFlowRanking from "../cashFlowRanking/CashFlowRanking";
 
 const Homepage = () => {
@@ -13,9 +12,6 @@ const Homepage = () => {
       <h2 className="app__header">Asunnot</h2>
 
       <div className="add-new-apartment">
-        {/*  <Link to="/uusi">
-          <div className="add-apartment__btn">+</div>
-        </Link> */}
         <Link to="/uusi">
           <div className="add__text">Lisää asunto</div>
         </Link>

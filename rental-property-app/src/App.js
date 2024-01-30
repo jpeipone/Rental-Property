@@ -15,6 +15,7 @@ import ApartmentPage from "./components/pages/apartmentPage/ApartmentPage";
 import SummaryApartments from "./components/summaryApartments/SummaryApartments";
 import FooterData from "./components/FooterData";
 import PageNotFound from "./components/pages/pageNotFound/PageNotFound";
+import AllApartmentsPage from "./components/pages/allApartments/AllApartmentsPage";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
         <NavigationMenu />
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/asunnot" element={<ApartmentSlide />} />
+          <Route path="/asunnot" element={<AllApartmentsPage />} />
           <Route path="/uusi" element={<AddApartment />} />
           <Route path="/asunto/:apartmentID" element={<ApartmentPage />} />
           <Route path="/tiivistelma" element={<SummaryApartments />} />

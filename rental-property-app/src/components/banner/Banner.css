@@ -21,7 +21,7 @@
 }
 
 .banner__header {
-  margin-top: 100px;
+  margin-top: 65px;
   margin-bottom: 2rem;
   text-align: left;
   margin-left: 1.5rem;
@@ -30,15 +30,18 @@
 .banner__text {
   margin-bottom: 1.5rem;
   text-align: left;
-  margin-left: 0.8rem;
-  font-weight: bold;
+  margin-left: 1.5rem;
+  max-width: 215px;
+  font-weight: medium;
+  background-color: white;
 }
 
 .banner__btn {
-  width: 60px;
-  height: 30px;
+  width: 100px;
+  height: 40px;
   border-radius: 20px;
   background-color: #1f51ff;
+  font-size: 1.1rem;
   color: white;
   font-weight: bold;
   border: none;

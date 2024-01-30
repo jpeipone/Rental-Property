@@ -22,6 +22,7 @@ const SummaryApartments = () => {
       {usersApartmentSummary
         ? usersApartmentSummary?.map((summary) => (
             <div className="summary-container" key={summary?.id}>
+              <h2 className="summary__header">Asuntojen kooste</h2>
               {/*     In a month */}
               <div className="summary-wrapper">
                 <div className="left__summary">

@@ -35,7 +35,7 @@
 
 .right__summary {
   width: 140px;
-  margin-top: 35px;
+  margin-top: 75px;
   height: 140px;
   background-color: #1f51ff;
   border-radius: 50%;
@@ -109,6 +109,12 @@
 
 @media only screen and (min-width: 400px) {
   .right__summary {
-    margin-left: 20%;
+    margin-left: 15%;
+  }
+}
+
+@media only screen and (min-width: 370px) {
+  .right__summary {
+    margin-left: 8%;
   }
 }

@@ -23,7 +23,7 @@ const AddApartment = () => {
   const [monthlyRent, setMonthlyRent] = useState(""); //kuukausivuokra
   const [originalCost, setOriginalCost] = useState(""); //velaton ostohinta
   const [monthlyMaintenanceCharge, setMonthlyMaintenanceCharge] = useState(""); //hoitovastike
-  const [loan, setLoan] = useState("");
+  const [loan, setLoan] = useState(0);
   const [emptyMonths, setEmptyMonths] = useState(0);
   const [squareMeters, setSquareMeters] = useState("");
 
@@ -54,33 +54,83 @@ const AddApartment = () => {
       setUserdata(userdata.splice(0, userdata.length));
     }
 
+    //Fix NaN errors if erases input
     let tempLoan = loan;
-    if (tempLoan === null) {
+
+    if (isNaN(tempLoan)) {
       tempLoan = 0;
     }
 
-    if (loan === "") {
-      setLoan(0);
+    /*  let temp_monthlyMaintenanceCharge = monthlyMaintenanceCharge;
+    if (isNaN(temp_monthlyMaintenanceCharge)) {
+      temp_monthlyMaintenanceCharge = 0;
+    } */
+
+    let temp_emptyMonths = emptyMonths;
+    if (isNaN(temp_emptyMonths)) {
+      temp_emptyMonths = 0;
     }
-    if (capitalExpenditureCharge === null || capitalExpenditureCharge === "") {
-      setCapitalExpenditureCharge(0);
+    let temp_squareMeters = emptyMonths;
+    if (isNaN(temp_squareMeters)) {
+      temp_squareMeters = 0;
     }
+    let temp_lineRenovation = lineRenovation;
+    if (isNaN(temp_lineRenovation)) {
+      temp_lineRenovation = 0;
+    }
+    let temp_pipeRepair = pipeRepair;
+    if (isNaN(temp_pipeRepair)) {
+      temp_pipeRepair = 0;
+    }
+    let temp_roofRepair = roofRepair;
+    if (isNaN(temp_roofRepair)) {
+      temp_roofRepair = 0;
+    }
+    let temp_balconyRepair = balconyRepair;
+    if (isNaN(temp_balconyRepair)) {
+      temp_balconyRepair = 0;
+    }
+    let temp_windowRepair = windowRepair;
+    if (isNaN(temp_windowRepair)) {
+      temp_windowRepair = 0;
+    }
+    let temp_facadeRepair = facadeRepair;
+    if (isNaN(temp_facadeRepair)) {
+      temp_facadeRepair = 0;
+    }
+    let temp_otherRepair = otherRepair;
+    if (isNaN(temp_otherRepair)) {
+      temp_otherRepair = 0;
+    }
+
+    let temp_capitalExpenditureCharge = capitalExpenditureCharge;
+    if (isNaN(temp_capitalExpenditureCharge)) {
+      temp_capitalExpenditureCharge = 0;
+    }
+    /*   cashFlowMonthlyNoTax
+    renovationTotal,
+     totalCostWithTransferTax */
+
+    //NaN error ends
 
     //kassavirta
     const cashFlowMonthlyNoTax = parseFloat(
-      monthlyRent - monthlyMaintenanceCharge - loan - capitalExpenditureCharge
+      monthlyRent -
+        monthlyMaintenanceCharge -
+        tempLoan -
+        temp_capitalExpenditureCharge
     ).toFixed(2);
 
     const renovationTotal = (
       parseFloat(
-        lineRenovation +
-          pipeRepair +
-          roofRepair +
-          balconyRepair +
-          windowRepair +
-          facadeRepair +
-          otherRepair
-      ) * squareMeters
+        temp_lineRenovation +
+          temp_pipeRepair +
+          temp_roofRepair +
+          temp_balconyRepair +
+          temp_windowRepair +
+          temp_facadeRepair +
+          temp_otherRepair
+      ) * temp_squareMeters
     ).toFixed(2);
 
     if (renovationTotal === null) {
@@ -101,21 +151,21 @@ const AddApartment = () => {
       monthlyRevenue: monthlyRent,
       originalCost: originalCost,
       monthlyMaintenanceCharge: monthlyMaintenanceCharge,
-      loanMonthlyCost: loan,
-      emptyMonths: emptyMonths,
-      squareMeters: squareMeters,
-      lineRenovation: lineRenovation,
-      pipeRepair: pipeRepair,
-      roofRepair: roofRepair,
-      balconyRepair: balconyRepair,
-      windowRepair: windowRepair,
-      facadeRepair: facadeRepair,
-      otherRepair: otherRepair,
+      loanMonthlyCost: tempLoan,
+      emptyMonths: temp_emptyMonths,
+      squareMeters: temp_squareMeters,
+      lineRenovation: temp_lineRenovation,
+      pipeRepair: temp_pipeRepair,
+      roofRepair: temp_roofRepair,
+      balconyRepair: temp_balconyRepair,
+      windowRepair: temp_windowRepair,
+      facadeRepair: temp_facadeRepair,
+      otherRepair: temp_otherRepair,
       transferTax: transferTax,
       cashFlowMonthlyNoTax: cashFlowMonthlyNoTax,
       renovationTotalM2: renovationTotal,
       totalCostWithTransferTax: totalCostWithTransferTax,
-      capitalExpenditureCharge: capitalExpenditureCharge,
+      capitalExpenditureCharge: temp_capitalExpenditureCharge,
     };
     console.log("new apartment", newApartment);
     setUserdata([...userdata, newApartment]);
@@ -186,11 +236,12 @@ const AddApartment = () => {
               setMonthlyMaintenanceCharge(parseFloat(commaToSpot));
             }}
           />
-          <label className="input__label half">Velaton ostohinta</label>
+          <label className="input__label half">Velaton ostohinta *</label>
           <input
             type="number"
             step="0.01"
             className="input__investment half"
+            required
             /*  value={originalCost} */
             onChange={(e) => {
               const commaToSpot = e.target.value.replace(",", ".");
@@ -221,6 +272,7 @@ const AddApartment = () => {
                   value="2"
                   name="taxGroup"
                   className="radio__btn"
+                  checked={transferTax === 2}
                   onChange={(e) => {
                     const tax = 2;
                     setTransferTax(parseFloat(tax));
@@ -234,6 +286,7 @@ const AddApartment = () => {
                   value="4"
                   name="taxGroup"
                   className="radio__btn"
+                  checked={transferTax === 4}
                   onChange={(e) => {
                     const tax = 4;
                     setTransferTax(parseFloat(tax));
@@ -268,7 +321,7 @@ const AddApartment = () => {
               <label className="input__label half">Neliömetrit</label>
               <input
                 type="number"
-                step="0.1"
+                step="0.01"
                 className="input__investment half"
                 /* value={squareMeters} */
                 onChange={(e) => {
@@ -422,7 +475,7 @@ const AddApartment = () => {
             </button> */}
 
             <button className="add__btn" type="submit">
-              Tallenna
+              Laske
             </button>
           </div>
         </div>
