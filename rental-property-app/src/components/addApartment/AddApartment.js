@@ -38,7 +38,7 @@ const AddApartment = () => {
   const [id, setId] = useState();
 
   //varainsiirtovero
-  const [transferTax, setTransferTax] = useState(2);
+  const [transferTax, setTransferTax] = useState(1.5);
 
   //rahoitus
   const [capitalExpenditureCharge, setCapitalExpenditureCharge] = useState(0); //rahoitusvastike
@@ -273,30 +273,30 @@ const AddApartment = () => {
               <label>
                 <input
                   type="radio"
-                  value="2"
+                  value="1.5"
                   name="taxGroup"
                   className="radio__btn"
-                  checked={transferTax === 2}
+                  checked={transferTax === 1.5}
                   onChange={(e) => {
-                    const tax = 2;
+                    const tax = 1.5;
                     setTransferTax(parseFloat(tax));
                   }}
                 />{" "}
-                2 % Asunto-osake
+                1.5 % Asunto-osake
               </label>
               <label>
                 <input
                   type="radio"
-                  value="4"
+                  value="3.0"
                   name="taxGroup"
                   className="radio__btn"
-                  checked={transferTax === 4}
+                  checked={transferTax === 3.0}
                   onChange={(e) => {
-                    const tax = 4;
+                    const tax = 3.0;
                     setTransferTax(parseFloat(tax));
                   }}
                 />{" "}
-                4 % Kiinteistö
+                3 % Kiinteistö
               </label>
               <label className="input__label half">Lainan kuukausierä</label>
               <input
