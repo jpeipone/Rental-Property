@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import "./PageNotFound.css";
 
 const PageNotFound = () => {
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
   return (
     <div className="page-not-found">
       <div className="pagenotfound__hd">Etsimääsi sivua ei löytynyt</div>
@@ -11,13 +14,19 @@ const PageNotFound = () => {
 
       <div className="notfound-links">
         <div className="notfound__link">
-          <Link to="/uusi">Laskuri</Link>
+          <Link to="/uusi" onClick={handleScrollToTop}>
+            Laskuri
+          </Link>
         </div>
         <div className="notfound__link">
-          <Link to="/asunnot">Asunnot</Link>
+          <Link to="/asunnot" onClick={handleScrollToTop}>
+            Asunnot
+          </Link>
         </div>
         <div className="notfound__link">
-          <Link to="/tiivistelma">Vuokratuotto</Link>
+          <Link to="/tiivistelma" onClick={handleScrollToTop}>
+            Vuokratuotto
+          </Link>
         </div>
         <img
           src="./images/pagenotfoundwhale.png"

@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import "./FooterData.css";
 
 const FooterData = () => {
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
   return (
     <div className="footer-container">
       <div className="footer-logo-name">
@@ -12,13 +15,19 @@ const FooterData = () => {
       <div className="footer-row">
         <div className="footer__links">
           <div className="footer__link">
-            <Link to="/uusi">Laskuri</Link>
+            <Link to="/uusi" onClick={handleScrollToTop}>
+              Laskuri
+            </Link>
           </div>
           <div className="footer__link">
-            <Link to="/asunnot">Asunnot</Link>
+            <Link to="/asunnot" onClick={handleScrollToTop}>
+              Asunnot
+            </Link>
           </div>
           <div className="footer__link">
-            <Link to="/tiivistelma">Vuokratuotto</Link>
+            <Link to="/tiivistelma" onClick={handleScrollToTop}>
+              Vuokratuotto
+            </Link>
           </div>
         </div>{" "}
       </div>

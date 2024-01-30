@@ -56,6 +56,11 @@ const ApartmentPage = () => {
     }
   };
 
+  //link scroll to top
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
+
   //Chart line
   const years = [0, 1, 2, 3, 4, 5, 10, 15, 20, 25];
   let data = {
@@ -180,7 +185,7 @@ const ApartmentPage = () => {
       </div>
 
       <div className="buttons-row">
-        <Link to="/uusi">
+        <Link to="/uusi" onClick={handleScrollToTop}>
           <div className="column__icon__text">
             <AddCircleIcon className="icon-symbol" />
             Uusi
@@ -195,7 +200,7 @@ const ApartmentPage = () => {
           Poista
         </div>
 
-        <Link to="/">
+        <Link to="/" onClick={handleScrollToTop}>
           <div className="column__icon__text">
             <HomeIcon className="icon-symbol" />
             Etusivu

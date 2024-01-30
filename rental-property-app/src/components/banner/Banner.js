@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import "./Banner.css";
 
 const Banner = () => {
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
   return (
     <header className="banner">
       <div className="banner-info">
@@ -11,7 +14,7 @@ const Banner = () => {
         <p className="banner__text">vuokratuottoprosentti</p>
         <p className="banner__text">kassavirta</p>
         <p className="banner__text">yhdelle tai usealle asunnolle</p>
-        <Link to="/uusi">
+        <Link to="/uusi" onClick={handleScrollToTop}>
           <button className="banner__btn">Laskuri</button>
         </Link>
       </div>

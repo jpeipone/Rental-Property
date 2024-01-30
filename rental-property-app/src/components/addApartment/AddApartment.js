@@ -197,6 +197,10 @@ const AddApartment = () => {
     setTransferTax(value);
   };
 
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="add-form">
       <form onSubmit={handleAddInvestment}>
@@ -466,7 +470,7 @@ const AddApartment = () => {
             </div>
           )}
 
-          <Link to={`/asunto/${id}`}>
+          <Link to={`/asunto/${id}`} onClick={handleScrollToTop}>
             {id && <button className="show-saved"> {addedInvestment}</button>}
           </Link>
           <div className="form-buttons">
