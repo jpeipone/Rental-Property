@@ -5,7 +5,6 @@ import { CalculateSummary } from "../algos/CalculateSummary";
 import "./SummaryApartments.css";
 import HomeIcon from "@mui/icons-material/Home";
 import CashFlowRanking from "../cashFlowRanking/CashFlowRanking";
-import { Switch } from "@mui/material";
 
 const SummaryApartments = () => {
   const { userdata, setUserdata, setPortfolioUser } = useContext(UserContext);
@@ -23,152 +22,41 @@ const SummaryApartments = () => {
       {usersApartmentSummary
         ? usersApartmentSummary?.map((summary) => (
             <div className="summary-container" key={summary?.id}>
-              <h2 className="summary__header">Asuntojen kooste</h2>
+              <h2 className="summary__header">Asuntojesi kooste</h2>
               {/*     In a month */}
-              <div className="summary-wrapper">
-                <div className="left__summary">
-                  <h3 className="summary__header">Kuukaudessa</h3>
-                  <div className="summary__label">Vuokratulot</div>
-                  <div className="summary__value">
-                    {summary?.monthlyRevenue} €/kk
-                  </div>
-                  <div className="summary__label">Hoitovastikkeet</div>
-                  <div className="summary__value">
-                    {summary?.monthlyMaintenanceCharge} €/kk
-                  </div>
-
-                  <div className="summary__label">Rahoitusvastikkeet</div>
-                  <div className="summary__value">
-                    {summary?.monthlyCapitalExpenditureCharge} €/kk
-                  </div>
-                  <div className="summary__label">Lainaerä</div>
-                  <div className="summary__value">
-                    {summary?.loanMonthlyCost} €/kk
-                  </div>
-
-                  <div className="summary__label">veroprosentti:</div>
-                  <div className="row-tax">
-                    <div className="tax-percent">30%</div>
-                    <Switch
-                      checked={!taxValue}
-                      onClick={() => {
-                        setTaxValue(!taxValue);
-                      }}
-                      inputProps={{ "arial-label": "controlled" }}
-                    />
-
-                    <div className="tax-percent">34%</div>
-                  </div>
+              {/* cashflow container starts */}
+              <div className="cashflow-container">
+                <h3 className="cashflow__hd">Kassavirta veroton</h3>
+                <div className="cashflow__value">
+                  {parseFloat(
+                    summary?.monthlyRevenue -
+                      summary?.monthlyMaintenanceCharge -
+                      summary?.loanMonthlyCost -
+                      summary?.monthlyCapitalExpenditureCharge
+                  ).toFixed(2)}{" "}
+                  €/kk
                 </div>
-                <div className="right__summary">
-                  <div className="circle__label">Kassavirta</div>
-                  {/* true tax 30% false 34% for cashflow */}
-                  {taxValue ? (
-                    <div>
-                      <div className="circle__value">
-                        {parseFloat(
-                          (summary?.monthlyRevenue -
-                            summary?.monthlyMaintenanceCharge -
-                            summary?.loanMonthlyCost -
-                            summary?.monthlyCapitalExpenditureCharge) *
-                            0.7
-                        ).toFixed(2)}{" "}
-                        €
-                      </div>
-                      <div className="circle__label tax">(vero 30%)</div>
-                    </div>
-                  ) : (
-                    <div>
-                      <div className="circle__value">
-                        {parseFloat(
-                          (summary?.monthlyRevenue -
-                            summary?.monthlyMaintenanceCharge -
-                            summary?.loanMonthlyCost -
-                            summary?.monthlyCapitalExpenditureCharge) *
-                            0.66
-                        ).toFixed(2)}{" "}
-                        €
-                      </div>
-                      <div className="circle__label tax">(vero 34%)</div>
-                    </div>
-                  )}
-                  {/* cashflow tax ends */}
+                <div className="cashflow__value">
+                  {parseFloat(
+                    summary?.monthlyRevenue * 12 -
+                      summary?.monthlyMaintenanceCharge * 12 -
+                      summary?.loanMonthlyCost * 12 -
+                      summary?.monthlyCapitalExpenditureCharge * 12 -
+                      summary?.emptyMonthsYearlyLoss
+                  ).toFixed(2)}{" "}
+                  €/vuosi
                 </div>
               </div>
 
-              {/*     In a year */}
-              <div className="summary-wrapper">
-                <div className="left__summary">
-                  <h3 className="summary__header">Vuodessa</h3>
-                  <div className="summary__label">Vuokratulot</div>
-                  <div className="summary__value">
-                    {parseFloat(
-                      summary?.monthlyRevenue * 12 -
-                        summary?.emptyMonthsYearlyLoss
-                    ).toFixed(2)}{" "}
-                    €/v
-                  </div>
-                  <div className="summary__label">Hoitovastikkeet</div>
-                  <div className="summary__value">
-                    {parseFloat(summary?.monthlyMaintenanceCharge * 12).toFixed(
-                      2
-                    )}{" "}
-                    €/v
-                  </div>
+              {/* cashflow container ends */}
 
-                  <div className="summary__label">Rahoitusvastikkeet</div>
-                  <div className="summary__value">
-                    {parseFloat(
-                      summary?.monthlyCapitalExpenditureCharge * 12
-                    ).toFixed(2)}{" "}
-                    €/v
-                  </div>
-                  <div className="summary__label">Lainaerä</div>
-                  <div className="summary__value">
-                    {parseFloat(summary?.loanMonthlyCost * 12).toFixed(2)} €/v
-                  </div>
-                </div>
-                <div className="right__summary">
-                  {" "}
-                  <div className="circle__label">Kassavirta</div>
-                  {/* true tax 30% false 34% for cashflow */}
-                  {taxValue ? (
-                    <div>
-                      <div className="circle__value">
-                        {parseFloat(
-                          (summary?.monthlyRevenue * 12 -
-                            summary?.monthlyMaintenanceCharge * 12 -
-                            summary?.loanMonthlyCost * 12 -
-                            summary?.monthlyCapitalExpenditureCharge * 12 -
-                            summary?.emptyMonthsYearlyLoss) *
-                            0.7
-                        ).toFixed(2)}{" "}
-                        €
-                      </div>
-                      <div className="circle__label tax">(vero 30%)</div>
-                    </div>
-                  ) : (
-                    <div>
-                      <div className="circle__value">
-                        {parseFloat(
-                          (summary?.monthlyRevenue * 12 -
-                            summary?.monthlyMaintenanceCharge * 12 -
-                            summary?.loanMonthlyCost * 12 -
-                            summary?.monthlyCapitalExpenditureCharge * 12 -
-                            summary?.emptyMonthsYearlyLoss) *
-                            0.66
-                        ).toFixed(2)}{" "}
-                        €
-                      </div>
-                      <div className="circle__label tax">(vero 34%)</div>
-                    </div>
-                  )}
-                  {/* cashflow tax ends */}
-                </div>
-              </div>
+              {/*  apartment number start */}
               <div className="summary-wrapper">
                 <div className="left__summary__second">
-                  <h3 className="summary__header">Asunnoista</h3>
+                  <div className="apartment-number-row">
+                    <HomeIcon className="home-icon" fontSize="large" />
+                    <div className="apartment-number"> x {userdata.length}</div>
+                  </div>
                   <div className="summary__second">
                     Asuntojen velaton hinta yhteensä
                   </div>
@@ -181,13 +69,81 @@ const SummaryApartments = () => {
                   <div className="summary__value">
                     {summary?.totalRenovationCost} €
                   </div>
+                </div>
+              </div>
+              {/*  apartments number ends */}
 
-                  <div className="apartment-number-row">
-                    <HomeIcon className="home-icon" fontSize="large" />
-                    <div className="apartment-number"> x {userdata.length}</div>
+              <div className="summary-wrapper">
+                <div className="left__summary">
+                  <h3 className="summary__header">Kuukaudessa</h3>
+                  <div className="summary-row">
+                    <div className="summary__label">Vuokratulot</div>
+                    <div className="summary__value__row">
+                      {summary?.monthlyRevenue} €/kk
+                    </div>
+                  </div>
+                  <div className="summary-row">
+                    <div className="summary__label">Hoitovastikkeet</div>
+                    <div className="summary__value__row">
+                      {summary?.monthlyMaintenanceCharge} €/kk
+                    </div>
+                  </div>
+                  <div className="summary-row">
+                    <div className="summary__label">Rahoitusvastikkeet</div>
+                    <div className="summary__value__row">
+                      {summary?.monthlyCapitalExpenditureCharge} €/kk
+                    </div>
+                  </div>
+                  <div className="summary-row">
+                    <div className="summary__label">Lainaerä</div>
+                    <div className="summary__value__row">
+                      {summary?.loanMonthlyCost} €/kk
+                    </div>
                   </div>
                 </div>
               </div>
+
+              {/*     In a year */}
+              <div className="summary-wrapper">
+                <div className="left__summary">
+                  <h3 className="summary__header">Vuodessa</h3>
+                  <div className="summary-row">
+                    <div className="summary__label">Vuokratulot</div>
+                    <div className="summary__value__row">
+                      {parseFloat(
+                        summary?.monthlyRevenue * 12 -
+                          summary?.emptyMonthsYearlyLoss
+                      ).toFixed(2)}{" "}
+                      €/v
+                    </div>
+                  </div>
+                  <div className="summary-row">
+                    <div className="summary__label">Hoitovastikkeet</div>
+                    <div className="summary__value__row">
+                      {parseFloat(
+                        summary?.monthlyMaintenanceCharge * 12
+                      ).toFixed(2)}{" "}
+                      €/v
+                    </div>
+                  </div>
+                  <div className="summary-row">
+                    <div className="summary__label">Rahoitusvastikkeet</div>
+                    <div className="summary__value__row">
+                      {parseFloat(
+                        summary?.monthlyCapitalExpenditureCharge * 12
+                      ).toFixed(2)}{" "}
+                      €/v
+                    </div>
+                  </div>
+                  <div className="summary-row">
+                    <div className="summary__label">Lainaerä</div>
+                    <div className="summary__value__row">
+                      {parseFloat(summary?.loanMonthlyCost * 12).toFixed(2)} €/v
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <CashFlowRanking />
             </div>
           ))
