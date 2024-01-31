@@ -172,26 +172,6 @@ const AddApartment = () => {
     setAddedInvestment("Tarkastele asuntoa");
   };
 
-  const handleClear = () => {
-    setName("");
-    setCity("");
-    setMonthlyRent("");
-    setOriginalCost("");
-    setMonthlyMaintenanceCharge("");
-    setLoan("");
-    setAddedInvestment(" ");
-    setEmptyMonths("");
-    setSquareMeters("");
-    setLineRenovation("");
-    setPipeRepair("");
-    setRoofRepair("");
-    setBalconyRepair("");
-    setWindowRepair("");
-    setFacadeRepair("");
-    setOtherRepair("");
-    setId("");
-  };
-
   //Tax radio buttons
   const handleRadioTax = (value) => {
     setTransferTax(value);
@@ -270,7 +250,7 @@ const AddApartment = () => {
               <label className="input__label half">
                 Varainsiirto veroprosentti
               </label>
-              <label>
+              <label className="row-radio">
                 <input
                   type="radio"
                   value="1.5"
@@ -284,7 +264,8 @@ const AddApartment = () => {
                 />{" "}
                 1.5 % Asunto-osake
               </label>
-              <label>
+
+              <label className="row-radio">
                 <input
                   type="radio"
                   value="3.0"
@@ -474,10 +455,6 @@ const AddApartment = () => {
             {id && <button className="show-saved"> {addedInvestment}</button>}
           </Link>
           <div className="form-buttons">
-            {/*  <button className="clear__btn" onClick={handleClear}>
-              Tyhjennä
-            </button> */}
-
             <button className="add__btn" type="submit">
               Laske
             </button>

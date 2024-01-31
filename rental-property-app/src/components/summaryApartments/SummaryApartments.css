@@ -107,6 +107,13 @@
   font-size: 1.2rem;
 }
 
+.row-tax {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 15px;
+}
+
 @media only screen and (min-width: 400px) {
   .right__summary {
     margin-left: 15%;

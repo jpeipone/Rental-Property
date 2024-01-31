@@ -5,6 +5,7 @@ import { CalculateSummary } from "../algos/CalculateSummary";
 import "./SummaryApartments.css";
 import HomeIcon from "@mui/icons-material/Home";
 import CashFlowRanking from "../cashFlowRanking/CashFlowRanking";
+import { Switch } from "@mui/material";
 
 const SummaryApartments = () => {
   const { userdata, setUserdata, setPortfolioUser } = useContext(UserContext);
@@ -44,14 +45,20 @@ const SummaryApartments = () => {
                   <div className="summary__value">
                     {summary?.loanMonthlyCost} €/kk
                   </div>
-                  <button
-                    className="change-tax__btn"
-                    onClick={() => {
-                      setTaxValue(!taxValue);
-                    }}
-                  >
-                    veroprosentti{" "}
-                  </button>
+
+                  <div className="summary__label">veroprosentti:</div>
+                  <div className="row-tax">
+                    <div className="tax-percent">30%</div>
+                    <Switch
+                      checked={!taxValue}
+                      onClick={() => {
+                        setTaxValue(!taxValue);
+                      }}
+                      inputProps={{ "arial-label": "controlled" }}
+                    />
+
+                    <div className="tax-percent">34%</div>
+                  </div>
                 </div>
                 <div className="right__summary">
                   <div className="circle__label">Kassavirta</div>
@@ -120,14 +127,6 @@ const SummaryApartments = () => {
                   <div className="summary__value">
                     {parseFloat(summary?.loanMonthlyCost * 12).toFixed(2)} €/v
                   </div>
-                  <button
-                    className="change-tax__btn"
-                    onClick={() => {
-                      setTaxValue(!taxValue);
-                    }}
-                  >
-                    veroprosentti{" "}
-                  </button>
                 </div>
                 <div className="right__summary">
                   {" "}

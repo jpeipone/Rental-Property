@@ -96,6 +96,12 @@
   cursor: pointer;
 }
 
+.row-radio {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 /* radio button*/
 .radio__btn {
   margin-right: 10px;

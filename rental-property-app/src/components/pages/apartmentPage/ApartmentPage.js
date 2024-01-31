@@ -109,7 +109,10 @@ const ApartmentPage = () => {
           )}
           {!showMonthly && (
             <div className="bold__apartment__rent">
-              {parseFloat(apartmentDetails[0]?.monthlyRevenue * 12).toFixed(2)}{" "}
+              {parseFloat(
+                apartmentDetails[0]?.monthlyRevenue *
+                  (12 - apartmentDetails[0]?.emptyMonths)
+              ).toFixed(2)}{" "}
               €/v
             </div>
           )}
