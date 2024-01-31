@@ -25,7 +25,7 @@ const AddApartment = () => {
   const [monthlyMaintenanceCharge, setMonthlyMaintenanceCharge] = useState(""); //hoitovastike
   const [loan, setLoan] = useState(0);
   const [emptyMonths, setEmptyMonths] = useState(0);
-  const [squareMeters, setSquareMeters] = useState("");
+  const [squareMeters, setSquareMeters] = useState(0);
 
   //renovations
   const [lineRenovation, setLineRenovation] = useState(0); //linjasaneeraus
@@ -70,7 +70,7 @@ const AddApartment = () => {
     if (isNaN(temp_emptyMonths)) {
       temp_emptyMonths = 0;
     }
-    let temp_squareMeters = emptyMonths;
+    let temp_squareMeters = squareMeters;
     if (isNaN(temp_squareMeters)) {
       temp_squareMeters = 0;
     }
