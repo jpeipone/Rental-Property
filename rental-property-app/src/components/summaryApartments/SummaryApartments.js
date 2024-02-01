@@ -70,7 +70,7 @@ const SummaryApartments = () => {
                     {summary?.totalRenovationCost} €
                   </div>
                 </div>
-
+                <br className="medium-br" />
                 {/*  apartments number ends */}
 
                 <div className="left__summary">
@@ -100,7 +100,7 @@ const SummaryApartments = () => {
                     </div>
                   </div>
                 </div>
-
+                <br className="medium-br" />
                 {/*     In a year */}
 
                 <div className="left__summary">
