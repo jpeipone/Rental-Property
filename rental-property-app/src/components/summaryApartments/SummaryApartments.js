@@ -57,24 +57,11 @@ const SummaryApartments = () => {
                     <HomeIcon className="home-icon" fontSize="large" />
                     <div className="apartment-number"> x {userdata.length}</div>
                   </div>
-                  <div className="summary__second">
-                    Asuntojen velaton hinta yhteensä
-                  </div>
-                  <div className="summary__value">
-                    {summary?.originalCost} €
-                  </div>
-                  <div className="summary__second">
-                    Asuntojen remontit yhteensä
-                  </div>
-                  <div className="summary__value">
-                    {summary?.totalRenovationCost} €
-                  </div>
                 </div>
-                <br className="medium-br" />
                 {/*  apartments number ends */}
 
                 <div className="left__summary">
-                  <h3 className="summary__header">Kuukaudessa</h3>
+                  <h4 className="summary__header">Kuukaudessa</h4>
                   <div className="summary-row">
                     <div className="summary__label">Vuokratulot</div>
                     <div className="summary__value__row">
@@ -104,7 +91,7 @@ const SummaryApartments = () => {
                 {/*     In a year */}
 
                 <div className="left__summary">
-                  <h3 className="summary__header">Vuodessa</h3>
+                  <h4 className="summary__header">Vuodessa</h4>
                   <div className="summary-row">
                     <div className="summary__label">Vuokratulot</div>
                     <div className="summary__value__row">
@@ -141,8 +128,24 @@ const SummaryApartments = () => {
                   </div>
                 </div>
                 <br />
+                <div className="left__summary__second">
+                  <div className="summary__second">
+                    Asuntojen velaton hinta yhteensä
+                  </div>
+                  <div className="summary__value">
+                    {summary?.originalCost} €
+                  </div>
+                  <div className="summary__second">
+                    Asuntojen remontit yhteensä
+                  </div>
+                  <div className="summary__value">
+                    {summary?.totalRenovationCost} €
+                  </div>
+                </div>
+                <br className="medium-br" />
               </div>
-              <h3 className="summary__header">Vuokratuotto</h3>
+
+              <h4 className="summary__header">Vuokratuotto</h4>
               <CashFlowRanking />
             </div>
           ))

@@ -3,7 +3,7 @@
   max-width: 720px;
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -65,8 +65,10 @@
   /* width: 160px; */
   width: 330px;
   text-align: right;
-  font-weight: bold;
+  font-weight: medium;
   margin-right: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .summary__second {
