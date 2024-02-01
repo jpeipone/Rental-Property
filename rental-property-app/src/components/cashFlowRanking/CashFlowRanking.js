@@ -28,11 +28,12 @@ const CashFlowRanking = () => {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: "bottom",
+        position: "top",
       },
       title: {
         display: true,
         text: "Vuokratuottoprosentti %",
+        position: "bottom",
       },
     },
   };
@@ -40,7 +41,7 @@ const CashFlowRanking = () => {
     labels,
     datasets: [
       {
-        label: "asunto",
+        label: "%",
         data: userdata.map((a) =>
           parseFloat(
             (((a?.monthlyRevenue - a?.monthlyMaintenanceCharge) * 12) /

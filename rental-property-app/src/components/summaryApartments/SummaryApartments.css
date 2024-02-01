@@ -12,13 +12,13 @@
   box-shadow: 0 4px 12px rgb(0 0 0 / 0.4);
   border-radius: 10px;
   margin-bottom: 15px;
-  display: flex;
 }
 
 .cashflow-container {
   height: 160px;
   background-color: #1f51ff;
   border-radius: 10px;
+  margin: 15px;
 }
 
 .cashflow__hd {
@@ -36,7 +36,7 @@
 }
 
 .left__summary {
-  max-width: 300px;
+  max-width: 500px;
 }
 
 .summary__header {
@@ -48,10 +48,10 @@
   flex-direction: row;
   align-items: center;
   margin-bottom: 10px;
+  max-width: 500px;
 }
 .summary__label {
   margin-left: 15px;
-  margin-bottom: 4px;
   width: 140px;
 }
 
@@ -62,8 +62,11 @@
 }
 
 .summary__value__row {
-  width: 160px;
+  /* width: 160px; */
+  width: 330px;
   text-align: right;
+  font-weight: bold;
+  margin-right: 15px;
 }
 
 .summary__second {

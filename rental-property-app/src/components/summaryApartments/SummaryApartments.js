@@ -26,7 +26,7 @@ const SummaryApartments = () => {
               {/*     In a month */}
               {/* cashflow container starts */}
               <div className="cashflow-container">
-                <h3 className="cashflow__hd">Kassavirta veroton</h3>
+                <h4 className="cashflow__hd">Kassavirta veroton</h4>
                 <div className="cashflow__value">
                   {parseFloat(
                     summary?.monthlyRevenue -
@@ -44,7 +44,7 @@ const SummaryApartments = () => {
                       summary?.monthlyCapitalExpenditureCharge * 12 -
                       summary?.emptyMonthsYearlyLoss
                   ).toFixed(2)}{" "}
-                  €/vuosi
+                  €/v
                 </div>
               </div>
 
@@ -70,10 +70,9 @@ const SummaryApartments = () => {
                     {summary?.totalRenovationCost} €
                   </div>
                 </div>
-              </div>
-              {/*  apartments number ends */}
 
-              <div className="summary-wrapper">
+                {/*  apartments number ends */}
+
                 <div className="left__summary">
                   <h3 className="summary__header">Kuukaudessa</h3>
                   <div className="summary-row">
@@ -101,10 +100,9 @@ const SummaryApartments = () => {
                     </div>
                   </div>
                 </div>
-              </div>
 
-              {/*     In a year */}
-              <div className="summary-wrapper">
+                {/*     In a year */}
+
                 <div className="left__summary">
                   <h3 className="summary__header">Vuodessa</h3>
                   <div className="summary-row">
@@ -142,8 +140,9 @@ const SummaryApartments = () => {
                     </div>
                   </div>
                 </div>
+                <br />
               </div>
-
+              <h3 className="summary__header">Vuokratuotto</h3>
               <CashFlowRanking />
             </div>
           ))
