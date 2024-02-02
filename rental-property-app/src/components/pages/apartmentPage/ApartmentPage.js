@@ -255,6 +255,12 @@ const ApartmentPage = () => {
       </div>
 
       <div className="buttons-row">
+        <Link to="/" onClick={handleScrollToTop}>
+          <div className="column__icon__text">
+            <HomeIcon className="icon-symbol" />
+            Etusivu
+          </div>
+        </Link>
         <Link to="/uusi" onClick={handleScrollToTop}>
           <div className="column__icon__text">
             <AddCircleIcon className="icon-symbol" />
@@ -269,13 +275,6 @@ const ApartmentPage = () => {
           <DeleteForeverIcon className="icon-symbol" />
           Poista
         </div>
-
-        <Link to="/" onClick={handleScrollToTop}>
-          <div className="column__icon__text">
-            <HomeIcon className="icon-symbol" />
-            Etusivu
-          </div>
-        </Link>
       </div>
     </div>
   );

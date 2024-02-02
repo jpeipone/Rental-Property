@@ -6,6 +6,7 @@ import { CalculateSummary } from "../algos/CalculateSummary";
 import "./SummaryApartments.css";
 import HomeIcon from "@mui/icons-material/Home";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 import CashFlowRanking from "../cashFlowRanking/CashFlowRanking";
 
@@ -23,6 +24,12 @@ const SummaryApartments = () => {
   //link scroll to top
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
+
+  //delete all apartments
+  const handleDeleteAllApartments = () => {
+    //deletes all apartments
+    setUserdata([]);
   };
 
   return (
@@ -68,6 +75,12 @@ const SummaryApartments = () => {
                   <Link to="/uusi" onClick={handleScrollToTop}>
                     <AddCircleIcon className="add-icon" fontSize="large" />
                   </Link>
+                  <div onClick={handleDeleteAllApartments}>
+                    <DeleteForeverIcon
+                      className="delete-icon"
+                      fontSize="large"
+                    />
+                  </div>
                 </div>
                 {/*  apartments number ends */}
 
