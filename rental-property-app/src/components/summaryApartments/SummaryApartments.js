@@ -1,9 +1,12 @@
 import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import { UserContext } from "../../ContextUser";
 import { CalculateSummary } from "../algos/CalculateSummary";
 import "./SummaryApartments.css";
 import HomeIcon from "@mui/icons-material/Home";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
+
 import CashFlowRanking from "../cashFlowRanking/CashFlowRanking";
 
 const SummaryApartments = () => {
@@ -16,6 +19,11 @@ const SummaryApartments = () => {
     let SummaryCalculation = CalculateSummary(userdata);
     setUsersApartmentSummary(SummaryCalculation);
   }, [userdata]);
+
+  //link scroll to top
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
 
   return (
     <div className="summary-apartments">
@@ -52,11 +60,14 @@ const SummaryApartments = () => {
 
               {/*  apartment number start */}
               <div className="summary-wrapper">
-                <div className="left__summary__second">
-                  <div className="apartment-number-row">
+                <div className="apartment-number-row">
+                  <div className="row-icons">
                     <HomeIcon className="home-icon" fontSize="large" />
                     <div className="apartment-number"> x {userdata.length}</div>
                   </div>
+                  <Link to="/uusi" onClick={handleScrollToTop}>
+                    <AddCircleIcon className="add-icon" fontSize="large" />
+                  </Link>
                 </div>
                 {/*  apartments number ends */}
 
