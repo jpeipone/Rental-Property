@@ -69,7 +69,9 @@ const SummaryApartments = () => {
               <div className="summary-wrapper">
                 <div className="apartment-number-row">
                   <div className="row-icons">
-                    <HomeIcon className="home-icon" fontSize="large" />
+                    <Link to="/asunnot" onClick={handleScrollToTop}>
+                      <HomeIcon className="home-icon" fontSize="large" />
+                    </Link>
                     <div className="apartment-number"> x {userdata.length}</div>
                   </div>
                   <Link to="/uusi" onClick={handleScrollToTop}>

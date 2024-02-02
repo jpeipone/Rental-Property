@@ -22,7 +22,7 @@ const ApartmentPage = () => {
 
   //kassavirta
   const [cashFlow, setCashFlow] = useState(0);
-  const [showMonthly, setShowMonthly] = useState(false);
+  const [showMonthly, setShowMonthly] = useState(true);
 
   let { apartmentID } = useParams();
 
@@ -255,10 +255,10 @@ const ApartmentPage = () => {
       </div>
 
       <div className="buttons-row">
-        <Link to="/" onClick={handleScrollToTop}>
+        <Link to="/asunnot" onClick={handleScrollToTop}>
           <div className="column__icon__text">
             <HomeIcon className="icon-symbol" />
-            Etusivu
+            Asunnot
           </div>
         </Link>
         <Link to="/uusi" onClick={handleScrollToTop}>
