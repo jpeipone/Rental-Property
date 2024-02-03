@@ -1,14 +1,26 @@
-.add-form {
+.add-form-light {
   width: 100%;
+  background-color: white;
+  color: black;
+}
+
+.add-form-dark {
+  width: 100%;
+  background-color: black;
+  color: white;
 }
 
 .form-container {
   display: flex;
   flex-direction: column;
   max-width: 300px;
-  margin-top: 20px;
+  margin-top: 0px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.add-new__hd {
+  margin-top: 15px;
 }
 
 .form-more {

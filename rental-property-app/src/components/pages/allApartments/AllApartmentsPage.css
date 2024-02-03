@@ -1,3 +1,17 @@
+.all-apartments-light {
+  background-color: white;
+  color: black;
+}
+
+.all-apartments-dark {
+  background-color: black;
+  color: white;
+}
+
+.all-apartments__header {
+  margin-left: 25px;
+}
+
 .add-new-apartment {
   width: 200px;
   height: 50px;

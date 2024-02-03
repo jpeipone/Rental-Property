@@ -1,4 +1,4 @@
-.banner {
+.banner-light {
   color: black;
   object-fit: contain;
   height: 350px;
@@ -10,14 +10,26 @@
   border-bottom: black 2px solid;
 }
 
+.banner-dark {
+  color: white;
+  object-fit: contain;
+  height: 350px;
+  background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)),
+    url("/public/images/bannerchartthree.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-color: black;
+  border-bottom: solid 2px #0a2351;
+}
+
 .banner-info {
   width: 360px;
   height: 350px;
   display: flex;
   flex-direction: column;
   margin-left: 0rem;
-  /*  background-color: rgba(0, 0, 0, 0.5); */
-  /* border-left: 6px solid #1f51ff; */
 }
 
 .banner__header {
@@ -33,7 +45,6 @@
   margin-left: 1.5rem;
   max-width: 215px;
   font-weight: medium;
-  background-color: white;
 }
 
 .banner__btn {

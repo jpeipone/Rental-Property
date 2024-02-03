@@ -8,20 +8,29 @@ import { UserContext } from "../../ContextUser";
  */
 
 const ApartmentSlide = () => {
-  const { userdata, setUserdata } = useContext(UserContext);
+  const { userdata, setUserdata, isLightMode } = useContext(UserContext);
 
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
   return (
-    <div className="apartment-slide">
+    <div
+      className={isLightMode ? "apartment-slide-light" : "apartment-slide-dark"}
+    >
       <div className="apartment-grid">
         {/*  apartment card */}
         {userdata
           ? userdata?.map((apartment) => (
               <Link to={`/asunto/${apartment?.id}`} onClick={handleScrollToTop}>
-                <div className="apartment-container card" key={apartment?.id}>
+                <div
+                  className={
+                    isLightMode
+                      ? "apartment-container-light card"
+                      : "apartment-container-dark card"
+                  }
+                  key={apartment?.id}
+                >
                   <div className="header-container">
                     <h3 className="apartment__header">{apartment?.address}</h3>
                   </div>

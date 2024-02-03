@@ -1,3 +1,13 @@
+.apartment-page-light {
+  background-color: white;
+  color: black;
+}
+
+.apartment-page-dark {
+  background-color: black;
+  color: white;
+}
+
 .apartment-page {
   display: flex;
   flex-direction: column;

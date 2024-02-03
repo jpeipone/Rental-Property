@@ -1,5 +1,15 @@
+.footer-light {
+  background-color: white;
+  color: black;
+}
+
+.footer-dark {
+  background-color: black;
+  color: white;
+  border-top: solid 2px #0a2351;
+}
+
 .footer-container {
-  margin-top: 150px;
   height: 330px;
   width: 100%;
   border-top: solid 2px black;

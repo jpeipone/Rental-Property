@@ -17,6 +17,8 @@ const AddApartment = () => {
     userdata,
     showTempApartments,
     setTempApartments,
+    isLightMode,
+    setIsLightMode,
   } = useContext(UserContext);
   const [name, setName] = useState("");
   const [city, setCity] = useState("");
@@ -182,10 +184,10 @@ const AddApartment = () => {
   };
 
   return (
-    <div className="add-form">
+    <div className={isLightMode ? "add-form-light" : "add-form-dark"}>
       <form onSubmit={handleAddInvestment}>
         <div className="form-container">
-          <h2>Lisää asunnon tiedot</h2>
+          <h2 className="add-new__hd">Lisää asunnon tiedot</h2>
           <label className="input__label">Osoite *</label>
           <input
             type="text"
@@ -461,6 +463,13 @@ const AddApartment = () => {
           </div>
         </div>
       </form>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   );
 };

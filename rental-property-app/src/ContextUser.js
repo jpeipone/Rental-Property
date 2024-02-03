@@ -107,6 +107,8 @@ const ContextUser = ({ children }) => {
   });
   const [showTempApartments, setTempApartments] = useState(true);
 
+  const [isLightMode, setIsLightMode] = useState(true);
+
   return (
     <UserContext.Provider
       value={{
@@ -120,6 +122,8 @@ const ContextUser = ({ children }) => {
         setPortfolioUser,
         showTempApartments,
         setTempApartments,
+        isLightMode,
+        setIsLightMode,
       }}
     >
       {children}

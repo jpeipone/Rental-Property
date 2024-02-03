@@ -1,15 +1,29 @@
-.summary-container {
+.summary-apartments-light {
   background-color: white;
+  color: black;
+}
+
+.summary-apartments-dark {
+  background-color: black;
+  color: white;
+}
+
+.summary-container {
   max-width: 720px;
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.summary-wrapper {
+.summary-wrapper-light {
   box-shadow: 0 4px 12px rgb(0 0 0 / 0.4);
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.summary-wrapper-dark {
+  border: 2px solid #1f51ff;
   border-radius: 10px;
   margin-bottom: 15px;
 }

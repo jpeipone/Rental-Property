@@ -11,7 +11,13 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import CashFlowRanking from "../cashFlowRanking/CashFlowRanking";
 
 const SummaryApartments = () => {
-  const { userdata, setUserdata, setPortfolioUser } = useContext(UserContext);
+  const {
+    userdata,
+    setUserdata,
+    setPortfolioUser,
+    isLightMode,
+    setIsLightMode,
+  } = useContext(UserContext);
   const [taxValue, setTaxValue] = useState(true);
   const [usersApartmentSummary, setUsersApartmentSummary] = useState([{}]);
 
@@ -33,7 +39,11 @@ const SummaryApartments = () => {
   };
 
   return (
-    <div className="summary-apartments">
+    <div
+      className={
+        isLightMode ? "summary-apartments-light" : "summary-apartments-dark"
+      }
+    >
       {usersApartmentSummary
         ? usersApartmentSummary?.map((summary) => (
             <div className="summary-container" key={summary?.id}>
@@ -66,7 +76,11 @@ const SummaryApartments = () => {
               {/* cashflow container ends */}
 
               {/*  apartment number start */}
-              <div className="summary-wrapper">
+              <div
+                className={
+                  isLightMode ? "summary-wrapper-light" : "summary-wrapper-dark"
+                }
+              >
                 <div className="apartment-number-row">
                   <div className="row-icons">
                     <Link to="/asunnot" onClick={handleScrollToTop}>

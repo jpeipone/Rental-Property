@@ -13,7 +13,8 @@ import {
 import { Bar } from "react-chartjs-2";
 
 const CashFlowRanking = () => {
-  const { setUserdata, setPortfolioUser, userdata } = useContext(UserContext);
+  const { setUserdata, setPortfolioUser, userdata, isLightMode } =
+    useContext(UserContext);
 
   const labels = userdata.map((a) => a?.address);
   const options = {

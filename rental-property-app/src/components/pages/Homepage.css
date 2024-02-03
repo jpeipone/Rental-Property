@@ -1,3 +1,13 @@
+.homepage-light {
+  background-color: white;
+  color: black;
+}
+
+.homepage-dark {
+  background-color: black;
+  color: white;
+}
+
 .add-new-apartment {
   width: 200px;
   height: 50px;
