@@ -88,6 +88,7 @@ const ApartmentPage = () => {
         ),
         fill: true,
         borderColor: "rgba(31, 81, 255, 1)",
+        backgroundColor: "rgba(31,81,255,0.2)",
       },
     ],
   };

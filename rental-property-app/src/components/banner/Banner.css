@@ -14,13 +14,13 @@
   color: white;
   object-fit: contain;
   height: 350px;
-  background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)),
+  background-image: linear-gradient(rgba(18, 18, 18, 1), rgba(18, 18, 18, 1)),
     url("/public/images/bannerchartthree.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  background-color: black;
+  background-color: #121212;
   border-bottom: solid 2px #0a2351;
 }
 

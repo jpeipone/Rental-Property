@@ -1,10 +1,11 @@
 .navigation-light {
   background-color: white;
   color: black;
+  border-bottom: solid 2px black;
 }
 
 .navigation-dark {
-  background-color: black;
+  background-color: #121212;
   color: white;
   border-bottom: solid 2px #0a2351;
 }
@@ -14,7 +15,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   height: 65px;
-  border-bottom: solid 2px black;
 }
 .logo-name-container {
   display: flex;
