@@ -106,25 +106,31 @@ const SummaryApartments = () => {
                   <div className="summary-row">
                     <div className="summary__label">Vuokratulot</div>
                     <div className="summary__value__row">
-                      {summary?.monthlyRevenue} €/kk
+                      {parseFloat(summary?.monthlyRevenue * 1).toFixed(2)} €/kk
                     </div>
                   </div>
                   <div className="summary-row">
                     <div className="summary__label">Hoitovastikkeet</div>
                     <div className="summary__value__row">
-                      {summary?.monthlyMaintenanceCharge} €/kk
+                      {parseFloat(
+                        summary?.monthlyMaintenanceCharge * 1
+                      ).toFixed(2)}{" "}
+                      €/kk
                     </div>
                   </div>
                   <div className="summary-row">
                     <div className="summary__label">Rahoitusvastikkeet</div>
                     <div className="summary__value__row">
-                      {summary?.monthlyCapitalExpenditureCharge} €/kk
+                      {parseFloat(
+                        summary?.monthlyCapitalExpenditureCharge * 1
+                      ).toFixed(2)}{" "}
+                      €/kk
                     </div>
                   </div>
                   <div className="summary-row">
                     <div className="summary__label">Lainaerä</div>
                     <div className="summary__value__row">
-                      {summary?.loanMonthlyCost} €/kk
+                      {parseFloat(summary?.loanMonthlyCost * 1).toFixed(2)} €/kk
                     </div>
                   </div>
                 </div>
@@ -174,13 +180,13 @@ const SummaryApartments = () => {
                     Asuntojen velaton hinta yhteensä
                   </div>
                   <div className="summary__value">
-                    {summary?.originalCost} €
+                    {parseFloat(summary?.originalCost * 1).toFixed(2)} €
                   </div>
                   <div className="summary__second">
                     Asuntojen remontit yhteensä
                   </div>
                   <div className="summary__value">
-                    {summary?.totalRenovationCost} €
+                    {parseFloat(summary?.totalRenovationCost * 1).toFixed(2)} €
                   </div>
                 </div>
                 <br className="medium-br" />
