@@ -68,6 +68,17 @@
   width: 180px;
 }
 
+.detail__apartment {
+  width: 300px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.switch-row {
+  display: flex;
+  align-items: center;
+}
+
 .info__apartment {
   margin-right: 0.3rem;
   display: flex;

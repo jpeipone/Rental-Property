@@ -51,6 +51,10 @@
 
 .left__summary {
   max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .summary__header {
@@ -92,7 +96,11 @@
 }
 
 .left__summary__second {
-  width: 300px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .apartment-number-row {
@@ -143,4 +151,18 @@
 .medium-br {
   display: block;
   margin-bottom: 1.2rem;
+}
+
+/* compare apartments cashflowRanking and rentalincomePercentage */
+
+.compare-apartments {
+  display: flex;
+}
+
+@media only screen and (max-width: 940px) {
+  .compare-apartments {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
 }

@@ -9,6 +9,7 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 import CashFlowRanking from "../cashFlowRanking/CashFlowRanking";
+import RentalincomePercentage from "../rentalincomePercentage/RentalincomePercentage";
 
 const SummaryApartments = () => {
   const {
@@ -185,8 +186,16 @@ const SummaryApartments = () => {
                 <br className="medium-br" />
               </div>
 
-              <h4 className="summary__header">Vuokratuotto</h4>
-              <CashFlowRanking />
+              <div className="compare-apartments">
+                <div>
+                  <h4 className="summary__header">Vuokratuottoprosentti</h4>
+                  <RentalincomePercentage />
+                </div>
+                <div>
+                  <h4 className="summary__header">Kassavirta vuodessa</h4>
+                  <CashFlowRanking />
+                </div>
+              </div>
             </div>
           ))
         : null}

@@ -1,6 +1,8 @@
+import React from "react";
+
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../ContextUser";
-import "./CashFlowRanking.css";
+import "./RentalincomePercentage.css";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -12,7 +14,7 @@ import {
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 
-const CashFlowRanking = () => {
+const RentalincomePercentage = () => {
   const { setUserdata, setPortfolioUser, userdata, isLightMode } =
     useContext(UserContext);
 
@@ -20,10 +22,10 @@ const CashFlowRanking = () => {
   const options = {
     indexAxis: "y",
     /*   elements: {
-      bar: {
-        borderWidth: 4,
-      },
-    }, */
+          bar: {
+            borderWidth: 4,
+          },
+        }, */
 
     /*  responsive: true, */
     maintainAspectRatio: false,
@@ -33,7 +35,7 @@ const CashFlowRanking = () => {
       },
       title: {
         display: true,
-        text: "Kassavirta veroton",
+        text: "Vuokratuottoprosentti %",
         position: "bottom",
       },
     },
@@ -42,11 +44,14 @@ const CashFlowRanking = () => {
     labels,
     datasets: [
       {
-        label: "€",
+        label: "%",
         data: userdata.map((a) =>
           parseFloat(
-            a?.cashFlowMonthlyNoTax * 12 -
-              parseFloat(a?.monthlyRevenue * a?.emptyMonths)
+            (((a?.monthlyRevenue - a?.monthlyMaintenanceCharge) * 12) /
+              (a?.originalCost +
+                parseFloat(a?.totalCostWithTransferTax) +
+                parseFloat(a?.renovationTotalM2))) *
+              100
           ).toFixed(2)
         ),
         /* borderColor: "rgb(0,0,255,1)", */
@@ -62,4 +67,4 @@ const CashFlowRanking = () => {
   return <Bar options={options} data={data} className="bar-chart" />;
 };
 
-export default CashFlowRanking;
+export default RentalincomePercentage;

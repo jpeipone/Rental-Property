@@ -13,7 +13,6 @@ const Homepage = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
-  console.log("homepage is mode", isLightMode);
   return (
     <div className={isLightMode ? "homepage-light" : "homepage-dark"}>
       <Banner />
@@ -26,8 +25,6 @@ const Homepage = () => {
       </div>
 
       <ApartmentSlide />
-      <h2 className="app__header">Vuokratuotto</h2>
-      <CashFlowRanking />
     </div>
   );
 };
