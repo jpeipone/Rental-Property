@@ -169,7 +169,7 @@ const AddApartment = () => {
       totalCostWithTransferTax: totalCostWithTransferTax,
       capitalExpenditureCharge: temp_capitalExpenditureCharge,
     };
-    console.log("new apartment", newApartment);
+    //console.log("new apartment", newApartment); //shows apartment details
     setUserdata([...userdata, newApartment]);
     setAddedInvestment("Tarkastele asuntoa");
   };

@@ -8,6 +8,12 @@
   color: white;
 }
 
+.container-add-delete {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .add-new-apartment {
   width: 200px;
   height: 50px;
@@ -25,4 +31,18 @@
   text-align: right;
   font-size: 1.2rem;
   margin-left: 15px;
+}
+
+.homepage-delete-all {
+  width: 70px;
+  height: 50px;
+  border-radius: 50px;
+  display: flex;
+  color: #1f51ff;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-left: 10px;
+  cursor: pointer;
+  margin-right: 10px;
 }
