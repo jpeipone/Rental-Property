@@ -242,7 +242,73 @@ const ApartmentPage = () => {
               </div>
             </div>
           )}
+          {/* Renovations */}
+          {/* lineRenovation
+      pipeRepair
+      roofRepair
+      balconyRepair
+      windowRepair
+      facadeRepair
+      otherRepair */}
+          {apartmentDetails[0]?.lineRenovation !== 0 && (
+            <div className="info__apartment">
+              <label className="label__apartment">Linjasaneeraus</label>
+              <div className="detail__apartment">
+                {apartmentDetails[0]?.lineRenovation} €/m<sup>2</sup>
+              </div>
+            </div>
+          )}
+          {apartmentDetails[0]?.pipeRepair !== 0 && (
+            <div className="info__apartment">
+              <label className="label__apartment">Putkiremontti</label>
+              <div className="detail__apartment">
+                {apartmentDetails[0]?.pipeRepair} €/m<sup>2</sup>
+              </div>
+            </div>
+          )}
+          {apartmentDetails[0]?.roofRepair !== 0 && (
+            <div className="info__apartment">
+              <label className="label__apartment">Kattoremontti</label>
+              <div className="detail__apartment">
+                {apartmentDetails[0]?.roofRepair} €/m<sup>2</sup>
+              </div>
+            </div>
+          )}
 
+          {apartmentDetails[0]?.balconyRepair !== 0 && (
+            <div className="info__apartment">
+              <label className="label__apartment">Parvekeremontti</label>
+              <div className="detail__apartment">
+                {apartmentDetails[0]?.balconyRepair} €/m<sup>2</sup>
+              </div>
+            </div>
+          )}
+          {apartmentDetails[0]?.windowRepair !== 0 && (
+            <div className="info__apartment">
+              <label className="label__apartment">Ikkunaremontti</label>
+              <div className="detail__apartment">
+                {apartmentDetails[0]?.windowRepair} €/m<sup>2</sup>
+              </div>
+            </div>
+          )}
+          {apartmentDetails[0]?.facadeRepair !== 0 && (
+            <div className="info__apartment">
+              <label className="label__apartment">Julkisivuremontti</label>
+              <div className="detail__apartment">
+                {apartmentDetails[0]?.facadeRepair} €/m<sup>2</sup>
+              </div>
+            </div>
+          )}
+          {apartmentDetails[0]?.otherRepair !== 0 && (
+            <div className="info__apartment">
+              <label className="label__apartment">Muut remontit</label>
+              <div className="detail__apartment">
+                {apartmentDetails[0]?.otherRepair} €/m<sup>2</sup>
+              </div>
+            </div>
+          )}
+
+          {/* Renovations total*/}
           <div className="info__apartment">
             <label className="label__apartment">Remontit yht.</label>
             <div className="detail__apartment">
@@ -304,7 +370,7 @@ const ApartmentPage = () => {
           </Link>
           <Link to="/uusi" onClick={handleScrollToTop}>
             <div className="column__icon__text">
-              <AddCircleIcon className="icon-symbol" fontSize="large" />
+              <AddCircleIcon className="icon-add-symbol" fontSize="large" />
               Uusi
             </div>
           </Link>
@@ -313,7 +379,10 @@ const ApartmentPage = () => {
             className="column__icon__text"
             onClick={() => handleDeleteApartment(apartmentDetails[0]?.id)}
           >
-            <DeleteForeverIcon className="icon-symbol" fontSize="large" />
+            <DeleteForeverIcon
+              className="icon-delete-symbol"
+              fontSize="large"
+            />
             Poista
           </div>
         </div>
