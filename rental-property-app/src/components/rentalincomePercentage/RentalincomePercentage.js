@@ -21,13 +21,13 @@ const RentalincomePercentage = () => {
   const labels = userdata.map((a) => a?.address.slice(0, 10));
   const options = {
     indexAxis: "y",
-    /*   elements: {
-          bar: {
-            borderWidth: 4,
-          },
-        }, */
-
-    /*  responsive: true, */
+    scales: {
+      y: {
+        grid: {
+          display: false,
+        },
+      },
+    },
     maintainAspectRatio: false,
     plugins: {
       legend: {

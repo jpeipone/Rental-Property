@@ -19,13 +19,13 @@ const CashFlowRanking = () => {
   const labels = userdata.map((a) => a?.address.slice(0, 10));
   const options = {
     indexAxis: "y",
-    /*   elements: {
-      bar: {
-        borderWidth: 4,
+    scales: {
+      y: {
+        grid: {
+          display: false,
+        },
       },
-    }, */
-
-    /*  responsive: true, */
+    },
     maintainAspectRatio: false,
     plugins: {
       legend: {

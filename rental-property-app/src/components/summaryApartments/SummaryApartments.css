@@ -70,7 +70,7 @@
 }
 .summary__label {
   margin-left: 15px;
-  width: 140px;
+  width: 150px;
 }
 
 .summary__value {
@@ -81,7 +81,7 @@
 
 .summary__value__row {
   /* width: 160px; */
-  width: 330px;
+  width: 320px;
   text-align: right;
   font-weight: medium;
   margin-right: 15px;

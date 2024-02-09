@@ -175,20 +175,23 @@ const SummaryApartments = () => {
                   </div>
                 </div>
                 <br />
-                <div className="left__summary__second">
-                  <div className="summary__second">
-                    Asuntojen velaton hinta yhteensä
+                <div className="left__summary">
+                  <h4 className="summary__header">Asunnot</h4>
+                  <div className="summary-row">
+                    <div className="summary__label">Velaton hinta yht.</div>
+                    <div className="summary__value__row">
+                      {parseFloat(summary?.originalCost * 1).toFixed(2)} €
+                    </div>
                   </div>
-                  <div className="summary__value">
-                    {parseFloat(summary?.originalCost * 1).toFixed(2)} €
-                  </div>
-                  <div className="summary__second">
-                    Asuntojen remontit yhteensä
-                  </div>
-                  <div className="summary__value">
-                    {parseFloat(summary?.totalRenovationCost * 1).toFixed(2)} €
+                  <div className="summary-row">
+                    <div className="summary__label">Remontit yht.</div>
+                    <div className="summary__value__row">
+                      {parseFloat(summary?.totalRenovationCost * 1).toFixed(2)}{" "}
+                      €
+                    </div>
                   </div>
                 </div>
+
                 <br className="medium-br" />
               </div>
 

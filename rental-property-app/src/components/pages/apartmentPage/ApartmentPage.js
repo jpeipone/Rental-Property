@@ -237,8 +237,8 @@ const ApartmentPage = () => {
             <div className="info__apartment">
               <label className="label__apartment">Varainsiirtovero</label>
               <div className="detail__apartment">
-                {apartmentDetails[0]?.totalCostWithTransferTax} €{"  "} (
-                {apartmentDetails[0]?.transferTax}%)
+                ({apartmentDetails[0]?.transferTax}%) {"  "}
+                {apartmentDetails[0]?.totalCostWithTransferTax} €
               </div>
             </div>
           )}
