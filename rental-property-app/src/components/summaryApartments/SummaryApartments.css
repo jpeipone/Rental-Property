@@ -89,20 +89,6 @@
   margin-bottom: 5px;
 }
 
-.summary__second {
-  width: 300px;
-  margin-left: 15px;
-  margin-bottom: 4px;
-}
-
-.left__summary__second {
-  max-width: 500px;
-  display: flex;
-  flex-direction: column;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .apartment-number-row {
   display: flex;
   flex-direction: row;
@@ -157,9 +143,10 @@
 
 .compare-apartments {
   display: flex;
+  max-width: 720px;
 }
 
-@media only screen and (max-width: 940px) {
+@media only screen and (max-width: 740px) {
   .compare-apartments {
     display: flex;
     flex-direction: column;

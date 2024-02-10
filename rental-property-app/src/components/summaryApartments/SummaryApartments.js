@@ -100,7 +100,7 @@ const SummaryApartments = () => {
                   </div>
                 </div>
                 {/*  apartments number ends */}
-
+                {/*  In a month starts */}
                 <div className="left__summary">
                   <h4 className="summary__header">Kuukaudessa</h4>
                   <div className="summary-row">
@@ -194,7 +194,8 @@ const SummaryApartments = () => {
 
                 <br className="medium-br" />
               </div>
-
+              <br className="medium-br" />
+              <h2 className="summary__header">Asuntojen vertailu</h2>
               <div className="compare-apartments">
                 <div>
                   <h4 className="summary__header">Vuokratuottoprosentti</h4>
