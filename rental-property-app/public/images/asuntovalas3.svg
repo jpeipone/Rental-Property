@@ -7,5 +7,4 @@
 <circle cx="30" cy="10" r="2" fill="white"/>
 <rect x="19" width="4" height="3" fill="#1F51FF"/>
 <path d="M8 14.5L10 15.5L11 20.5H9L5 13.5L3.5 10.5L2 8L6 9.5V6L8 14.5Z" fill="#1F51FF" stroke="#1F51FF"/>
-<line x1="13.15" y1="5.98501" x2="35.8" y2="5.98501" stroke="#1F51FF" stroke-width="0.23"/>
 </svg>

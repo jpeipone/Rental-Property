@@ -1,6 +1,6 @@
 {
   "short_name": "Asunto Valas",
-  "name": "Asunto Valas",
+  "name": "AsuntoValas",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,9 +8,9 @@
       "type": "image/x-icon"
     },
     {
-      "src": "apartmentwhalelogo.png",
-      "type": "image/png",
-      "sizes": "792x604"
+      "src": "asuntovalas.jpg",
+      "type": "image/jpg",
+      "sizes": "181x180"
     }
   ],
   "start_url": ".",

@@ -54,11 +54,10 @@ const RentalincomePercentage = () => {
               100
           ).toFixed(2)
         ),
-        /* borderColor: "rgb(0,0,255,1)", */
-        /*  backgroundColor: "rgba(82, 179, 217,1)", */
+
         backgroundColor: (apar) => {
           const value = apar.dataset.data[apar.dataIndex];
-          return value < 0 ? "red" : "rgba(82, 179, 217)";
+          return value < 0 ? "red" : "rgba(31, 81, 255)";
         },
       },
     ],
