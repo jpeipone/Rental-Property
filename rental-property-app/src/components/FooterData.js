@@ -37,8 +37,12 @@ const FooterData = () => {
         </div>
         <br />
         <div className="footer-text">
-          <p>Asuntosijoittajille tehty laskuri</p>
-          <p>Laskurin arvot voivat sisältää virheitä</p>
+          <p>
+            Sivuston sisältö on tarkoitettu suuntaa-antavaksi, ja sitä ei ole
+            tarkoitettu sijoituspäätöksen tekemiseen. Sivustolla voi ilmetä
+            virheitä, kuten laskurin laskukaavoissa. Laskurin tarkkuus ei
+            välttämättä ole ajantasalla, joten käytä omalla harkinnallasi.
+          </p>
         </div>
         <div className="footer-text-copyright">
           <p>&copy; AsuntoValas</p>

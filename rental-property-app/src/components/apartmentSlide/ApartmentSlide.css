@@ -1,13 +1,13 @@
 .apartment-slide-light {
   width: 100%;
-  min-height: 500px;
+  min-height: 600px;
   background-color: white;
   color: black;
 }
 
 .apartment-slide-dark {
   width: 100%;
-  min-height: 500px;
+  min-height: 600px;
   background-color: #121212;
   color: white;
 }

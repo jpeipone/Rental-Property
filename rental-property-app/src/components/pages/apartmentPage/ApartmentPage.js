@@ -243,13 +243,7 @@ const ApartmentPage = () => {
             </div>
           )}
           {/* Renovations */}
-          {/* lineRenovation
-      pipeRepair
-      roofRepair
-      balconyRepair
-      windowRepair
-      facadeRepair
-      otherRepair */}
+
           {apartmentDetails[0]?.lineRenovation !== 0 && (
             <div className="info__apartment">
               <label className="label__apartment">Linjasaneeraus</label>
