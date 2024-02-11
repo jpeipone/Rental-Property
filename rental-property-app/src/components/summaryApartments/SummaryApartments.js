@@ -48,40 +48,37 @@ const SummaryApartments = () => {
       {usersApartmentSummary
         ? usersApartmentSummary?.map((summary) => (
             <div className="summary-container" key={summary?.id}>
-              <h2 className="summary__header">Asuntojesi kooste</h2>
-              {/*     In a month */}
-              {/* cashflow container starts */}
-              <div className="cashflow-container">
-                <h4 className="cashflow__hd">Kassavirta veroton</h4>
-                <div className="cashflow__value">
-                  {parseFloat(
-                    summary?.monthlyRevenue -
-                      summary?.monthlyMaintenanceCharge -
-                      summary?.loanMonthlyCost -
-                      summary?.monthlyCapitalExpenditureCharge
-                  ).toFixed(2)}{" "}
-                  €/kk
+              <div className="header-cashflow-month-year">
+                <h2 className="summary__header">Asuntojesi kooste</h2>
+                {/*     In a month */}
+                {/* cashflow container starts */}
+                <div className="cashflow-container">
+                  <br className="medium-br" />
+                  <h4 className="cashflow__hd">Kassavirta veroton</h4>
+                  <div className="cashflow__value">
+                    {parseFloat(
+                      summary?.monthlyRevenue -
+                        summary?.monthlyMaintenanceCharge -
+                        summary?.loanMonthlyCost -
+                        summary?.monthlyCapitalExpenditureCharge
+                    ).toFixed(2)}{" "}
+                    €/kk
+                  </div>
+                  <div className="cashflow__value">
+                    {parseFloat(
+                      summary?.monthlyRevenue * 12 -
+                        summary?.monthlyMaintenanceCharge * 12 -
+                        summary?.loanMonthlyCost * 12 -
+                        summary?.monthlyCapitalExpenditureCharge * 12 -
+                        summary?.emptyMonthsYearlyLoss
+                    ).toFixed(2)}{" "}
+                    €/v
+                  </div>
                 </div>
-                <div className="cashflow__value">
-                  {parseFloat(
-                    summary?.monthlyRevenue * 12 -
-                      summary?.monthlyMaintenanceCharge * 12 -
-                      summary?.loanMonthlyCost * 12 -
-                      summary?.monthlyCapitalExpenditureCharge * 12 -
-                      summary?.emptyMonthsYearlyLoss
-                  ).toFixed(2)}{" "}
-                  €/v
-                </div>
-              </div>
 
-              {/* cashflow container ends */}
+                {/* cashflow container ends */}
 
-              {/*  apartment number start */}
-              <div
-                className={
-                  isLightMode ? "summary-wrapper-light" : "summary-wrapper-dark"
-                }
-              >
+                {/*  apartment number start */}
                 <div className="apartment-number-row">
                   <div className="row-icons">
                     <Link to="/asunnot" onClick={handleScrollToTop}>
@@ -99,83 +96,121 @@ const SummaryApartments = () => {
                     />
                   </div>
                 </div>
-                {/*  apartments number ends */}
-                {/*  In a month starts */}
-                <div className="left__summary">
-                  <h4 className="summary__header">Kuukaudessa</h4>
-                  <div className="summary-row">
-                    <div className="summary__label">Vuokratulot</div>
-                    <div className="summary__value__row">
-                      {parseFloat(summary?.monthlyRevenue * 1).toFixed(2)} €/kk
+                <div
+                  className={
+                    isLightMode
+                      ? "summary-wrapper-light"
+                      : "summary-wrapper-dark"
+                  }
+                >
+                  {/*  In a month starts */}
+                  <div className="left__summary">
+                    <br className="medium-br" />
+                    <h4 className="summary__header">Kuukaudessa</h4>
+                    <div className="summary-row">
+                      <div className="summary__label">Vuokratulot</div>
+                      <div className="summary__value__row">
+                        {parseFloat(summary?.monthlyRevenue * 1).toFixed(2)}{" "}
+                        €/kk
+                      </div>
+                    </div>
+                    <div className="summary-row">
+                      <div className="summary__label">Hoitovastikkeet</div>
+                      <div className="summary__value__row">
+                        {parseFloat(
+                          summary?.monthlyMaintenanceCharge * 1
+                        ).toFixed(2)}{" "}
+                        €/kk
+                      </div>
+                    </div>
+                    <div className="summary-row">
+                      <div className="summary__label">Rahoitusvastikkeet</div>
+                      <div className="summary__value__row">
+                        {parseFloat(
+                          summary?.monthlyCapitalExpenditureCharge * 1
+                        ).toFixed(2)}{" "}
+                        €/kk
+                      </div>
+                    </div>
+                    <div className="summary-row">
+                      <div className="summary__label">Lainaerä</div>
+                      <div className="summary__value__row">
+                        {parseFloat(summary?.loanMonthlyCost * 1).toFixed(2)}{" "}
+                        €/kk
+                      </div>
                     </div>
                   </div>
-                  <div className="summary-row">
-                    <div className="summary__label">Hoitovastikkeet</div>
-                    <div className="summary__value__row">
-                      {parseFloat(
-                        summary?.monthlyMaintenanceCharge * 1
-                      ).toFixed(2)}{" "}
-                      €/kk
-                    </div>
-                  </div>
-                  <div className="summary-row">
-                    <div className="summary__label">Rahoitusvastikkeet</div>
-                    <div className="summary__value__row">
-                      {parseFloat(
-                        summary?.monthlyCapitalExpenditureCharge * 1
-                      ).toFixed(2)}{" "}
-                      €/kk
-                    </div>
-                  </div>
-                  <div className="summary-row">
-                    <div className="summary__label">Lainaerä</div>
-                    <div className="summary__value__row">
-                      {parseFloat(summary?.loanMonthlyCost * 1).toFixed(2)} €/kk
-                    </div>
-                  </div>
-                </div>
-                <br className="medium-br" />
-                {/*     In a year */}
+                  <br className="medium-br" />
 
-                <div className="left__summary">
-                  <h4 className="summary__header">Vuodessa</h4>
-                  <div className="summary-row">
-                    <div className="summary__label">Vuokratulot</div>
-                    <div className="summary__value__row">
-                      {parseFloat(
-                        summary?.monthlyRevenue * 12 -
-                          summary?.emptyMonthsYearlyLoss
-                      ).toFixed(2)}{" "}
-                      €/v
+                  <br className="medium-br" />
+                  {/*     In a year */}
+
+                  <div className="left__summary">
+                    <h4 className="summary__header">Vuodessa</h4>
+                    <div className="summary-row">
+                      <div className="summary__label">Vuokratulot</div>
+                      <div className="summary__value__row">
+                        {parseFloat(
+                          summary?.monthlyRevenue * 12 -
+                            summary?.emptyMonthsYearlyLoss
+                        ).toFixed(2)}{" "}
+                        €/v
+                      </div>
                     </div>
-                  </div>
-                  <div className="summary-row">
-                    <div className="summary__label">Hoitovastikkeet</div>
-                    <div className="summary__value__row">
-                      {parseFloat(
-                        summary?.monthlyMaintenanceCharge * 12
-                      ).toFixed(2)}{" "}
-                      €/v
+                    <div className="summary-row">
+                      <div className="summary__label">Hoitovastikkeet</div>
+                      <div className="summary__value__row">
+                        {parseFloat(
+                          summary?.monthlyMaintenanceCharge * 12
+                        ).toFixed(2)}{" "}
+                        €/v
+                      </div>
                     </div>
-                  </div>
-                  <div className="summary-row">
-                    <div className="summary__label">Rahoitusvastikkeet</div>
-                    <div className="summary__value__row">
-                      {parseFloat(
-                        summary?.monthlyCapitalExpenditureCharge * 12
-                      ).toFixed(2)}{" "}
-                      €/v
+                    <div className="summary-row">
+                      <div className="summary__label">Rahoitusvastikkeet</div>
+                      <div className="summary__value__row">
+                        {parseFloat(
+                          summary?.monthlyCapitalExpenditureCharge * 12
+                        ).toFixed(2)}{" "}
+                        €/v
+                      </div>
                     </div>
+                    <div className="summary-row">
+                      <div className="summary__label">Lainaerä</div>
+                      <div className="summary__value__row">
+                        {parseFloat(summary?.loanMonthlyCost * 12).toFixed(2)}{" "}
+                        €/v
+                      </div>
+                    </div>
+
+                    <br className="medium-br" />
                   </div>
-                  <div className="summary-row">
-                    <div className="summary__label">Lainaerä</div>
-                    <div className="summary__value__row">
-                      {parseFloat(summary?.loanMonthlyCost * 12).toFixed(2)} €/v
+                </div>
+              </div>
+              <br className="medium-br" />
+              <div className="container-compare-and-apartment">
+                <div className="container-compare-apartments">
+                  <h2 className="summary__header__2">Asuntojen vertailu</h2>
+                  <br className="min-br" />
+                  <div
+                    className={
+                      isLightMode
+                        ? "compare-apartments"
+                        : "compare-apartments-dark"
+                    }
+                  >
+                    <div>
+                      <h4 className="summary__header">Vuokratuottoprosentti</h4>
+                      <RentalincomePercentage />
+                    </div>
+                    <div>
+                      <h4 className="summary__header">Kassavirta vuodessa</h4>
+                      <CashFlowRanking />
                     </div>
                   </div>
                 </div>
-                <br />
-                <div className="left__summary">
+                <div className="bottom__summary">
+                  <br className="medium-br" />
                   <h4 className="summary__header">Asunnot</h4>
                   <div className="summary-row">
                     <div className="summary__label">Velaton hinta yht.</div>
@@ -190,22 +225,12 @@ const SummaryApartments = () => {
                       €
                     </div>
                   </div>
+                  <br className="medium-br" />
                 </div>
-
-                <br className="medium-br" />
               </div>
               <br className="medium-br" />
-              <h2 className="summary__header">Asuntojen vertailu</h2>
-              <div className="compare-apartments">
-                <div>
-                  <h4 className="summary__header">Vuokratuottoprosentti</h4>
-                  <RentalincomePercentage />
-                </div>
-                <div>
-                  <h4 className="summary__header">Kassavirta vuodessa</h4>
-                  <CashFlowRanking />
-                </div>
-              </div>
+              <br className="medium-br" />
+              <br className="medium-br" />
             </div>
           ))
         : null}

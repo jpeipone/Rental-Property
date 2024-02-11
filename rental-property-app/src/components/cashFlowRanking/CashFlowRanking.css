@@ -3,7 +3,7 @@
   max-height: 450px;
 }
 
-@media only screen and (max-width: 739px) {
+@media only screen and (max-width: 738px) {
   .bar-chart {
     max-width: 500px;
     max-height: 400px;

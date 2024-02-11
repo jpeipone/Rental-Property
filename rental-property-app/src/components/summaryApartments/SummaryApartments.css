@@ -1,5 +1,5 @@
 .summary-apartments-light {
-  background-color: white;
+  background-color: #f5f5f5;
   color: black;
 }
 
@@ -17,7 +17,8 @@
 }
 
 .summary-wrapper-light {
-  box-shadow: 0 4px 12px rgb(0 0 0 / 0.4);
+  /* box-shadow: 0 2px 12px rgb(0 0 0 / 0.4); */
+  background-color: white;
   border-radius: 10px;
   margin-bottom: 15px;
 }
@@ -32,11 +33,12 @@
   height: 160px;
   background-color: #1f51ff;
   border-radius: 10px;
-  margin: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 15px;
 }
 
 .cashflow__hd {
-  margin-top: 25px;
   text-align: center;
   color: white;
 }
@@ -57,8 +59,27 @@
   margin-right: auto;
 }
 
+.bottom__summary {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #1f51ff;
+  color: white;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
 .summary__header {
   margin: 15px;
+}
+
+.summary__header__2 {
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-right: 15px;
+  margin-bottom: 10px;
 }
 
 .summary-row {
@@ -96,6 +117,7 @@
   margin-left: auto;
   margin-right: auto;
   gap: 1.5em;
+  margin-bottom: 10px;
 }
 
 .row-icons {
@@ -112,12 +134,13 @@
   color: #1f51ff;
   margin-top: 12px;
   margin-left: 7px;
+  margin-right: 15px;
 }
 
 .delete-icon {
   color: #1f51ff;
   margin-top: 12px;
-  margin-left: 35px;
+  margin-left: 20px;
   cursor: pointer;
 }
 
@@ -144,12 +167,51 @@
 .compare-apartments {
   display: flex;
   max-width: 720px;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
 
-@media only screen and (max-width: 740px) {
+.compare-apartments-dark {
+  display: flex;
+  max-width: 720px;
+  background-color: #121212;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border: 3px solid #1c1c1c;
+}
+
+@media only screen and (max-width: 739px) {
   .compare-apartments {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
+  }
+  .compare-apartments-dark {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border: 3px solid #1c1c1c;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .summary-container {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1300px;
+  }
+  .cashflow-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header-cashflow-month-year {
+    display: flex;
+    flex-direction: column;
+    margin-right: 25px;
+    margin-left: 15px;
   }
 }
