@@ -209,7 +209,11 @@ const SummaryApartments = () => {
                     </div>
                   </div>
                 </div>
-                <div className="bottom__summary">
+                <div
+                  className={
+                    isLightMode ? "bottom__summary" : "bottom__summary__dark"
+                  }
+                >
                   <br className="medium-br" />
                   <h4 className="summary__header">Asunnot</h4>
                   <div className="summary-row">
