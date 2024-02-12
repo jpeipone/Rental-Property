@@ -214,22 +214,43 @@ const SummaryApartments = () => {
                     isLightMode ? "bottom__summary" : "bottom__summary__dark"
                   }
                 >
-                  <br className="medium-br" />
-                  <h4 className="summary__header">Asunnot</h4>
-                  <div className="summary-row">
-                    <div className="summary__label">Velaton hinta yht.</div>
-                    <div className="summary__value__row">
-                      {parseFloat(summary?.originalCost * 1).toFixed(2)} €
+                  <div
+                    className={
+                      isLightMode
+                        ? "apartments-cost-renovation"
+                        : "apartments-cost-renovation__dark"
+                    }
+                  >
+                    <h4 className="summary__header">Asunnot</h4>
+                    <div className="summary-column">
+                      <div className="summary__label">Velaton hinta yht.</div>
+                      <div className="summary__value__column">
+                        {parseFloat(summary?.originalCost * 1).toFixed(2)} €
+                      </div>
+                    </div>
+                    <div className="summary-column">
+                      <div className="summary__label">Remontit yht.</div>
+                      <div className="summary__value__column">
+                        {parseFloat(summary?.totalRenovationCost * 1).toFixed(
+                          2
+                        )}{" "}
+                        €
+                      </div>
                     </div>
                   </div>
-                  <div className="summary-row">
-                    <div className="summary__label">Remontit yht.</div>
-                    <div className="summary__value__row">
-                      {parseFloat(summary?.totalRenovationCost * 1).toFixed(2)}{" "}
-                      €
-                    </div>
+                  <div
+                    className={
+                      isLightMode
+                        ? "apartments-cost-renovation__2"
+                        : "apartments-cost-renovation__2__dark"
+                    }
+                  >
+                    <img
+                      src="./images/asuntovalas.svg"
+                      className="summary-logo"
+                      alt="AsuntoValas"
+                    />
                   </div>
-                  <br className="medium-br" />
                 </div>
               </div>
               <br className="medium-br" />

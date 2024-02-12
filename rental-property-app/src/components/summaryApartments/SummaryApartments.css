@@ -60,34 +60,6 @@
   margin-right: auto;
 }
 
-.bottom__summary {
-  max-width: 720px;
-  display: flex;
-  flex-direction: column;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: white;
-  color: black;
-  border-radius: 20px;
-  margin-top: 30px;
-  height: 171px;
-  box-shadow: 0 2px 4px rgb(0 0 0 / 0.2);
-}
-
-.bottom__summary__dark {
-  max-width: 720px;
-  display: flex;
-  flex-direction: column;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #121212;
-  border: 3px solid #1c1c1c;
-  color: white;
-  border-radius: 20px;
-  margin-top: 30px;
-  height: 167px;
-}
-
 .summary__header {
   margin: 15px;
 }
@@ -129,6 +101,13 @@
   margin-right: 15px;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.summary__value__column {
+  margin-left: 15px;
+  width: 150px;
+  margin-bottom: 10px;
+  margin-top: 2px;
 }
 
 .apartment-number-row {
@@ -203,6 +182,77 @@
   border: 3px solid #1c1c1c;
 }
 
+.bottom__summary {
+  max-width: 720px;
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  color: black;
+  border-radius: 20px;
+  margin-top: 30px;
+  height: 171px;
+}
+
+.bottom__summary__dark {
+  max-width: 720px;
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #121212;
+  color: white;
+  border-radius: 20px;
+  margin-top: 30px;
+  height: 167px;
+}
+
+.apartments-cost-renovation {
+  width: 390px;
+  height: 171px;
+  border-radius: 20px;
+  background-color: white;
+  margin-right: 25px;
+
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.2);
+}
+
+.apartments-cost-renovation__dark {
+  width: 390px;
+  height: 167px;
+  border-radius: 20px;
+  background-color: #121212;
+  margin-right: 25px;
+
+  border: 3px solid #1c1c1c;
+}
+
+.apartments-cost-renovation__2 {
+  width: 300px;
+  height: 171px;
+  border-radius: 20px;
+  background-color: white;
+
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.2);
+}
+.apartments-cost-renovation__2__dark {
+  width: 300px;
+  height: 167px;
+  border-radius: 20px;
+  background-color: #121212;
+
+  border: 3px solid #1c1c1c;
+}
+
+.summary-logo {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  margin-top: 50px;
+}
+
 @media only screen and (max-width: 739px) {
   .compare-apartments {
     display: flex;
@@ -252,5 +302,9 @@
 
   .summary__value__row {
     margin-right: 35px;
+  }
+
+  .summary__value__column {
+    margin-left: 35px;
   }
 }
