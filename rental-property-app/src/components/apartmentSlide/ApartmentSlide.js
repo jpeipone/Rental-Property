@@ -40,43 +40,40 @@ const ApartmentSlide = () => {
                     </div>
                   </div>
                   <div className="row-apartment">
-                    <div className="apartment__label">hoitovastike</div>
+                    <div className="apartment__label">Hoitovastike</div>
                     <div className="apartment__data">
                       {apartment?.monthlyMaintenanceCharge}€/kk
                     </div>
                   </div>
 
                   <div className="row-apartment">
-                    <div className="apartment__label">rahoitusvastike</div>
+                    <div className="apartment__label">Rahoitusvastike</div>
                     <div className="apartment__data">
                       {apartment?.capitalExpenditureCharge}€/kk
                     </div>
                   </div>
 
                   <div className="row-apartment">
-                    <div className="apartment__label">velaton hinta</div>
+                    <div className="apartment__label">Velaton hinta</div>
 
                     <div className="apartment__data">
                       {apartment?.originalCost}€
                     </div>
                   </div>
                   <div className="row-apartment">
-                    <div className="apartment__label">lainaerä </div>
+                    <div className="apartment__label">Lainaerä </div>
 
-                    {apartment?.loanMonthlyCost && (
-                      <div className="apartment__data">
-                        {apartment?.loanMonthlyCost}
-                        €/kk
-                      </div>
-                    )}
+                    <div className="apartment__data">
+                      {apartment?.loanMonthlyCost}
+                      €/kk
+                    </div>
                   </div>
                   <div className="row-apartment">
-                    <div className="apartment__label">tyhjät kuukaudet </div>
-                    {apartment?.emptyMonths && (
-                      <div className="apartment__data">
-                        {apartment?.emptyMonths}
-                      </div>
-                    )}
+                    <div className="apartment__label">Tyhjät kuukaudet </div>
+
+                    <div className="apartment__data">
+                      {apartment?.emptyMonths} kk
+                    </div>
                   </div>
 
                   <div className="row-apartment column">

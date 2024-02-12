@@ -13,7 +13,7 @@ const FooterData = () => {
     <div className={isLightMode ? "footer-light" : "footer-dark"}>
       <div className="footer-container">
         <div className="footer-logo-name">
-          <img src="./images/asuntovalas.svg" className="footer-logo" />
+          <img src="./images/asuntovalas.svg" className="footer-logo" alt=" " />
           <div className="footer__header">AsuntoValas</div>
         </div>
         <div className="footer-row">

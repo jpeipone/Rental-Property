@@ -62,9 +62,10 @@
   width: 150px;
 }
 .apartment__data {
-  max-width: 120px;
+  width: 150px;
   text-align: right;
   font-weight: bold;
+  margin-right: 15px;
 }
 
 .row-apartment.column {
