@@ -49,7 +49,7 @@ const SummaryApartments = () => {
         ? usersApartmentSummary?.map((summary) => (
             <div className="summary-container" key={summary?.id}>
               <div className="header-cashflow-month-year">
-                <h2 className="summary__header">Asuntojesi kooste</h2>
+                <h2 className="summary__header__1">Asuntojesi kooste</h2>
                 {/*     In a month */}
                 {/* cashflow container starts */}
                 <div className="cashflow-container">

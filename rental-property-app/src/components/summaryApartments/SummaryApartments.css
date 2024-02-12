@@ -1,5 +1,6 @@
 .summary-apartments-light {
   background-color: #f5f5f5;
+  /* background-color: white; */
   color: black;
 }
 
@@ -17,12 +18,10 @@
 }
 
 .summary-wrapper-light {
-  /* box-shadow: 0 2px 12px rgb(0 0 0 / 0.4); */
   background-color: white;
   border-radius: 20px;
   margin-bottom: 15px;
-
-  box-shadow: 0 4px 4px rgb(0 0 0 / 0.2);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.2);
 }
 
 .summary-wrapper-dark {
@@ -72,7 +71,7 @@
   border-radius: 20px;
   margin-top: 30px;
   height: 171px;
-  box-shadow: 0 4px 4px rgb(0 0 0 / 0.2);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.2);
 }
 
 .bottom__summary__dark {
@@ -90,6 +89,10 @@
 }
 
 .summary__header {
+  margin: 15px;
+}
+
+.summary__header__1 {
   margin: 15px;
 }
 
@@ -188,7 +191,7 @@
   background-color: white;
   border-radius: 20px;
   margin-bottom: 15px;
-  box-shadow: 0 4px 4px rgb(0 0 0 / 0.2);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.2);
 }
 
 .compare-apartments-dark {
@@ -237,5 +240,17 @@
   .cashflow-container {
     margin-left: 0;
     margin-right: 0;
+  }
+
+  .summary__header {
+    margin-left: 35px;
+  }
+
+  .summary__label {
+    margin-left: 35px;
+  }
+
+  .summary__value__row {
+    margin-right: 35px;
   }
 }
