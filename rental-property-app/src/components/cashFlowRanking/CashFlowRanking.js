@@ -33,7 +33,7 @@ const CashFlowRanking = () => {
       },
       title: {
         display: true,
-        text: "Kassavirta veroton",
+        text: "€",
         position: "bottom",
       },
     },

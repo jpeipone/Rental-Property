@@ -35,7 +35,7 @@ const RentalincomePercentage = () => {
       },
       title: {
         display: true,
-        text: "Vuokratuottoprosentti %",
+        text: "%",
         position: "bottom",
       },
     },
