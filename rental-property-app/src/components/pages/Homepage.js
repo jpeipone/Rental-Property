@@ -36,7 +36,7 @@ const Homepage = () => {
           className="homepage-delete-all"
           onClick={handleDeleteAllApartments}
         >
-          <DeleteForeverIcon fontSize="large" /> {"x"} {userdata.length}
+          <DeleteForeverIcon fontSize="large" /> {userdata.length}
         </div>
       </div>
       <ApartmentSlide />

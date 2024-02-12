@@ -84,16 +84,16 @@ const SummaryApartments = () => {
                     <Link to="/asunnot" onClick={handleScrollToTop}>
                       <HomeIcon className="home-icon" fontSize="large" />
                     </Link>
-                    <div className="apartment-number"> x {userdata.length}</div>
-                  </div>
-                  <Link to="/uusi" onClick={handleScrollToTop}>
-                    <AddCircleIcon className="add-icon" fontSize="large" />
-                  </Link>
-                  <div onClick={handleDeleteAllApartments}>
-                    <DeleteForeverIcon
-                      className="delete-icon"
-                      fontSize="large"
-                    />
+
+                    <Link to="/uusi" onClick={handleScrollToTop}>
+                      <AddCircleIcon className="add-icon" fontSize="large" />
+                    </Link>
+                    <div onClick={handleDeleteAllApartments}>
+                      <DeleteForeverIcon
+                        className="delete-icon"
+                        fontSize="large"
+                      />
+                    </div>
                   </div>
                 </div>
                 <div
@@ -221,15 +221,15 @@ const SummaryApartments = () => {
                         : "apartments-cost-renovation__dark"
                     }
                   >
-                    <h4 className="summary__header">Asunnot</h4>
+                    <h4 className="summary__header">Velaton hinta yht.</h4>
                     <div className="summary-column">
-                      <div className="summary__label">Velaton hinta yht.</div>
                       <div className="summary__value__column">
                         {parseFloat(summary?.originalCost * 1).toFixed(2)} €
                       </div>
                     </div>
                     <div className="summary-column">
-                      <div className="summary__label">Remontit yht.</div>
+                      <h4 className="summary__header">Remontit yht.</h4>
+
                       <div className="summary__value__column">
                         {parseFloat(summary?.totalRenovationCost * 1).toFixed(
                           2
@@ -245,11 +245,8 @@ const SummaryApartments = () => {
                         : "apartments-cost-renovation__2__dark"
                     }
                   >
-                    <img
-                      src="./images/asuntovalas.svg"
-                      className="summary-logo"
-                      alt="AsuntoValas"
-                    />
+                    <h4 className="summary__header">Asuntoja</h4>
+                    <div className="summary-number">{userdata.length}</div>
                   </div>
                 </div>
               </div>
