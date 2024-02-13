@@ -139,12 +139,10 @@ const SummaryApartments = () => {
                         €/kk
                       </div>
                     </div>
-                  </div>
+                  </div>{" "}
                   <br className="medium-br" />
-
                   <br className="medium-br" />
                   {/*     In a year */}
-
                   <div className="left__summary">
                     <h4 className="summary__header">Vuodessa</h4>
                     <div className="summary-row">
@@ -250,7 +248,6 @@ const SummaryApartments = () => {
                   </div>
                 </div>
               </div>
-              <br className="medium-br" />
               <br className="medium-br" />
               <br className="medium-br" />
             </div>
