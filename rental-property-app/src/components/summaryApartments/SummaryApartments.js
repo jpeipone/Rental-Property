@@ -141,7 +141,6 @@ const SummaryApartments = () => {
                     </div>
                   </div>{" "}
                   <br className="medium-br" />
-                  <br className="medium-br" />
                   {/*     In a year */}
                   <div className="left__summary">
                     <h4 className="summary__header">Vuodessa</h4>
