@@ -167,6 +167,7 @@
   display: flex;
   max-width: 720px;
   background-color: white;
+
   border-radius: 20px;
   margin-bottom: 15px;
   box-shadow: rgba(0, 0, 0, 0.06) 0px 6px 20px 0px,
@@ -316,5 +317,9 @@
 
   .summary__value__column {
     margin-left: 35px;
+  }
+
+  .compare-apartments {
+    background-color: hsl(0, 0%, 98%);
   }
 }
