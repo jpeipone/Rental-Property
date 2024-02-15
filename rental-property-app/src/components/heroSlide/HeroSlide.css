@@ -1,0 +1,60 @@
+.hero-and-image {
+  margin-left: 1.5rem;
+  max-width: 1100px;
+  margin-right: 1.5rem;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  display: flex;
+}
+
+.hero-header {
+  margin-top: 60px;
+  margin-bottom: 30px;
+  max-width: 400px;
+}
+
+.hero-text {
+  max-width: 400px;
+  line-height: 1.5;
+}
+
+.heroslide-image {
+  max-width: 600px;
+  margin-top: 40px;
+  margin-left: 60px;
+  margin-right: 10px;
+}
+
+.hero__btn {
+  margin-top: 40px;
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #1f51ff;
+  font-size: 1.1rem;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1000px) {
+  .heroslide-image {
+    max-width: 350px;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .hero-and-image {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .heroslide-image {
+    max-width: 400px;
+    margin-top: 30px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}

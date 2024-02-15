@@ -13,13 +13,17 @@ const FooterData = () => {
     <div className={isLightMode ? "footer-light" : "footer-dark"}>
       <div className="footer-container">
         <div className="footer-logo-name">
-          <img src="./images/asuntovalas.svg" className="footer-logo" alt=" " />
+          <img
+            src="./images/asuntovalas.svg"
+            className="footer-logo"
+            alt="logo"
+          />
           <div className="footer__header">AsuntoValas</div>
         </div>
         <div className="footer-row">
           <div className="footer__links">
             <div className="footer__link">
-              <Link to="/uusi" onClick={handleScrollToTop}>
+              <Link to="/vuokratuottolaskuri" onClick={handleScrollToTop}>
                 Laskuri
               </Link>
             </div>

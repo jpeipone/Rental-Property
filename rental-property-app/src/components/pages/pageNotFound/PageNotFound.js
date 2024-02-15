@@ -14,7 +14,7 @@ const PageNotFound = () => {
 
       <div className="notfound-links">
         <div className="notfound__link">
-          <Link to="/uusi" onClick={handleScrollToTop}>
+          <Link to="/vuokratuottolaskuri" onClick={handleScrollToTop}>
             Laskuri
           </Link>
         </div>

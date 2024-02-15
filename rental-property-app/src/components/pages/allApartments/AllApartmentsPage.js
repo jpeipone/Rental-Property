@@ -27,7 +27,7 @@ const AllApartmentsPage = () => {
 
       <div className="container-add-delete">
         <div className="add-new-apartment">
-          <Link to="/uusi" onClick={handleScrollToTop}>
+          <Link to="/vuokratuottolaskuri" onClick={handleScrollToTop}>
             <div className="add__text">Lisää asunto</div>
           </Link>
         </div>

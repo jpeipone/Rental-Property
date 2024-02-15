@@ -85,7 +85,7 @@ const SummaryApartments = () => {
                       <HomeIcon className="home-icon" fontSize="large" />
                     </Link>
 
-                    <Link to="/uusi" onClick={handleScrollToTop}>
+                    <Link to="/vuokratuottolaskuri" onClick={handleScrollToTop}>
                       <AddCircleIcon className="add-icon" fontSize="large" />
                     </Link>
                     <div onClick={handleDeleteAllApartments}>

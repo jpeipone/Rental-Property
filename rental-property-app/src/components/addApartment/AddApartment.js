@@ -187,7 +187,8 @@ const AddApartment = () => {
     <div className={isLightMode ? "add-form-light" : "add-form-dark"}>
       <form onSubmit={handleAddInvestment}>
         <div className="form-container">
-          <h2 className="add-new__hd">Lisää asunnon tiedot</h2>
+          <h2 className="add-new__hd">Vuokratuottolaskuri</h2>
+          <p className="add-new__hd">Lisää sijoitusasunto</p>
           <label className="input__label">Osoite *</label>
           <input
             type="text"

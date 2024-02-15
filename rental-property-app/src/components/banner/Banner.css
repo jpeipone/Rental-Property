@@ -10,11 +10,20 @@
 }
 
 .banner-dark {
-  color: white;
+  color: black;
+  object-fit: contain;
+  height: 350px;
+  background-image: url("/public/images/bannershowmobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  /* color: white;
   height: 350px;
   width: 100%;
   border-bottom: solid 3px #1c1c1c;
-  background-color: #121212;
+  background-color: #121212; */
+  -webkit-filter: grayscale(1) invert(1);
+  filter: grayscale(1) invert(1);
 }
 
 .banner-info {
@@ -26,7 +35,7 @@
 }
 
 .banner__header {
-  margin-top: 45px;
+  margin-top: 25px;
   margin-bottom: 2rem;
   text-align: left;
   margin-left: 1.5rem;

@@ -11,13 +11,16 @@ const Banner = () => {
   return (
     <header className={isLightMode ? "banner-light" : "banner-dark"}>
       <div className="banner-info">
-        <h1 className="banner__header">Asuntosijoituksen Laskuri </h1>
+        <h2 className="banner__header">
+          Vuokratuottolaskuri Asuntosijoittajalle
+        </h2>
 
         <p className="banner__text">
-          Laske kassavirta ja vuokratuotto yhdelle tai usealle asunnolle.
+          Laske kassavirta ja vuokratuotto yhdelle tai usealle
+          sijoitusasunnolle.
         </p>
 
-        <Link to="/uusi" onClick={handleScrollToTop}>
+        <Link to="/vuokratuottolaskuri" onClick={handleScrollToTop}>
           <button className="banner__btn">Laskuri</button>
         </Link>
       </div>

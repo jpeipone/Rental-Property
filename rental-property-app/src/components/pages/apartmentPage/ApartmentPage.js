@@ -362,7 +362,7 @@ const ApartmentPage = () => {
               Asunnot
             </div>
           </Link>
-          <Link to="/uusi" onClick={handleScrollToTop}>
+          <Link to="/vuokratuottolaskuri" onClick={handleScrollToTop}>
             <div className="column__icon__text">
               <AddCircleIcon className="icon-add-symbol" fontSize="large" />
               Uusi

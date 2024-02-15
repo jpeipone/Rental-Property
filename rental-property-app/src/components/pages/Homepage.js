@@ -6,6 +6,7 @@ import ApartmentSlide from "../apartmentSlide/ApartmentSlide";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import "./Homepage.css";
 import CashFlowRanking from "../cashFlowRanking/CashFlowRanking";
+import HeroSlide from "../heroSlide/HeroSlide";
 
 const Homepage = () => {
   const { isLightMode, setIsLightMode, userdata, setUserdata } =
@@ -24,11 +25,12 @@ const Homepage = () => {
   return (
     <div className={isLightMode ? "homepage-light" : "homepage-dark"}>
       <Banner />
+      <HeroSlide />
       <h2 className="app__header">Asunnot</h2>
 
       <div className="container-add-delete">
         <div className="add-new-apartment">
-          <Link to="/uusi" onClick={handleScrollToTop}>
+          <Link to="/vuokratuottolaskuri" onClick={handleScrollToTop}>
             <div className="add__text">Lisää asunto</div>
           </Link>
         </div>
